@@ -9,11 +9,11 @@
 
 ***
 
-# 1. Studio Ghibli
-
 <div align="center">
 <img src="https://raw.githubusercontent.com/RJRCH123/LIM016-data-lovers/main/src/img/StudioG/Logo/StudioGLogo.png" width="400" >
 </div>
+
+# 1. Studio Ghibli
 
 🎌 **Studio Ghibli**(スタジオジブリ) es un estudio de animación japonés muy reconocido por sus largometrajes como **"Viaje de Chihiro"**, **"Mi vecino Totoro"**, y muchos otros. 🎎 Studio Ghibli fue fundado por el animador, director, productor, guionista, autor y artista de manga **Hayao Miyazaki**; el director de cine japonés **Isao Takahata**; y el productor **Toshio Suzuki**.
 Este proyecto tiene como finalidad brindar información sobre sus animaciones, personajes, estadísticas, y mucho más.🎌 
@@ -71,6 +71,7 @@ Para satisfacer las necesidades del usuario, consideramos la distribución de la
 - **ESTADÍSTICAS:** Se elaborará gráficos estadísticos sobre las películas.
 - **JUEGOS:** Añadiremos un par de juegos elaborados por el equipo para darle mayor interacción con el usuario.
 
+*** 
 
 ## 3. Realización del Proyecto
 ## 3.1 Diseño 📱
@@ -104,6 +105,8 @@ A continuación, se mostrará parte del Prototipado de Alta Fidelidad, si desea 
 <img  src="https://raw.githubusercontent.com/RJRCH123/LIM016-data-lovers/main/src/imgReadme/Prototipo%20AF/Pag5.png"  width="800">
 
 </div>
+
+***
 
 ## 4. Tecnologías empleadas 👩🏾‍💻 
 ### Para la estructura y diseño:
