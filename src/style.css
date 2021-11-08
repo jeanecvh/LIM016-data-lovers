@@ -46,7 +46,7 @@ body {
 }
 
 /* .LogoNav {
-  width:100%; 
+  width:100%;
 } */
 
 /************** BARRA DE SCROLL **************/
@@ -91,12 +91,31 @@ body {
   color: white;
   text-align: center;
   font-size: xx-small;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  /*padding-top: 10px;
+  padding-bottom: 10px;*/
   font-family: Roboto;
+  display: flex;
+  columns: 4;
+  justify-content: space-around;
+  align-items: center;
 }
 
 /************** Iconos de las redes sociales**************/
 .redSocial{
   width: 1.125rem;
 }
+
+#participants{
+display: flex;
+columns: 2;
+}
+
+.logos{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#copyright{
+  padding-top: 35px;
+}
+
