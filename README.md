@@ -52,7 +52,7 @@ A continuación, mostraremos algunas de las historias de Usuario:
 
 > Yo como visitante, me gustaría que cuando ingrese a la página sienta que estoy leyendo un historieta de fantasía, con música de fondo, con dinámicas y encontrar información detallada sobre las películas. Además, no me gustaria encontrar mucho texto a la vista.
 
-#### USUARIO 2 👩🏼 (Su pélicula favorita es El viaje de Chihiro)
+#### USUARIO 2 👩🏼 (Su película favorita es El viaje de Chihiro)
 
 > Yo como visitante, me gustaría encontrar datos curiosos sobre el Studio Ghibli y sus películas. Además, que tenga una paleta de colores que transmitan misterio.
 
