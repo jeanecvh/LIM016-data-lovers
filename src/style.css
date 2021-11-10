@@ -332,17 +332,18 @@ body {
   border: 5px;
 }
 
+.BoxFounder1 img,
+.BoxFounder2 img,
+.BoxFounder3 img {
+  width: 100%;
+}
+
 .BoxFounder1 {
 
   justify-self: stretch;
   align-self: stretch;
   grid-area: BoxFounder1;
   text-align: center;
-  background-image: url("./img/Fundadores/Takohata/IsaoTakahata.jpg");
-  background-size: cover;
-  border-radius: 100%;
-  border-color: rgb(27, 82, 48);
-  border: 5px;
 }
 
 .BoxFounder2 {
@@ -351,10 +352,6 @@ body {
   align-self: stretch;
   grid-area: BoxFounder2;
   text-align: center;
-  background-image: url("./img/Fundadores/Miyazaqui/Hayao-Miyazaki.jpg");
-  background-size: cover;
-  border-radius: 100%;
-  border-color: rgb(27, 82, 48);
 }
 
 .BoxFounder3 {
@@ -363,10 +360,6 @@ body {
   align-self: stretch;
   grid-area: BoxFounder3;
   text-align: center;
-  background-image: url("./img/Fundadores/Toshio/Toshio2.jpg");
-  background-size: cover;
-  border-radius: 100%;
-  border-color: rgb(27, 82, 48);
 }
 
 .BoxFounderText1 h1,
