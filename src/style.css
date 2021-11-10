@@ -76,8 +76,8 @@ body {
 
 #Inicio {background-color: rgb(12 46 45 / 0);}
 #SobreNosotros {background-color: rgb(12 46 45 / 70%);}
-#Peliculas {background-color:  rgb(6 5 5 / 70%)}
-#Premios {background-color:  rgb(12 46 45 / 70%)}
+#Peliculas {background-color:  rgb(6 5 5 / 70%);}
+#Premios {background-color:  rgb(12 46 45 / 70%);}
 #Estadisticas {background-color:  rgb(6 5 5 / 70%);}
 #Juegos {background-color: rgb(12 46 45 / 0);}
 
@@ -111,7 +111,7 @@ body {
 }
 
 #copyright{
-  padding-top: 35px;
+  padding-top: 35;
 }
 /************** Iconos de las redes sociales**************/
 .redSocial{
@@ -211,6 +211,8 @@ body {
   border-radius: 0 3px 3px 0;
   user-select: none;
 }
+
+
 
 /* Position the "next button" to the right */
 .next {
