@@ -540,13 +540,13 @@ text-align: center;
 
 /************** BOX VIDEO PREMIO OSCAR **************/
 
-#PremioHo h3 {
+.BoxPremio h3 {
   text-align: left;
   color: rgb(10, 103, 116);
   font-size: large;
 }
 
-#PremioHo p {
+.BoxPremio p {
   text-align: justify;
   color: black;
   font-size: small;
@@ -562,3 +562,76 @@ iframe {
   border-color: rgb(43 103 108);
   border-style: solid;
 }
+
+/*************** TABLA DE PREMIOS *************/
+
+div.redTable {
+  border: 2px solid #193125;
+  background-color: #EEE7DB;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+.divTable.redTable .divTableCell, .divTable.redTable .divTableHead {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+.divTable.redTable .divTableBody .divTableCell {
+  font-size: 13px;
+}
+.divTable.redTable .divTableRow:nth-child(even) {
+  background: #C8DBCE;
+}
+.divTable.redTable .divTableHeading {
+  background: #193125;
+  background: -moz-linear-gradient(top, #52645b 0%, #30453a 66%, #193125 100%);
+  background: -webkit-linear-gradient(top, #52645b 0%, #30453a 66%, #193125 100%);
+  background: linear-gradient(to bottom, #52645b 0%, #30453a 66%, #193125 100%);
+}
+.divTable.redTable .divTableHeading .divTableHead {
+  font-size: 19px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  border-left: 0px solid #193125;
+}
+.divTable.redTable .divTableHeading .divTableHead:first-child {
+  border-left: none;
+}
+
+.redTable .tableFootStyle {
+  font-size: 13px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #193125;
+  background: -moz-linear-gradient(top, #52645b 0%, #30453a 66%, #193125 100%);
+  background: -webkit-linear-gradient(top, #52645b 0%, #30453a 66%, #193125 100%);
+  background: linear-gradient(to bottom, #52645b 0%, #30453a 66%, #193125 100%);
+}
+.redTable .tableFootStyle {
+  font-size: 13px;
+}
+.redTable .tableFootStyle .links {
+	text-align: right;
+}
+.redTable .tableFootStyle .links a{
+  display: inline-block;
+  background: #FFFFFF;
+  color: #193125;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+.redTable.outerTableFooter {
+  border-top: none;
+}
+.redTable.outerTableFooter .tableFootStyle {
+  padding: 3px 5px; 
+}
+/* DivTable.com */
+.divTable{ display: table; }
+.divTableRow { display: table-row; }
+.divTableHeading { display: table-header-group;}
+.divTableCell, .divTableHead { display: table-cell;}
+.divTableHeading { display: table-header-group;}
+.divTableFoot { display: table-footer-group;}
+.divTableBody { display: table-row-group;}
