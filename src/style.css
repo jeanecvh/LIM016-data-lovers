@@ -68,7 +68,42 @@ body {
 /************** PÁGINAS **************/
 
 /* Diseñe el contenido de la pestaña (y agregue altura: 100% para el contenido de la página completa) */
-.Box {
+/*.Box {
+  display: none;
+  padding: 0;
+  height: 1000px;
+  font-family:'Poppins', sans-serif;
+}
+*/
+
+#SobreNosotros{
+  display: none;
+  padding: 0;
+  font-family:'Poppins', sans-serif;
+}
+
+#Peliculas{
+  display: none;
+  padding: 0;
+  height: 1000px;
+  font-family:'Poppins', sans-serif;
+}
+
+#Premios{
+  display: none;
+  padding: 0;
+  height: 1000px;
+  font-family:'Poppins', sans-serif;
+}
+
+#Estadisticas{
+  display: none;
+  padding: 0;
+  height: 1000px;
+  font-family:'Poppins', sans-serif;
+}
+
+#Juegos{
   display: none;
   padding: 0;
   height: 1000px;
@@ -271,4 +306,99 @@ body {
   to {opacity: 1}
 }
 
+/************PÁGINA ABOUT US *****************/
+
+.container2 {
+  display: grid;
+  grid-template-columns: 2fr 0.8fr 0.2fr 1fr;
+  grid-template-rows: 0.0fr 1fr 1fr 1fr;
+  gap: 16px 16px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "historia fundadores fundadores fundadores"
+    "historia img_f1 text_f1 text_f1"
+    "historia img_f2 text_f2 text_f2"
+    "historia img_f3 text_f3 text_f3";
+}
+
+.container2 h1 {
+  color: #2e696f;
+}
+
+.historia {
+  grid-area: historia;
+  text-align: justify;
+  font-size: small;
+  padding: 5%;
+}
+
+.historia img {
+  width: 80%;
+  text-align: center;
+}
+
+
+.historia div {
+  text-align: center;
+}
+
+.photofundadores{
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #2e696f;
+  border-width: 5px;
+}
+
+.totoritos2 {
+  text-align: end;
+}
+
+.fundadores {
+  grid-area: fundadores;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 2%;
+}
+
+.fundadores img {
+  width: 30%;
+  justify-content: right;
+  padding-right: 5%;
+}
+
+.img_f1{
+  grid-area: img_f1;
+  text-align: center;
+}
+.img_f2 {
+  grid-area: img_f2;
+  text-align: center;
+}
+.img_f3 {
+  grid-area: img_f3;
+  text-align: center;
+}
+
+.img_f1 img,
+.img_f2 img,
+.img_f3 img
+{
+  width: 70%;
+  text-align: center;
+}
+
+.text_f1 { grid-area: text_f1; }
+
+.text_f2 { grid-area: text_f2; }
+
+.text_f3 { grid-area: text_f3; }
+
+.text_f1,
+.text_f2,
+.text_f3 {
+  font-size: small;
+  text-align: justify;
+  padding-right: 8%;
+}
 
