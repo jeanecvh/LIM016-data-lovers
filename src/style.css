@@ -407,11 +407,7 @@ body {
   padding-left: 20px;
 }
 
-.filter_movies { grid-area: filter_movies; }
-
-.all_movies { grid-area: all_movies; }
-
- .mySlides2{
+.mySlides2{
   display:none;
  }
 
@@ -445,6 +441,52 @@ body {
 
 }
 
+
+.filter_movies { grid-area: filter_movies;}
+
+.container_all_filters {
+  background-color:rgba(0, 0, 0, 0.548);
+  height: 50px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search {
+  width: 400px;
+  font-size: 16px;
+  border-radius: 20px;
+  border-color: #008CBA;
+  border-width: 5px;
+}
+
+.box_filters{
+  display: flex;
+  align-items: center;
+}
+
+.data_filters{
+  width: 200px;
+  font-size: 16px;
+  border-radius: 20px;
+  border-color: #008CBA;
+  border-width: 5px;
+
+}
+
+.button_alfabet{
+  height: 40px;
+}
+
+.box_filter_by{
+  margin: 8px;
+}
+
+.all_movies { grid-area: all_movies; }
+
+
+
 /***************** PAGE GAMES ********************/
 
 .container6 {
@@ -462,15 +504,25 @@ body {
 .gameOne {
   grid-area: gameOne;
   text-align: center;
-  padding: 10px;
+  padding: 15px;
   margin: 50px;
 }
 
 .gameTwo {
   grid-area: gameTwo;
   text-align: center;
-  padding: 10px;
+  padding: 15px;
   margin: 50px;
+ }
+
+ .gameOne p{
+   text-align: justify;
+   padding: 15px;
+ }
+
+ .gameOne ul  li{
+  text-align: justify;
+  padding-right: 15px;
  }
 
 .boxGame1,
@@ -495,7 +547,7 @@ body {
 }
 
 .button_play{
-  background-color: #008CBA; /* Green */
+  background-color: #008CBA;
   border-radius: 10px;
   color: white;
   margin: 30px;
@@ -506,4 +558,14 @@ body {
   font-size: 50px;
   width: 200px;
   height: 100px;
+}
+
+.gameTwo p{
+  text-align: justify;
+  padding: 15px;
+}
+
+.gameTwo ul  li{
+ text-align: justify;
+ padding-right: 15px;
 }

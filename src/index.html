@@ -193,6 +193,41 @@
           </div>
           <div class="filter_movies">
             <h1>ALL THE MOVIES</h1>
+            <div class="container_all_filters">
+              <div class="box_search">
+                <input type="text" class="search" onkeyup="myFunction()" placeholder="Search for movies names..">
+              </div>
+
+              <div class="box_filters">
+
+                <div class="box_filter_by">
+                  <select name="directors" class="data_filters" id="directors">
+                    <option value="directors" selected="selected">Filter by directors</option>
+                  </select>
+                </div>
+
+                <div class="box_filter_by">
+                  <select name="producers" class="data_filters" id="producers">
+                    <option value="producers" selected="selected">Filter by producers</option>
+                  </select>
+                </div>
+
+                <div class="box_filter_by">
+                  <select name="score" class="data_filters" id="score">
+                    <option value="score" selected="selected">Filter by score</option>
+                  </select>
+                </div>
+
+                <div class="box_filter_by">
+                  <input type="image" class="button_alfabet" id="order_az" src="./img/Animaciones/Iconos/AZ.png">
+                </div>
+
+                <div class="box_filter_by">
+                  <input type="image" class="button_alfabet" id="order_az" src="./img/Animaciones/Iconos/ZA.png">
+                </div>
+              </div>
+            </div>
+
           </div>
           <div class="all_movies"></div>
         </div>
@@ -210,12 +245,14 @@
         <div class="container6">
           <div class="gameOne">
             <div class="boxGame1">
-              <h1> SHOW HOW MUCH YOU KNOW 😄 </h1>
+              <h1> SHOW US HOW MUCH YOU KNOW 😄 </h1>
               <p>In this game, you can found a lot of question about "Studio Ghibli".
                 Show us your skills, after having read some of the data on this website.</p>
                 <p>About the game:</p>
-                <p> They are questions, based on the information you will find here. You will be in advantage after reading a little.</p>
-                <p> You have a limit of time for answer the questions. Do it in that range. </p>
+                  <ul>
+                    <li> They are questions, based on the data you will find here. You will be in advantage after reading a little.</li>
+                    <li> You have a limit of time for answer the questions. Do it in that range. </li>
+                  </ul>
                 <div class="imgGame1">
                   <img class="imgGame" src="img/Animaciones/Frases/Frase1.jpeg">
                 </div>
@@ -224,7 +261,18 @@
           </div>
           <div class="gameTwo">
             <div class="boxGame2">
-              <h1>DEMUESTRA CUAN RÁPIDO ERES ATRAPANDO TOTOROS</h1>
+              <h1> HOW FAST YOU CAN DO IT 🐭  </h1>
+              <p> In this game will appear a little and sweet Totoro, and you have to try catch with the mouse!</p>
+                <p>About the game:</p>
+                  <ul>
+                    <li> The key is the patience and the pulse</li>
+                    <li> Don't give down in the first try, could be a little be dificult. When catch all the Totoros, you will have won. </li>
+                  </ul>
+                <div class="imgGame2">
+                  <img class="imgGame" src="img/Animaciones/Totoro/Totoro-Paraguas.png">
+                </div>
+              <button class="button_play">PLAY</button>
+            </div>
             </div>
           </div>
         </div>
