@@ -11,19 +11,19 @@
   <body>
     <header class="header">
       <nav class="nav">
-        <button class="BoxNavs" onclick="openPage('Inicio', this,'rgb(12 46 45 / 70%)')" id="AbrirPorDefecto">Home</button>
-        <button class="BoxNavs" onclick="openPage('SobreNosotros', this,'rgb(12 46 45 / 70%)')" >About us</button>
-        <button class="BoxNavs" onclick="openPage('Peliculas', this,' rgb(6 5 5 / 70%)')">Films</button>
-        <button class="BoxNavs" onclick="openPage('Premios', this, 'rgb(12 46 45 / 70%)')">Awards</button>
-        <button class="BoxNavs" onclick="openPage('Estadisticas', this,' rgb(6 5 5 / 70%)')">Estadísticas</button>
-        <button class="BoxNavs" onclick="openPage('Juegos', this, 'rgb(12 46 45 / 70%)')">Games</button>
+        <button class="BoxNavs" onclick="openPage('Home', this,'rgb(12 46 45 / 70%)')" id="OpenDefault">Home</button>
+        <button class="BoxNavs" onclick="openPage('AboutUs', this,'rgb(12 46 45 / 70%)')" >About us</button>
+        <button class="BoxNavs" onclick="openPage('Films', this,' rgb(6 5 5 / 70%)')">Films</button>
+        <button class="BoxNavs" onclick="openPage('Awards', this, 'rgb(12 46 45 / 70%)')">Awards</button>
+        <button class="BoxNavs" onclick="openPage('Statistics', this,' rgb(6 5 5 / 70%)')">Statistics</button>
+        <button class="BoxNavs" onclick="openPage('Games', this, 'rgb(12 46 45 / 70%)')">Games</button>
       </nav>
     </header>
 
     <main>
 
-      <section id="Inicio" class="Box" >
-        <div class="container1">
+      <section id="Home" class="Box" >
+        <div class="ContainerWelcome">
           <div class="BoxWelcome">
             <img class="LogoWelcome" src="./img/StudioG/Logo/Studio_Ghibli_portal_logo.png" alt="Studio Ghibli">
             <h1>WELCOME!</h1> <br>
@@ -38,7 +38,7 @@
               <div class="mySlides fade">
                 <div class="numbertext">
                   <h1>The Simpsons made a beautiful tribute to Studio Ghibli and My Neighbor Totoro</h1>
-                  The first time The Simpsons paid homage to Studio Ghibli and Miyazaki was in 2014 in Kumiko's introductory chapter "Married to the Blob," in which Homer, Jeff, and Kumiko's father get drunk together in a Japanese bar, and Upon leaving, they enter a fantasy world set in the universe of Ghibli movies such as Spirited Away, Totoro, Ponyo and Princess Mononoke ... 
+                  The first time The Simpsons paid homage to Studio Ghibli and Miyazaki was in 2014 in Kumiko's introductory chapter "Married to the Blob," in which Homer, Jeff, and Kumiko's father get drunk together in a Japanese bar, and Upon leaving, they enter a fantasy world set in the universe of Ghibli movies such as Spirited Away, Totoro, Ponyo and Princess Mononoke... 
                   <a href="https://codigoespagueti.com/noticias/cultura/los-simpson-homenaje-a-studio-ghibli-y-mi-vecino-totoro/" target="_blank">See more</a> 
                 </div>
                 <img src="./img/Animaciones/Noticias/Noticia1.png" style="width:100%">
@@ -92,12 +92,14 @@
 
             </div>
           </div>
-          <div class="BoxPhrases"></div>
+          <div class="BoxPhrases">
+            
+          </div>
         </div>
 
       </section >
 
-      <section id="SobreNosotros" class="Box">
+      <section id="AboutUs" class="Box">
         <div class="containerAbout">
           <div class="BoxAbout1">
             
@@ -195,12 +197,12 @@
         </div>
       </section>
 
-      <section id="Peliculas" class="Box">
+      <section id="Films" class="Box">
         
       </section>
 
-      <section id="Premios" class="Box">
-        <div class="container2">
+      <section id="Awards" class="Box">
+        <div class="ContainerAward">
           <div class="BoxImg">
             <img src="./img/Fundadores/Miyazaqui/Miyasaki-Terno.jpg" alt="Miyasaki recibiendo un Oscar">
           </div>
@@ -217,12 +219,12 @@
           </div>
           <div class="BoxPremio">
             <div class="tab">
-              <button class="tablinks" onmouseover="openCity(event, 'PremioHo')">Honorary Oscar</button>
-              <button class="tablinks" onmouseover="openCity(event, 'Nominaciones')">TOP 10 Awards</button>
-              <button class="tablinks" onmouseover="openCity(event, 'Ganadas')"> Statuettes Obtained </button>
+              <button class="tablinks" onmouseover="openCity(event, 'AwardHo')">Honorary Oscar</button>
+              <button class="tablinks" onmouseover="openCity(event, 'TopAward')">TOP 10 Awards</button>
+              <button class="tablinks" onmouseover="openCity(event, 'Statuites')"> Statuettes Obtained </button>
             </div>
             
-            <div id="PremioHo" class="tabcontent">
+            <div id="AwardHo" class="tabcontent">
               <h3>OSCAR HONORED HAYAO MIYASAKI</h3>
               <p>
                 On November 9, 2014, the Hollywood Academy presented the honorary Oscar to Maureen O'Hara, <strong> Hayao Miyazaki </strong>, Jean-Claude Carrière and Harry Belafonte, in an intimate gala in the Ray Dolby room, of the Hollywood & Highland Center. Miyazaki had a second chance to attend the Oscars in 2014, when he received an honorary award.
@@ -238,7 +240,7 @@
               </div>
             </div>
             
-            <div id="Nominaciones" class="tabcontent">
+            <div id="TopAward" class="tabcontent">
               <h3>TOP 10 AWARDS</h3>
               <p>
                 Studio Ghibli, with the passing of time, was acquiring greater recognition and therefore they were acquiring a long list of nominations and awards. So far (2021) they have accumulated <strong> more than 30 statuettes </strong>. Next, we will show 10 of the prizes obtained.
@@ -420,29 +422,29 @@
               </div>
             </div>
             
-            <div id="Ganadas" class="tabcontent">
+            <div id="Statuites" class="tabcontent">
               <h3>Statuettes Obtained</h3>
-              <div class="container3">
-                <img src="/src/img/Premios2/Annie.png" alt="Premios Annie"> 
-                <img src="/src/img/Premios2/Berlin.png" alt="Premios Berlín">
-                <img src="/src/img/Premios2/CriticJ.png" alt="Premios Crítica Japonesa">
-                <img src="/src/img/Premios2/Critics.png" alt="Premios Critics">
-                <img src="/src/img/Premios2/Mainichi.png" alt="Premios Mainichi">
-                <img src="/src/img/Premios2/Oscars.png" alt="Premios Oscar's">
-                <img src="/src/img/Premios2/Satellite.png" alt="Premios Satellite">
-                <img src="/src/img/Premios2/Saturn.png" alt="Premios Saturn">
-                <img src="/src/img/Premios2/Venecia.png" alt="Premios Venecia">
+              <div class="ContainerStatuites">
+                <img src="/src/img/Premios2/Annie.png" alt="Annie Awards"> 
+                <img src="/src/img/Premios2/Berlin.png" alt="Berlín Awards">
+                <img src="/src/img/Premios2/CriticJ.png" alt="Japanese Academy Awards">
+                <img src="/src/img/Premios2/Critics.png" alt="Film Criticism Awards">
+                <img src="/src/img/Premios2/Mainichi.png" alt="Mainichi Awards">
+                <img src="/src/img/Premios2/Oscars.png" alt="Oscar's Awards">
+                <img src="/src/img/Premios2/Satellite.png" alt="Satellite Awards">
+                <img src="/src/img/Premios2/Saturn.png" alt="Saturn Awards">
+                <img src="/src/img/Premios2/Venecia.png" alt="Venecia Awards">
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="Estadisticas" class="Box">
+      <section id="Statistics" class="Box">
         
       </section>
 
-      <section id="Juegos" class="Box">
+      <section id="Games" class="Box">
         
       </section>
     </main>
@@ -489,7 +491,7 @@
     </footer>
     <script>
 
-      /******** Codigo Paginas *********/
+      /******** PAGES CODE *********/
 
       function openPage(pageName,elmnt,color) {
         var i, Box, BoxNavs;
@@ -505,10 +507,10 @@
         elmnt.style.backgroundColor = color;
       }
       
-      // Obtenga el elemento con id = "AbrirPorDefecto" y haga clic en él
-      document.getElementById("AbrirPorDefecto").click();
+      // Obtenga el elemento con id = "OpenDefault" y haga clic en él
+      document.getElementById("OpenDefault").click();
 
-      /******** Codigo Slider *********/
+      /******** SLIDER CODE *********/
 
       var slideIndex = 1;
       showSlides(slideIndex);
@@ -539,7 +541,7 @@
         dots[slideIndex-1].className += " active";
       }
 
-      /******** Codigo Box Premio *********/
+      /******** BOX AWARD CODE *********/
 
       function openCity(evt, cityName) {
       // Declare all variables
