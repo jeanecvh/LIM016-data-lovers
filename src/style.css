@@ -559,7 +559,7 @@ text-align: center;
 iframe {
   border-radius: 10px;
   border-width: 7px;
-  border-color: rgb(43 103 108);
+  border-color:rgb(125 105 66);
   border-style: solid;
 }
 
@@ -635,3 +635,17 @@ div.redTable {
 .divTableHeading { display: table-header-group;}
 .divTableFoot { display: table-footer-group;}
 .divTableBody { display: table-row-group;}
+
+/*************** ESTATUILLAS ***************/
+
+.container3 {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-auto-flow: column;
+  place-items: center;
+}
+
+.container3 img {
+  width: 70%;
+}
+
