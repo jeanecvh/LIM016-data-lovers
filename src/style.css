@@ -30,7 +30,7 @@ body {
 .header {
   height: 80px;
   background-color:  rgb(21 32 36 / 69%);
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
   top: 0;
   left: 0;
@@ -239,16 +239,13 @@ body {
 
   justify-self: stretch;
   align-self: stretch;
-  /* display: grid;
-  justify-items: center;
-  align-items: center; */
   background: rgb(12 46 45 / 70%);
   color: beige;
   text-align: center;
   font-size: medium;
-  padding: 0% 5%;
   font-family: Roboto;
-  padding: 12% 5% 0% 5%;
+  padding: 10% 
+
   
 }
 
@@ -397,7 +394,7 @@ body {
     "BoxAbout1 BoxFounder1 BoxFounder2 BoxFounder3"
     "BoxAbout1 BoxFounderText1 BoxFounderText2 BoxFounderText3";
   margin: 0% 3%;
-  padding: 10% 3% 7% 3%;
+  padding: 3% 0%;
 }
 
 .BoxAbout1,
@@ -539,7 +536,6 @@ text-align: center;
   grid-template-areas:
     "BoxImg BoxText2"
     "BoxPremio BoxPremio";
-  padding-top: 5.9%
 }
 
 /************** BOX IMG **************/
@@ -857,7 +853,7 @@ div.redTable {
 
 .buttonG {
   width: 100%;
-  margin-top: 10%;
+  margin-top: 4%;
   display: inline-block;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -925,7 +921,6 @@ div.redTable {
   align-content: space-evenly;
   justify-items: center;
   align-items: center;
-  margin-top: 5.9%;
   grid-template-areas:
     "BoxSliderTop"
     "BoxFilmFilter";
