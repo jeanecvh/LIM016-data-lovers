@@ -13,12 +13,30 @@
   <body>
     <header class="header">
       <nav class="nav">
-        <button class="BoxNavs" onclick="openPage('Home', this,'rgb(12 46 45 / 70%)')" id="OpenDefault">Home</button>
-        <button class="BoxNavs" onclick="openPage('AboutUs', this,'rgb(12 46 45 / 70%)')" >About us</button>
-        <button class="BoxNavs" onclick="openPage('Films', this,' rgb(6 5 5 / 70%)')">Films</button>
-        <button class="BoxNavs" onclick="openPage('Awards', this, 'rgb(12 46 45 / 70%)')">Awards</button>
-        <button class="BoxNavs" onclick="openPage('Statistics', this,' rgb(6 5 5 / 70%)')">Statistics</button>
-        <button class="BoxNavs" onclick="openPage('Games', this, 'rgb(12 46 45 / 70%)')">Games</button>
+        <a onclick="openPage('Home', this,'rgb(12 46 45 / 0%)')"><img class="logo" src="./img/StudioG/Logo/Studio_Ghibli_portal_logo.png" alt="Studio Ghibli Portal"></a>
+        <button class="NavToggle" area-label="Abrir Menú" >
+          <img class="MenuBar" src="./img/Animaciones/Iconos/Menu.png" alt="Menu">
+        </button>
+        <ul class="nav-menu nav-menu_visible" >
+          <li class="nav-menu-item">
+            <a class="nav-menu-link nav-link" onclick="openPage('Home', this,'rgb(12 46 45 / 0%)')" id="OpenDefault">Home</a>
+          </li>
+          <li class="nav-menu-item">
+            <a class="nav-menu-link nav-link" onclick="openPage('AboutUs', this,'rgb(12 46 45 / 0%)')" >About us</a>
+          </li>
+          <li class="nav-menu-item">
+            <a class="nav-menu-link nav-link" onclick="openPage('Films', this,' rgb(12 46 45 / 0%)')">Films</a>
+          </li>
+          <li class="nav-menu-item">
+            <a class="nav-menu-link nav-link" onclick="openPage('Awards', this, 'rgb(12 46 45 / 0%)')">Awards</a>
+          </li>
+          <li class="nav-menu-item">
+            <a class="nav-menu-link nav-link" onclick="openPage('Statistics', this,' rgb(12 46 45 / 0%)')">Statistics</a>
+          </li>
+          <li class="nav-menu-item">
+            <a class="nav-menu-link nav-link" onclick="openPage('Games', this, 'rgb(12 46 45 / 0%)')">Games</a>
+          </li>
+        </ul>
       </nav>
     </header>
 
@@ -200,7 +218,16 @@
       </section>
 
       <section id="Films" class="Box">
-        
+        <div class="ContainerFilms">
+          <div class="BoxSliderTop">
+            <br>
+            <h1>TOP 10</h1>
+            <br><br><br><br><br><br><br><br><br><br>
+          </div>
+          <div class="BoxFilmFilter">
+              <h1>ALL FILMS</h1>
+          </div>
+        </div>
       </section>
 
       <section id="Awards" class="Box">
@@ -412,13 +439,8 @@
               </div>
               <div class="redTable outerTableFooter">
                 <div class="tableFootStyle">
-                  <div class="links"> <br>
-                    <!-- <a href="#"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&laquo;</span></span></a> 
-                    <a class="active" href="#"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">1</span></span></a>  
-                    <a href="#"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">2</span></span></a> 
-                    <a href="#"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">3</span></span></a> 
-                    <a href="#"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">4</span></span></a> 
-                    <a href="#"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">&raquo;</span></span></a> -->
+                  <div class="links"> 
+                    <br>
                   </div>
                 </div>
               </div>
@@ -501,7 +523,7 @@
       <section class="FlexFoot">
         <div id='copyright'>
           <p>
-            The content of this website is for educational purposes <br> <strong>© Copyright rights</strong> <br> <br>Lima-Perú
+            The content of this website is for educational purposes <br><br><strong> Copyright © 2021 </strong><br>Lima-Perú
           </p>
         </div>
       </section>

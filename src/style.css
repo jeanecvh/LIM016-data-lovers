@@ -7,12 +7,14 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 /* Establezca la altura del cuerpo y del documento al 100% para habilitar las "pestañas de página completa". */
 body, html {
   height: 100%;
   margin: 0;
+  
 }
 
 body {
@@ -21,33 +23,125 @@ body {
   display: flex;
   flex-direction: column;
   /* overflow: hidden; */
-
 }
 
 /************* NAVS HEADER **************/
 
-.BoxNavs {
-  background-color:  rgb(40 56 55 / 90%);
-  color: white;
-  float: left;
+.header {
+  height: 80px;
+  background-color:  rgb(21 32 36 / 69%);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  font-family: Roboto;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 992px;
+  margin: 0 auto;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: beige;
+}
+
+.logo {
+  width: 190px;
+} 
+
+.nav-menu {
+  display: flex;
+  margin-right: 40px;
+  list-style: none;
+}
+
+.nav-menu-item {
+  font-size: 18px;
+  margin: 0 10px;
+  line-height: 80px;
+  width: max-content;
+}
+
+.nav-menu-link:hover,
+.nav-menu-link_active {
+  background-color: none;
+  color: rgb(219, 186, 75);
+  transition: 0.5s;
+}
+
+.nav-menu-link {
+  height: 70px;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.NavToggle {
+  background-color: rgb(40 56 55 / 0%);
   border: none;
-  outline: none;
+  display: none;
   cursor: pointer;
-  padding: 14px 16px;
-  font-size: large;
-  width: 16.66%;
-  font-family: Roboto;
-
 }
 
-.BoxNavs:hover { /* Lo que cambiará cuando pase el cursor*/
-  background-color: rgba(119, 119, 119, 0.411);
-  font-family: Roboto;
+.MenuBar {
+  width: 40px;
 }
 
-/* .LogoNav {
-  width:100%; 
-} */
+@media (max-width: 768px) {
+
+  .header {
+    height: 60px;
+  }
+  
+  .logo {
+    width: 160px;
+    margin: 0px 12px;
+  } 
+  
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    list-style: none;
+    background-color: rgb(15 25 29);
+    position: fixed;
+    left: 0;
+    top: 60px;
+    width: 100%;
+    padding: 20px 0;
+    height: calc(100% - 60px);
+    overflow-y: auto;
+    left: 100%;
+    transition: left 0.3s;
+  }
+  
+  .nav-menu-item {
+    line-height: 70px;
+  }
+  
+  .nav-menu-link:hover,
+  .nav-menu-link_active {
+    background-color: none;
+    color: rgb(219, 186, 75);
+  }
+    
+  .NavToggle {
+    margin-right: 30px;
+    padding-bottom: 16px;
+    display: block;
+  }
+
+  .nav-menu_visible {
+    left: 0;
+  }
+
+  .MenuBar {
+    width: 40px;
+  }
+}
 
 /************** SCROLL **************/
 ::-webkit-scrollbar {
@@ -64,7 +158,11 @@ body {
   border-radius: 10px;
 }
 
+
+
 /************** PAGES **************/
+
+
 
 /* Diseñe el contenido de la pestaña (y agregue altura: 100% para el contenido de la página completa) */
 .Box {
@@ -76,12 +174,16 @@ body {
 
 #Home {background-color: rgb(12 46 45 / 0);}
 #AboutUs {background-color: rgba(250, 250, 221, 0.623);}
-#Films {background-color:  rgb(6 5 5 / 70%);}
+#Films {background-color:  rgb(6 5 5 / 0%);}
 #Awards {background-color:  rgb(12 46 45 / 70%);}
 #Statistics {background-color:  rgb(6 5 5 / 70%);}
 #Games {background-color: rgb(12 46 45 / 0);}
 
+
+
 /************** FOOTER **************/
+
+
 .footer {
   /* position: fixed; */
 
@@ -94,6 +196,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  padding: 10px 0px 10px 0px ;
 }
 
 #participants{
@@ -113,7 +216,7 @@ body {
 }
 
 
-/************** HOME PAGE ***************/
+/*----------------- HOME PAGE -----------------*/
 
 /************** BOX WELCOME**************/
 .LogoWelcome{
@@ -145,7 +248,7 @@ body {
   font-size: medium;
   padding: 0% 5%;
   font-family: Roboto;
-  padding: 8% 5% 0% 5%;
+  padding: 12% 5% 0% 5%;
   
 }
 
@@ -171,7 +274,11 @@ body {
 .BoxWelcome { grid-area: BoxWelcome; }
 .BoxSlider { grid-area: BoxSlider; }
 
+
+
 /************** BOX SLIDE NEWS **************/
+
+
 
 * {box-sizing:border-box}
 
@@ -280,7 +387,7 @@ body {
 
 
 
-/************** ABOUT US PAGE **************/
+/*----------------- ABOUT US PAGE -----------------*/
 
 .containerAbout {
   display: grid;
@@ -290,6 +397,7 @@ body {
     "BoxAbout1 BoxFounder1 BoxFounder2 BoxFounder3"
     "BoxAbout1 BoxFounderText1 BoxFounderText2 BoxFounderText3";
   margin: 0% 3%;
+  padding: 10% 3% 7% 3%;
 }
 
 .BoxAbout1,
@@ -415,7 +523,7 @@ text-align: center;
   font-size: small;
 }
 
-/************** AWARD PAGE **************/
+/*----------------- AWARD PAGE -----------------*/
 
 .ContainerAward {
   display: grid; 
@@ -431,6 +539,7 @@ text-align: center;
   grid-template-areas:
     "BoxImg BoxText2"
     "BoxPremio BoxPremio";
+  padding-top: 5.9%
 }
 
 /************** BOX IMG **************/
@@ -447,7 +556,11 @@ text-align: center;
   width: 100%;
 }
 
+
+
 /************** BOX NEWS OSCAR´S **************/
+
+
 
 .BoxText2 {
 
@@ -491,7 +604,11 @@ text-align: center;
   grid-area: BoxPremio; 
 }
 
+
+
 /************** AWARD TABLE BOX **************/
+
+
 /* Style the tab */
 .tab {
   float: left;
@@ -538,7 +655,11 @@ text-align: center;
   display: none;
 }
 
+
+
 /************** BOX VIDEO: OSCAR´S AWARD **************/
+
+
 
 .BoxPremio h3 {
   text-align: left;
@@ -563,7 +684,11 @@ iframe {
   border-style: solid;
 }
 
+
+
 /*************** AWARD TABLE *************/
+
+
 
 div.redTable {
   border: 2px solid #193125;
@@ -627,6 +752,7 @@ div.redTable {
 .redTable.outerTableFooter .tableFootStyle {
   padding: 3px 5px; 
 }
+
 /* DivTable.com */
 .divTable{ display: table; }
 .divTableRow { display: table-row; }
@@ -636,7 +762,11 @@ div.redTable {
 .divTableFoot { display: table-footer-group;}
 .divTableBody { display: table-row-group;}
 
+
+
 /*************** ESTATUILLAS ***************/
+
+
 
 .ContainerStatuites {
   display: grid;
@@ -649,7 +779,11 @@ div.redTable {
   width: 70%;
 }
 
-/*************** GAMES PAGE *************/
+
+
+/*----------------- GAMES PAGE -----------------*/
+
+
 .ContainerGame {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -723,7 +857,7 @@ div.redTable {
 
 .buttonG {
   width: 100%;
-  margin-top: 3%;
+  margin-top: 10%;
   display: inline-block;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -774,3 +908,51 @@ div.redTable {
   -webkit-box-shadow: 0 1px 10px 1px rgb(92,139,238) inset, 0 1px 0 0 rgb(29,44,77) , 0 2px 0 0 rgb(31,48,83) , 0 4px 3px 0 rgb(17,17,17) ;
   box-shadow: 0 1px 10px 1px rgb(92,139,238) inset, 0 1px 0 0 rgb(29,44,77) , 0 2px 0 0 rgb(31,48,83) , 0 4px 3px 0 rgb(17,17,17) ;
 }
+
+
+
+/*----------------- FILM PAGE -----------------*/
+
+
+.ContainerFilms {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  gap: 0% 5%;
+  grid-auto-flow: row;
+  justify-content: center;
+  align-content: space-evenly;
+  justify-items: center;
+  align-items: center;
+  margin-top: 5.9%;
+  grid-template-areas:
+    "BoxSliderTop"
+    "BoxFilmFilter";
+}
+
+.ContainerFilms h1 {
+  color: rgb(175, 175, 10);
+  font-size: large;
+  text-align: left;
+  padding-left: 3%;
+}
+
+.BoxSliderTop {
+
+  justify-self: stretch;
+  align-self: stretch;
+  grid-area: BoxSliderTop;
+  background-color: rgba(0, 0, 0, 0.63);
+}
+
+.BoxFilmFilter {
+  margin-top: 2%;
+  justify-self: stretch;
+  align-self: stretch;
+  grid-area: BoxFilmFilter;
+}
+
+
+/* Filter Films */
+
