@@ -240,17 +240,11 @@ body {
   background: rgb(12 46 45 / 70%);
   color: beige;
   text-align: center;
-  font-size: medium;
+  font-size: 14px;
   font-family: Roboto;
-  padding: 10% 
-
-  
+  padding: 10%   
 }
 
-.BoxWelcome h1 {
-  font-size: xx-large;
-  color: beige;
-}
 
 .BoxSlider {
 
@@ -323,7 +317,7 @@ body {
 /* Caption text */
 .text {
   color: #f2f2f2;
-  font-size: xx-large;
+  font-size: 12px;
   padding: 8px 12px;
   position: absolute;
   bottom: 8px;
@@ -334,7 +328,7 @@ body {
 /* Number text */
 .numbertext {
   color: #f2f2f2;
-  font-size: medium;
+  font-size: 18px;
   padding: 2%;
   margin: 2% 5%;
   position: absolute;
@@ -378,6 +372,38 @@ body {
 @keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
+}
+
+@media (max-width: 768px) {
+  .text {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Number text */
+  .numbertext {
+    font-size: 12px;
+  }
+  
+  .numbertext a {
+    font-size: 12px;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    height: 10px;
+    width: 10px;
+  }
+
+  .LogoWelcome {
+    width: 80%;
+}
+
 }
 
 
@@ -518,6 +544,16 @@ text-align: center;
   font-size: small;
 }
 
+@media (max-width: 768px) {
+  .containerAbout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .BoxFounder1 img, .BoxFounder2 img, .BoxFounder3 img {
+    width: 40%; 
+  }
+}
 /*----------------- AWARD PAGE -----------------*/
 
 .ContainerAward {
@@ -773,6 +809,23 @@ div.redTable {
   width: 70%;
 }
 
+@media (max-width: 768px) {
+  .ContainerStatuites {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr ;
+    grid-auto-flow: column;
+    place-items: center;
+  }
+  
+  .ContainerStatuites img {
+    width: 80%;
+  }
+
+  .ContainerAward {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 
 /*----------------- GAMES PAGE -----------------*/
@@ -903,12 +956,30 @@ div.redTable {
   box-shadow: 0 1px 10px 1px rgb(92,139,238) inset, 0 1px 0 0 rgb(29,44,77) , 0 2px 0 0 rgb(31,48,83) , 0 4px 3px 0 rgb(17,17,17) ;
 }
 
+@media (max-width: 768px) {
+  .ContainerGame {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .Game1,
+  .Game2 {
+    margin: 5%;
+  }
+
+  .buttonG {
+    font-size: 180%;
+    margin-top: 8%;
+  }
+}
 
 
 /*----------------- FILM PAGE -----------------*/
 
 
-.ContainerFilms {
+/*.ContainerFilms {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
@@ -921,8 +992,8 @@ div.redTable {
   align-items: center;
   grid-template-areas:
     "BoxSliderTop"
-    "BoxFilmFilter";
-}
+    "BoxFilmFilter"; 
+} */
 
 .ContainerFilms h1 {
   color: rgb(175, 175, 10);
@@ -948,6 +1019,53 @@ div.redTable {
 
 
 /* Filter Films */
+
+
+.cards_movies{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-rows: column;
+  gap: 60px;
+  place-content: center;
+  margin: 3% 6%;
+}
+
+.moviecard{
+  background-color: rgba(0, 0, 0, 0.548);
+  text-align: center;
+  padding-top: 30px;
+  border-radius: 20px;
+}
+
+.movie-poster{
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 4px;
+  border-color: rgb(43 103 108);
+  height: 80%;
+  width: 80%;
+}
+
+.filmClick{
+  font-size: 13px;
+  font-family: Roboto;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: beige;
+  margin: 5% 5% 8% 5%;
+}
+
+@media (max-width: 768px) {
+
+  .cards_movies{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: column;
+    gap: 60px;
+    place-content: center;
+    margin: 3% 6%;
+  }
+}
 
 /*---------------- Staditics Page ----------------*/
 
@@ -1018,4 +1136,14 @@ div.redTable {
 .Chart4 { 
   grid-area: Chart4; 
   margin: 2% 15% 8% 5%;
+}
+
+@media (max-width: 768px) {
+  .ContainerStaditics{
+    display: flex;
+    flex-direction: column;
+  }
+  .TittleSt {
+    margin-top: 8%;
+  }
 }
