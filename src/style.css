@@ -418,7 +418,7 @@ body {
     "BoxAbout1 BoxFounder1 BoxFounder2 BoxFounder3"
     "BoxAbout1 BoxFounderText1 BoxFounderText2 BoxFounderText3";
   margin: 0% 3%;
-  padding: 3% 0%;
+  padding: 3% 3% 0 3%;
 }
 
 .BoxAbout1,
@@ -430,7 +430,7 @@ body {
   align-self: stretch;
   border-radius: 20px;
   /* background-color: rgba(250, 250, 221, 0.623); */
-  padding: 5%;
+  padding: 5% 5% 0% 5%;
 }
 
 .BoxAbout1 {
@@ -463,16 +463,16 @@ body {
   grid-area: BoxFounder3;
 }
 
-.Totorosmini img {
+/* .Totorosmini img {
   width: 40%;
-}
+} */
 
-.Totorosmini2 {
+/* .Totorosmini2 {
   text-align: center;
-}
-.Totorosmini2 img {
-  width: 40%;
-}
+} */
+/* .Totorosmini2 img {
+  width: 30%;
+} */
 
 .BoxAbout1 p,
 .BoxAbout2 p {
