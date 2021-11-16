@@ -950,6 +950,19 @@ div.redTable {
   text-align: center;
 }
 
+.starScore {
+  width: 30px;
+}
+
+.divScoreYear {
+  margin: 8% 0 0 0;
+}
+
+.directorClick, 
+.producerClick {
+  color: beige;
+}
+
 .filmClick{
   font-size: 13px;
   font-family: Roboto;
@@ -1004,9 +1017,9 @@ div.redTable {
   margin: 20px 0 0 0
   }
   .contenedor-img p {
-  font-size: 12px;
+  font-size: 15px;
   position: relative;
-  padding: 10px 20px 10px;
+  padding: 2% 8% 2% 8%;
   text-align: center
   }
   .contenedor-img a.link {
@@ -1022,14 +1035,7 @@ div.redTable {
   box-shadow: 0 0 5px #000
   }
 
-  .scoreClick {
-    color: rgb(194, 194, 34);
-  }
-  .dateClick, 
-  .directorClick, 
-  .producerClick {
-    color: beige;
-  }
+  
 
 /*Ejemplo 1*/
 .ejemplo-1 img {

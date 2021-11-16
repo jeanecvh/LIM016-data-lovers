@@ -96,31 +96,36 @@ function allMovies() {
     const titleText = document.createTextNode(filmTitles[i]);
     newMovieTitle.setAttribute("class", "filmClick");
 
+    // Crear un div para date and year
+    const divScoreYear = document.createElement("div");
+    divScoreYear.setAttribute("class", "divScoreYear");
+
     // Creamos p score
     const newMovieScore = document.createElement("p");
-    const scoreText = document.createTextNode(filmScore[i]);
+    const scoreText = document.createTextNode("⭐️ " + filmScore[i] + " ");
     newMovieScore.setAttribute("class", "scoreClick");
 
     // Creamos p año 
     const newMovieDate = document.createElement("p");
-    const dateText = document.createTextNode(filmDate[i]);
+    const dateText = document.createTextNode( "📆 " + filmDate[i]);
     newMovieDate.setAttribute("class", "dateClick");
     
     // Creamos p director
     const newMovieDirector = document.createElement("p");
-    const directorText = document.createTextNode(filmDirector[i]);
+    const directorText = document.createTextNode( "Director: " + filmDirector[i]);
     newMovieDirector.setAttribute("class", "directorClick");
 
     // Creamos p producer
     const newMovieProducer = document.createElement("p");
-    const producerText = document.createTextNode(filmProducer[i]);
+    const producerText = document.createTextNode( "Producer: " + filmProducer[i]);
     newMovieProducer.setAttribute("class", "producerClick");
 
 
     //Unimos los elementos al contenedor
     newMovieTitle.appendChild(titleText);
-    newMovieScore.appendChild(scoreText);
-    newMovieDate.appendChild(dateText);
+    divScoreYear.appendChild(scoreText);
+
+    divScoreYear.appendChild(dateText);
     newMovieDirector.appendChild(directorText);
     newMovieProducer.appendChild(producerText);
 
@@ -128,11 +133,15 @@ function allMovies() {
 
     newDivMascara.appendChild(newMovieTitle);
     newDivMascara.appendChild(newMovieScore);
+
     newDivMascara.appendChild(newMovieDate);
     newDivMascara.appendChild(newMovieDirector);
     newDivMascara.appendChild(newMovieProducer);
 
     newMovieCard.appendChild(newDivMascara);
+
+    newDivMascara.appendChild(divScoreYear);
+
     
 
     //Ubicamos el contenedor en el DOM
