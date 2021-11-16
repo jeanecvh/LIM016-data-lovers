@@ -29,13 +29,10 @@ export const allFilms = data.films;
 const filmTitles = films.map((film) => film.title);
 const filmPosters = films.map((film) => film.poster);
 
-// const filmScore = films.map((film) => film.rt_score);
-
-
 const filmDate = films.map((film) => film.release_date);
 const filmScore = films.map((film) => film.rt_score);
 const filmDirector = films.map((film) => film.director);
-const filmProducer = films.map((film) => film.producer);
+const filmProducer = films.map((film) => film.producer)
 const top10 = films.sort(function (a,b) {return b.rt_score - a.rt_score }).slice(0,10);
 
 //BUCLEANDO PARA CREAR
@@ -70,11 +67,11 @@ function allMovies() {
     const scoreText = document.createTextNode("⭐️ " + filmScore[i] + " ");
     newMovieScore.setAttribute("class", "scoreClick");
 
-    // Creamos p año 
+    // Creamos p año
     const newMovieDate = document.createElement("p");
     const dateText = document.createTextNode( "📆 " + filmDate[i]);
     newMovieDate.setAttribute("class", "dateClick");
-    
+
     // Creamos p director
     const newMovieDirector = document.createElement("p");
     const directorText = document.createTextNode( "Director: " + filmDirector[i]);
@@ -87,7 +84,7 @@ function allMovies() {
 
 
     //Unimos los elementos al contenedor
-    
+
     newMovieTitle.appendChild(titleText);
     divScoreYear.appendChild(scoreText);
 
@@ -108,7 +105,7 @@ function allMovies() {
 
     newDivMascara.appendChild(divScoreYear);
 
-    
+
 
     //Ubicamos el contenedor en el DOM
     const newMovieContainer = document.getElementsByClassName("cards_movies")[0];
@@ -132,23 +129,22 @@ function topmovies() {
     ////if (filmScore >= "92" && filmScore <= "100"){
     //Creamos el contenedor
     const newMovieCard = document.createElement("div");
-    newMovieCard.setAttribute("class", "moviecard");
+    newMovieCard.setAttribute("class", "moviecard-top");
     //Creamos el elemento de imagen
     const newMoviePoster = document.createElement("img");
     newMoviePoster.setAttribute("src", filmPosters[i]);
-    newMoviePoster.setAttribute("class", "movie-poster");
+    newMoviePoster.setAttribute("class", "movie-poster-top");
     //Creamos el elemento de titulo
     const newMovieTitle = document.createElement("p");
     const titleText = document.createTextNode(filmTitles[i]);
-    newMovieTitle.setAttribute("class", "filmClick");
+    newMovieTitle.setAttribute("class", "filmClick-top");
     //Creamos el elemento score
     const topScore = document.createElement("p");
     const starScore = document.createElement("img");
     starScore.setAttribute("src", "/src/img/Animaciones/Iconos/Star.png");
     starScore.setAttribute("class", "starScore")
     const scoreText= document.createTextNode(filmScore[i]);
-    topScore.setAttribute("class","score");
-    
+    topScore.setAttribute("class","score-top");
     //Unimos los elementos al contenedor
     newMovieTitle.appendChild(titleText);
     topScore.appendChild(scoreText);
@@ -157,12 +153,12 @@ function topmovies() {
     newMovieCard.appendChild(newMovieTitle);
     newMovieCard.appendChild(topScore);
     newMovieCard.appendChild(topScore);
-    
+
     //Ubicamos el contenedor en el DOM
     const newMovieContainer = document.getElementsByClassName("BoxSliderTop")[0];
     newMovieContainer.appendChild(newMovieCard);
 
-    document.getElementsByClassName("moviecard")[i].addEventListener("click", function () {
+    document.getElementsByClassName("moviecard-top")[i].addEventListener("click", function () {
       window.open("movies.html", "_self");
       //USO LOCALSTORAGE
       localStorage.setItem("identificador", JSON.stringify(films[i]));
