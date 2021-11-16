@@ -4,10 +4,7 @@
 import data from './data/ghibli/ghibli.js';
 // // import data from './data/rickandmorty/rickandmorty.js';
 
-console.log(data['films']);
-
-import data from './data/ghibli/ghibli.js';
-
+// console.log(data['films']);
 
 // Event for Nav-Menu responsive
 
