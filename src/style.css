@@ -200,6 +200,7 @@ body {
 /* Diseñe el contenido de la pestaña (y agregue altura: 100% para el contenido de la página completa) */
 .Box {
   font-family:'Poppins', sans-serif;
+}
 
 #copyright{
   padding-top: 35;
@@ -207,7 +208,6 @@ body {
 /************** Iconos de las redes sociales**************/
 .redSocial{
   width: 1.125rem;
-
 }
 
 #Home {background-color: rgb(12 46 45 / 0);}
