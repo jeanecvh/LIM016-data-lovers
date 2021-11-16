@@ -51,7 +51,7 @@ body {
 
 .logo {
   width: 190px;
-} 
+}
 
 .nav-menu {
   display: flex;
@@ -94,16 +94,16 @@ body {
   .header {
     height: 60px;
   }
-  
+
   .logo {
     width: 160px;
     margin: 0px 12px;
-  } 
+  }
 
   .logo {
     padding: 0;
   }
-  
+
   .nav-menu {
     flex-direction: column;
     align-items: center;
@@ -120,16 +120,16 @@ body {
     left: 100%;
     transition: left 0.3s;
   }
-  
+
   .nav-menu-item {
     line-height: 70px;
   }
-  
+
   .nav-menu-link:hover {
     background-color: none;
     color: #84f0deea;
   }
-    
+
   .NavToggle {
     margin-right: 30px;
     padding-bottom: 16px;
@@ -148,13 +148,13 @@ body {
   .nav-menu li {
     margin-right: 70px;
   }
-  
+
   .nav-menu a {
     position: relative;
     display: block;
     padding: 5px;
   }
-  
+
   .nav-menu a::before {
     content: '';
     position: absolute;
@@ -168,7 +168,7 @@ body {
     transform-origin: left;
     transition: transform 0.5s ease-in-out;
   }
-  
+
   .nav-menu a:hover::before {
     transform: scaleX(1);
   }
@@ -218,11 +218,11 @@ body {
 }
 
 .ContainerWelcome {
-  display: grid; 
-  grid-auto-columns: 1fr; 
-  grid-template-columns: 1fr; 
-  grid-template-rows: 1fr 1fr; 
-  gap: 0% 0%; 
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0% 0%;
   grid-template-areas: "BoxWelcome" "BoxSlider";
 
   align-content: space-evenly;
@@ -238,7 +238,7 @@ body {
   text-align: center;
   font-size: 14px;
   font-family: Roboto;
-  padding: 10%   
+  padding: 10%
 }
 
 .BoxSlider {
@@ -326,6 +326,8 @@ body {
   margin: 2% 5%;
   position: absolute;
   top: 0;
+  font-family: 'Poppins', sans-serif;
+  text-align: justify;
 }
 
 .numbertext a {
@@ -377,16 +379,16 @@ body {
     width: 100%;
     text-align: center;
   }
-  
+
   /* Number text */
   .numbertext {
     font-size: 12px;
   }
-  
+
   .numbertext a {
     font-size: 12px;
   }
-  
+
   /* The dots/bullets/indicators */
   .dot {
     height: 10px;
@@ -402,7 +404,7 @@ body {
 
 .containerAbout {
   display: grid;
-  grid-template-columns: 2.1fr 0.7fr 0.7fr 0.7fr; 
+  grid-template-columns: 2.1fr 0.7fr 0.7fr 0.7fr;
   grid-template-areas:
     "BoxAbout1 BoxAbout2 BoxAbout2 BoxAbout2"
     "BoxAbout1 BoxFounder1 BoxFounder2 BoxFounder3"
@@ -528,17 +530,17 @@ text-align: center;
   }
 
   .BoxFounder1 img, .BoxFounder2 img, .BoxFounder3 img {
-    width: 40%; 
+    width: 40%;
   }
 }
 /*----------------- AWARD PAGE -----------------*/
 
 .ContainerAward {
-  display: grid; 
-  grid-auto-columns: 1fr; 
-  grid-template-columns: 1fr 1fr; 
-  grid-template-rows: 0.7fr 1.3fr; 
-  gap: 0% 0%; 
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.7fr 1.3fr;
+  gap: 0% 0%;
   grid-auto-flow: row;
   justify-content: center;
   align-content: space-evenly;
@@ -600,10 +602,10 @@ text-align: center;
   font-size: x-small;
 }
 
-.BoxPremio { 
-  justify-self: stretch; 
-  align-self: stretch; 
-  grid-area: BoxPremio; 
+.BoxPremio {
+  justify-self: stretch;
+  align-self: stretch;
+  grid-area: BoxPremio;
 }
 
 /************** AWARD TABLE BOX **************/
@@ -741,7 +743,7 @@ div.redTable {
   border-top: none;
 }
 .redTable.outerTableFooter .tableFootStyle {
-  padding: 3px 5px; 
+  padding: 3px 5px;
 }
 
 /* DivTable.com */
@@ -773,7 +775,7 @@ div.redTable {
     grid-auto-flow: column;
     place-items: center;
   }
-  
+
   .ContainerStatuites img {
     width: 80%;
   }
@@ -799,7 +801,7 @@ div.redTable {
   align-items: center;
   grid-template-areas:
     "BoxSliderTop"
-    "BoxFilmFilter"; 
+    "BoxFilmFilter";
 } */
 
 .ContainerFilms h1 {
@@ -826,17 +828,17 @@ div.redTable {
 /* Container Filters Film */
 
 .container_all_filters {
-  display: grid; 
-  grid-auto-columns: 1fr; 
-  grid-template-columns: 1fr 1fr; 
-  grid-template-rows: 1fr; 
-  gap: 2% 0%; 
-  grid-template-areas: 
-    "box_search box_filters"; 
-  justify-content: center; 
-  align-content: space-evenly; 
-  justify-items: center; 
-  align-items: center; 
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 2% 0%;
+  grid-template-areas:
+    "box_search box_filters";
+  justify-content: center;
+  align-content: space-evenly;
+  justify-items: center;
+  align-items: center;
   background-color:rgba(0, 0, 0, 0.548);
   margin: 3%;
   padding: 0 3%;
@@ -857,7 +859,7 @@ div.redTable {
 
 .Order_Alfabetic {
   display: flex;
-} 
+}
 
 .search {
   width: 300px;
@@ -907,8 +909,7 @@ div.redTable {
 .button_alfabet{
   width: 40px;
 }
-
-
+/*@media (max-width: 1250px) {}*/
 @media (max-width: 768px) {
   .container_all_filters {
     display: flex;
@@ -935,9 +936,16 @@ div.redTable {
 .moviecard{
   background-color: rgba(0, 0, 0, 0.548);
   text-align: center;
+ /* main
+  padding-top: 30px;
+  border-radius: 20px;
+  position: relative;
+  display: inline-block; */
+
   padding: 15% 0 15% 15%;
   border-radius: 20px; 
   text-align: center;
+
 }
 
 .movie-poster{
@@ -996,6 +1004,39 @@ div.redTable {
 
 }
 
+.BoxSliderTop{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-rows: column;
+  gap: 60px;
+  place-content: center;
+  margin: 3% 6%;
+}
+
+.score{
+  width: 25%;
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-49%, -50%);
+  background-color: rgb(2 21 29);
+  border: #ecab0f;
+  border-style: solid;
+  border-width: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  padding-left: 4px;
+}
+
+.starScore{
+  width: 30px;
+}
+
 /*Estilos Base*/
 .contenedor-img {
   float: left;
@@ -1047,7 +1088,6 @@ div.redTable {
   }
 
   
-
 /*Ejemplo 1*/
 .ejemplo-1 img {
   transition: all 0.2s linear;
@@ -1111,19 +1151,19 @@ div.redTable {
     "Chart3 Chart4";
 }
 
-.TittleSt { 
+.TittleSt {
   grid-area: TittleSt;
   margin: 5% 0 0 0;
 }
 
-.TittleSt h1, 
+.TittleSt h1,
 .TittleSt p {
   color: rgb(43 103 108);
   font-size: x-large;
   text-align: center;
 }
 
-.Chart1 p, 
+.Chart1 p,
 .Chart2 p,
 .Chart3 p,
 .Chart4 p {
@@ -1132,7 +1172,7 @@ div.redTable {
   text-align: center;
 }
 
-.Chart1, 
+.Chart1,
 .Chart2,
 .Chart3,
 .Chart4 {
@@ -1144,23 +1184,23 @@ div.redTable {
   border-style: solid;
 }
 
-.Chart1 { 
+.Chart1 {
   grid-area: Chart1;
   margin: 5% 5% 5% 15%;
 }
 
-.Chart2 { 
-  grid-area: Chart2; 
+.Chart2 {
+  grid-area: Chart2;
   margin: 5% 15% 5% 5%;
 }
 
-.Chart3 { 
-  grid-area: Chart3; 
+.Chart3 {
+  grid-area: Chart3;
   margin: 2% 5% 8% 15%;
 }
 
-.Chart4 { 
-  grid-area: Chart4; 
+.Chart4 {
+  grid-area: Chart4;
   margin: 2% 15% 8% 5%;
 }
 
@@ -1201,7 +1241,7 @@ div.redTable {
   grid-area: Game2;
 }
 
-.Game1, 
+.Game1,
 .Game2 {
   justify-self: stretch;
   align-self: stretch;
@@ -1221,20 +1261,20 @@ div.redTable {
   box-shadow: 3px 3px 18px 3px rgba(15,35,48,0.91) ;
 }
 
-.Game1 h1 , 
+.Game1 h1 ,
 .Game2 h1 {
   color: beige;
   font-size: large;
       text-shadow: 0 0 10px #050505, 0 0 10px #050505, 0 0 20px #050505, 0 0 20px #045c5c, 0 0 10px #063c3c, 0 0 20px #0cc7c7, 0 0 20px #04f1f1;
 }
 
-.Game1 p, 
+.Game1 p,
 .Game2 p {
   font-size: small;
   color: beige;
 }
 
-.Game1 ul, 
+.Game1 ul,
 .Game2 ul {
   font-size: small;
   color: beige;
