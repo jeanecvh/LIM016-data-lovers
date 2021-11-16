@@ -41,7 +41,7 @@
     </header>
 
     <main>
-
+      
       <section id="Home" class="Box" >
         <div class="ContainerWelcome">
           <div class="BoxWelcome">
@@ -50,11 +50,12 @@
             <h3>WHAT WILL YOU FIND? <br> <br>
               In this platform, Studio Ghibli, you can find information about its history, movies, news, statistics, games and more. Join us in this fantasy adventure to learn more about its work.</h3>
           </div>
+
+          
           <div class="BoxSlider">
             <!-- Slideshow container -->
             <br> <br> <br>
             <div class="slideshow-container">
-
               <div class="mySlides fade">
                 <div class="numbertext">
                   <h1>The Simpsons made a beautiful tribute to Studio Ghibli and My Neighbor Totoro</h1> <br>
@@ -64,7 +65,7 @@
                 <img src="./img/Animaciones/Noticias/Noticia1.png" style="width:100%">
                 <div class="text">SG News</div>
               </div>
-            
+
               <div class="mySlides fade">
                 <div class="numbertext">
                   <h1>Studio Ghibli to launch a pack with some of its films and shorts films in Japan</h1> <br>
@@ -75,7 +76,7 @@
                 <img src="./img/Animaciones/Noticias/Noticia2.png" style="width:100%">
                 <div class="text">SG News</div>
               </div>
-            
+
               <div class="mySlides fade">
                 <div class="numbertext">
                   <h1>Spirited Away Over 25 thousand viewers in its re-release</h1> <br>
@@ -103,22 +104,22 @@
             <br>
             <!-- The dots/circles -->
             <div style="text-align:center">
-              <span class="dot" onclick="currentSlide(1)"></span> 
-              <span class="dot" onclick="currentSlide(2)"></span> 
-              <span class="dot" onclick="currentSlide(3)"></span> 
-              <span class="dot" onclick="currentSlide(4)"></span> 
+              <span class="dot" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
+              <span class="dot" onclick="currentSlide(4)"></span>
+              <span class="dot" onclick="currentSlide(5)"></span>
             </div>
-            
 
             </div>
           </div>
           <div class="BoxPhrases">
 
           </div>
+
         </div>
 
       </section >
-
       <section id="AboutUs" class="Box">
         <div class="containerAbout">
           <div class="BoxAbout1">
@@ -589,9 +590,9 @@
         </div>
       </section>
     </main>
-
     <footer class="footer">
       <section class="FlexFoot" >
+
         <p>This Studio Ghibli Portal is not official. <br> Official social networks of Studio Ghibli: <br></p>
         <a href="https://twitter.com/JP_GHIBLI"><img src="./img/RedesSociales/icons8-twitter-30.png" class="redSocial" alt="Twitter"></a>
         <a href="https://www.instagram.com/ghibliarchives/"><img src="./img/RedesSociales/Instagram.png" class="redSocial" alt="Instagram"></a>
@@ -651,6 +652,7 @@
       // Obtenga el elemento con id = "OpenDefault" y haga clic en él
       document.getElementById("OpenDefault").click();
 
+
       /******** SLIDER CODE *********/
 
       var slideIndex = 1;
@@ -670,17 +672,40 @@
         var i;
         var slides = document.getElementsByClassName("mySlides");
         var dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {slideIndex = 1} 
+        if (n > slides.length) {slideIndex = 1}
         if (n < 1) {slideIndex = slides.length}
         for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none"; 
+            slides[i].style.display = "none";
         }
         for (i = 0; i < dots.length; i++) {
             dots[i].className = dots[i].className.replace(" active", "");
         }
-        slides[slideIndex-1].style.display = "block"; 
+        slides[slideIndex-1].style.display = "block";
         dots[slideIndex-1].className += " active";
       }
+
+      /********** SLIDER CODE 2 ***********
+
+      var slideIndex2 = 1;
+      showSlides2(slideIndex2);
+
+      function plusSlides2(n) {
+        showSlides2(slideIndex2 += n);
+      }
+
+      function showSlides2(n) {
+       var i;
+       var slides2 = document.getElementsByClassName("mySlides2");
+        if (n > slides2.length) {slideIndex2 = 1}
+        if (n < 1) {slideIndex2 = slides2.length}
+       for (i = 0; i < slides2.length; i++) {
+        slides2[i].style.display = "none";
+       }
+
+       slides2[slideIndex2-1].style.display = "block";
+       setTimeout(showSlides2,2000);
+}
+*/
 
       /******** BOX AWARD CODE *********/
 
@@ -704,8 +729,10 @@
       document.getElementById(cityName).style.display = "block";
       evt.currentTarget.className += " active";
       }
+    
     </script>
     <script src="main.js" type="module"></script>
+    <script src="data/ghibli/ghibli.js" type="module"></script>
   </body>
 </html>
 

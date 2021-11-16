@@ -14,7 +14,7 @@
 body, html {
   height: 100%;
   margin: 0;
-  
+
 }
 
 body {
@@ -178,7 +178,8 @@ body {
   
 }
 
-/************** SCROLL **************/
+
+/************** SCROLL **************
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -223,13 +224,13 @@ body {
   grid-template-rows: 1fr 1fr; 
   gap: 0% 0%; 
   grid-template-areas: "BoxWelcome" "BoxSlider";
+
   align-content: space-evenly;
   justify-items: center;
   align-items: center;
 }
 
 .BoxWelcome {
-
   justify-self: stretch;
   align-self: stretch;
   background: rgb(12 46 45 / 70%);
@@ -260,7 +261,7 @@ body {
 /************** BOX SLIDE NEWS **************/
 
 
-* {box-sizing:border-box}
+/* {box-sizing:border-box}*/
 
 .BoxSlider {
   background-color: rgba(0, 0, 0, 0.767);
@@ -271,7 +272,9 @@ body {
   max-width: 1000px;
   position: relative;
   margin: auto;
+  background-color: rgb(12 46 45 / 70%);
 }
+
 
 /* Hide the images by default */
 .mySlides {
@@ -340,7 +343,7 @@ body {
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
-  transition: background-color 0.6s ease;
+  transition: 0.6s ease;
 }
 
 .active, .dot:hover {
@@ -356,12 +359,12 @@ body {
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
 
 @keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
 
@@ -1242,3 +1245,4 @@ div.redTable {
     padding: 7%;
   }
 }
+
