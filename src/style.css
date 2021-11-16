@@ -110,7 +110,7 @@ body {
     margin-right: 20px;
     list-style: none;
     background-color: rgb(15 25 29);
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 60px;
     width: 100%;
@@ -172,6 +172,10 @@ body {
   .nav-menu a:hover::before {
     transform: scaleX(1);
   }
+  .nav-menu[data-animation="center"] a::before {
+    transform-origin: center;
+  }
+
 }
 
 
@@ -982,9 +986,9 @@ div.redTable {
 
 .cards_movies{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1.3fr 1.3fr 1.3fr 1.3fr 1.3fr;
   grid-auto-rows: column;
-  gap: 60px;
+  gap: 40px;
   place-content: center;
   margin: 3% 6%;
 }
@@ -992,10 +996,16 @@ div.redTable {
 .moviecard{
   background-color: rgba(0, 0, 0, 0.548);
   text-align: center;
+ /* main
   padding-top: 30px;
   border-radius: 20px;
   position: relative;
-  display: inline-block;
+  display: inline-block; */
+
+  padding: 15% 0 15% 15%;
+  border-radius: 20px;
+  text-align: center;
+
 }
 
 .movie-poster{
@@ -1003,17 +1013,33 @@ div.redTable {
   border-style: solid;
   border-width: 4px;
   border-color: rgb(43 103 108);
-  height: 80%;
+  height: 100%;
   width: 80%;
+  text-align: center;
+}
+
+.starScore {
+  width: 30px;
+  font-size: medium;
+}
+
+.divScoreYear {
+  margin: 8% 0 0 0;
+  font-size: medium;
+}
+
+.directorClick,
+.producerClick {
+  color: beige;
+  font-size: 14px;
 }
 
 .filmClick{
-  font-size: 17px;
   font-family: Roboto;
   font-weight: bold;
   text-transform: uppercase;
   color: beige;
-  margin: 8% 5% 8% 5%;
+  margin: 5% 5% 8% 5%;
 }
 
 @media (max-width: 768px) {
@@ -1026,8 +1052,17 @@ div.redTable {
     place-content: center;
     margin: 3% 6%;
   }
-}
 
+  .directorClick,
+  .producerClick {
+  font-size: small;
+  }
+
+  .contenedor-img h2 {
+    font-size: medium;
+  }
+
+}
 
 .BoxSliderTop{
   display: grid;
@@ -1057,6 +1092,106 @@ div.redTable {
   border-radius: 10px;
   padding-left: 4px;
 }
+
+.starScore{
+  width: 30px;
+}
+
+/*Estilos Base*/
+.contenedor-img {
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+  }
+
+  .contenedor-img .mascara,.contenedor-img .contenido {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0
+  }
+  .contenedor-img img {
+  display: block;
+  position: relative;
+
+  }
+  .contenedor-img h2 {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  font-size: 17px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.719);
+  margin: 20px 0 0 0
+  }
+  .contenedor-img p {
+  position: relative;
+  padding: 2% 8% 2% 8%;
+  text-align: center
+  }
+  .contenedor-img a.link {
+  display: inline-block;
+  text-decoration: none;
+  padding: 7px 14px;
+  background: #222;
+  color: #fff;
+  text-transform: uppercase;
+  box-shadow: 0 0 1px #000
+  }
+  .contenedor-img a.link:hover {
+  box-shadow: 0 0 5px #000
+  }
+
+
+/*Ejemplo 1*/
+.ejemplo-1 img {
+  transition: all 0.2s linear;
+  }
+  .ejemplo-1 .mascara {
+  opacity: 0;
+  background-color: rgba(17, 131, 146, 0.7);
+  transition: all 0.3s ease-in-out;
+  }
+  .ejemplo-1 h2 {
+  transform: translateX(-50px);/*Desplazamos a la izquierda*/
+  opacity: 0;
+  transition: all 0.7s ease-in-out;
+  }
+  .ejemplo-1 p {
+  transform: translateX(100px); /*Desplazamos a la derecha*/
+  opacity: 0;
+  transition: all 0.4s linear;
+  }
+  .ejemplo-1 a.link{
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  transform: translateY(0px)/*Desplazamos para abajo*/
+  }
+  .ejemplo-1:hover img {
+  transform: scale(1.1);/*Damos un ligero zoom a la imagen*/
+  }
+  .ejemplo-1:hover .mascara {
+  opacity: 1;
+  }
+  .ejemplo-1:hover h2,
+  .ejemplo-1:hover p,
+  .ejemplo-1:hover a.link {
+  opacity: 1;
+  transform: translateX(0px);
+  /*Regresamos a las posiciones originales*/
+  }
+  .ejemplo-1:hover p {
+  transition-delay: 0.1s;
+  }
+  .ejemplo-1:hover a.link {
+  transition-delay: 0.2s; /*Aplicamos un pequeño retardo para que se muestre al final*/
+  transform: translateY(0px);
+  }
 
 /*---------------- Staditics Page ----------------*/
 
