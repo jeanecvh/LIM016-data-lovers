@@ -29,14 +29,14 @@ export const allFilms = data.films;
 const filmTitles = films.map((film) => film.title);
 const filmPosters = films.map((film) => film.poster);
 
-const filmScore = films.map((film) => film.rt_score);
-const top10 = films.sort(function (a,b) {return b.rt_score - a.rt_score }).slice(0,10)
+// const filmScore = films.map((film) => film.rt_score);
+
 
 const filmDate = films.map((film) => film.release_date);
 const filmScore = films.map((film) => film.rt_score);
 const filmDirector = films.map((film) => film.director);
-const filmProducer = films.map((film) => film.producer)
-
+const filmProducer = films.map((film) => film.producer);
+const top10 = films.sort(function (a,b) {return b.rt_score - a.rt_score }).slice(0,10);
 
 //BUCLEANDO PARA CREAR
 function allMovies() {
