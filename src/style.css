@@ -952,19 +952,21 @@ div.redTable {
 
 .starScore {
   width: 30px;
+  font-size: medium;
 }
 
 .divScoreYear {
   margin: 8% 0 0 0;
+  font-size: medium;
 }
 
 .directorClick, 
 .producerClick {
   color: beige;
+  font-size: 14px;
 }
 
 .filmClick{
-  font-size: 13px;
   font-family: Roboto;
   font-weight: bold;
   text-transform: uppercase;
@@ -982,6 +984,16 @@ div.redTable {
     place-content: center;
     margin: 3% 6%;
   }
+
+  .directorClick, 
+  .producerClick {
+  font-size: small;
+  }
+
+  .contenedor-img h2 {
+    font-size: medium;
+  }
+
 }
 
 /*Estilos Base*/
@@ -1017,7 +1029,6 @@ div.redTable {
   margin: 20px 0 0 0
   }
   .contenedor-img p {
-  font-size: 15px;
   position: relative;
   padding: 2% 8% 2% 8%;
   text-align: center
