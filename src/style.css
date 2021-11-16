@@ -979,7 +979,7 @@ div.redTable {
 }
 
 .score{
-  width: 70px;
+  width: 25%;
   font-size: 18px;
   color: white;
   font-weight: bold;
@@ -987,12 +987,15 @@ div.redTable {
   top: 80%;
   left: 50%;
   transform: translate(-49%, -50%);
-  background-color: #bea029;
+  background-color: rgb(2 21 29);
   border: #ecab0f;
   border-style: solid;
   border-width: 4px;
   display: flex;
   align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  padding-left: 4px;
 }
 
 .starScore{
