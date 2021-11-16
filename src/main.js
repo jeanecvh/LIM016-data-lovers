@@ -29,9 +29,6 @@ export const allFilms = data.films;
 const filmTitles = films.map((film) => film.title);
 const filmPosters = films.map((film) => film.poster);
 
-
-
-
 const filmDate = films.map((film) => film.release_date);
 const filmScore = films.map((film) => film.rt_score);
 const filmDirector = films.map((film) => film.director);
