@@ -172,6 +172,10 @@ body {
   .nav-menu a:hover::before {
     transform: scaleX(1);
   }
+  .nav-menu[data-animation="center"] a::before {
+    transform-origin: center;
+  }
+  
 }
 
 /************** SCROLL **************/
