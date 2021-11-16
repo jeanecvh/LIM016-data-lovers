@@ -856,26 +856,37 @@ div.redTable {
 .search {
   width: 300px;
   font-size: 16px;
-  border-radius: 20px;
-  border-color: #008CBA;
-  border-width: 3px;
-  padding: 0 20px;
+  border: none;
+  border-bottom: #55a389 6px solid;
+  background: none;
+  padding: 1% 5%;
   overflow: hidden;
   cursor: pointer;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  color: beige;
+  outline:none;
 }
 
+::placeholder {
+  color: rgba(245, 245, 220, 0.658);
+}
 
-.data_filters{
+.data_filters {
   width: 200px;
-  font-size: 16px;
-  border-radius: 20px;
-  border-color: #008CBA;
-  border-width: 3px;
+  font-size: 14px;
+  background: none;
+  color: beige;
+  padding: 2.2% 5%;
+  outline:none;
+  border: none;
+  border-bottom: #55a389 4px solid;
+}
 
+.data_filters option {
+  background: #5d7b63;
 }
 
 .button_alfabet{
