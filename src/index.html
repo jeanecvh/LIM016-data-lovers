@@ -11,19 +11,37 @@
   <body>
     <header class="header">
       <nav class="nav">
-        <button class="BoxNavs" onclick="openPage('Inicio', this,'rgb(12 46 45 / 70%)')" id="AbrirPorDefecto">Inicio</button>
-        <button class="BoxNavs" onclick="openPage('SobreNosotros', this,'rgb(12 46 45 / 70%)')" >Sobre Nosotros</button>
-        <button class="BoxNavs" onclick="openPage('Peliculas', this,' rgb(6 5 5 / 70%)')">Películas</button>
-        <button class="BoxNavs" onclick="openPage('Premios', this, 'rgb(12 46 45 / 70%)')">Premios</button>
-        <button class="BoxNavs" onclick="openPage('Estadisticas', this,' rgb(6 5 5 / 70%)')">Estadísticas</button>
-        <button class="BoxNavs" onclick="openPage('Juegos', this, 'rgb(12 46 45 / 70%)')">Juegos</button>
+        <a onclick="openPage('Home', this,'rgb(12 46 45 / 0%)')" id="OpenDefault"><img class="logo" src="./img/StudioG/Logo/Studio_Ghibli_portal_logo.png" alt="Studio Ghibli Portal"></a>
+        <button class="NavToggle" area-label="Open menu" >
+          <img class="MenuBar" src="./img/Animaciones/Iconos/Menu.png" alt="Menu">
+        </button>
+        <ul class="nav-menu nav-menu_visible" >
+          <li class="nav-menu-item">
+            <a class="nav-menu-link nav-link" onclick="openPage('Home', this,'rgb(12 46 45 / 0%)')" id="OpenDefault">Home</a>
+          </li>
+          <li class="nav-menu-item">
+            <a class="nav-menu-link nav-link " onclick="openPage('AboutUs', this,'rgb(12 46 45 / 0%)')" >About us</a>
+          </li>
+          <li class="nav-menu-item">
+            <a class="nav-menu-link nav-link" onclick="openPage('Films', this,' rgb(12 46 45 / 0%)')">Films</a>
+          </li>
+          <li class="nav-menu-item">
+            <a class="nav-menu-link nav-link" onclick="openPage('Awards', this, 'rgb(12 46 45 / 0%)')">Awards</a>
+          </li>
+          <li class="nav-menu-item">
+            <a class="nav-menu-link nav-link" onclick="openPage('Statistics', this,' rgb(12 46 45 / 0%)')">Statistics</a>
+          </li>
+          <li class="nav-menu-item">
+            <a class="nav-menu-link nav-link" onclick="openPage('Games', this, 'rgb(12 46 45 / 0%)')">Games</a>
+          </li>
+        </ul>
       </nav>
     </header>
 
     <main>
 
-      <section id="Inicio" class="Box">
-        <div class="container1">
+      <section id="Home" class="Box">
+        <div class="ContainerHome">
           <div class="BoxSlider">
 
             <!-- Slideshow container -->
@@ -37,43 +55,43 @@
 
               <div class="mySlides fade">
                 <div class="numbertext">
-                  <h1>Los Simpson hicieron un bello homenaje a Studio Ghibli y Mi Vecino Totoro</h1>
-                  La primera vez que Los Simpson rindieron un homenaje a Studio Ghibli y Miyazaki fue en 2014 en el capítulo introductorio de Kumiko “Married to the Blob”, en el que Homero, Jeff y el padre de Kumiko se emborrachan juntos en un bar japonés, y al salir se introducen en un mundo de fantasía ambientado en el universo de películas de Ghibli como El viaje de Chihiro, Totoro, Ponyo y La princesa Mononoke...
-                  <a href="https://codigoespagueti.com/noticias/cultura/los-simpson-homenaje-a-studio-ghibli-y-mi-vecino-totoro/" target="_blank">Ver más</a>
+                  <h1>The Simpsons made a beautiful tribute to Studio Ghibli and My Neighbor Totoro</h1> <br>
+                  The first time The Simpsons paid homage to Studio Ghibli and Miyazaki was in 2014 in Kumiko's introductory chapter "Married to the Blob," in which Homer, Jeff, and Kumiko's father get drunk together in a Japanese bar, and Upon leaving, they enter a fantasy world set in the universe of Ghibli movies...
+                  <a href="https://codigoespagueti.com/noticias/cultura/los-simpson-homenaje-a-studio-ghibli-y-mi-vecino-totoro/" target="_blank">See more</a>
                 </div>
                 <img src="./img/Animaciones/Noticias/Noticia1.png" style="width:100%">
-                <div class="text">SG Noticias</div>
+                <div class="text">SG News</div>
               </div>
 
               <div class="mySlides fade">
                 <div class="numbertext">
-                  <h1>Studio Ghibli lanzará en Japón un pack con algunas de sus películas y cortos</h1>
-                  Lo más curioso de todo es que los largometrajes incluidos rinden homenaje a otros directores del estudio, más allá de Hayao Miyazaki e Isao Takahata
-                  Hayao Miyazaki e Isao Takahata son dos de los genios más grandes en la historia de la animación, y padres de Studio Ghibli. No obstante, la compañía de Totoro tiene muy buenos largometrajes más allá de estos dos genios...
-                  <a href="https://areajugones.sport.es/anime/studio-ghibli-lanzara-en-japon-un-pack-con-algunas-de-sus-peliculas-y-cortos/" target="_blank">Ver más</a>
+                  <h1>Studio Ghibli to launch a pack with some of its films and shorts films in Japan</h1> <br>
+                  The most curious thing of all is that the feature films included pay tribute to other directors of the studio, beyond Hayao Miyazaki and Isao Takahata
+                  Hayao Miyazaki and Isao Takahata are two of the greatest geniuses in animation history, and parents of Studio Ghibli. However, Totoro's company has very good feature films beyond these two geniuses...
+                  <a href="https://areajugones.sport.es/anime/studio-ghibli-lanzara-en-japon-un-pack-con-algunas-de-sus-peliculas-y-cortos/" target="_blank">See more</a>
                 </div>
                 <img src="./img/Animaciones/Noticias/Noticia2.png" style="width:100%">
-                <div class="text">SG Noticias</div>
+                <div class="text">SG News</div>
               </div>
 
               <div class="mySlides fade">
                 <div class="numbertext">
-                  <h1>El Viaje de Chihiro supera los 25 mil espectadores en su reestreno</h1>
-                  Con motivo del 20 aniversario del estreno de El Viaje de Chihiro e Japón, el pasado 21 de mayo Vértigo Films volvió a llevar a los cines españoles esta y icónica película de Miyazaki. La película es una de los obras más aclamados del Studi  Ghibli, gracias al Oscar obtenido por mejor película de animación...
-                  <a href="https://ramenparados.com/el-viaje-de-chihiro-supera-los-25-mil-espectadores-en-su-reestreno/" target="_blank">Ver más</a>
+                  <h1>Spirited Away Over 25 thousand viewers in its re-release</h1> <br>
+                  In the occasion of the 20th anniversary of the premiere of Spirited Away in Japan, on May 21, Vertigo Films again brought this iconic Miyazaki film to Spanish cinemas. The film is one of the most acclaimed works of the Studi Ghibli, thanks to the Oscar obtained for best animated film...
+                  <a href="https://ramenparados.com/el-viaje-de-chihiro-supera-los-25-mil-espectadores-en-su-reestreno/" target="_blank">See more</a>
                 </div>
                 <img src="./img/Animaciones/Noticias/Noticia3.png" style="width:100%">
-                <div class="text">SG Noticias</div>
+                <div class="text">SG News</div>
               </div>
 
               <div class="mySlides fade">
                 <div class="numbertext">
-                  <h1>El Parque Ghibli construirá nuevos escenarios</h1>
-                  El gobierno de la prefectura de Aichi, lugar donde se situará el futuro Parque Ghibli, ha confirmado que la zona del Bosque Dondoko se encuentra bajo construcción. El área, con una temática basada en la película Mi vecino Totoro, fue reestructurada con un nuevo diseño que se ha mostrado junto al anuncio de la operación...
-                  <a href="https://ramenparados.com/el-parque-ghibli-construira-nuevos-escenarios/" target="_blank">Ver más</a>
+                  <h1>Ghibli Park will build new stages</h1> <br>
+                  The Aichi government, where the future Ghibli Park will be located, has confirmed that the Dondoko Forest area is being constructed. The area, with a theme based on the movie My Neighbor Totoro, was restructured with a new design that has been shown together with the announcement of the operation...
+                  <a href="https://ramenparados.com/el-parque-ghibli-construira-nuevos-escenarios/" target="_blank">See More</a>
                 </div>
                 <img src="./img/Animaciones/Noticias/Noticia4.png" style="width:100%">
-                <div class="text">SG Noticias</div>
+                <div class="text"><br> <br> SG News</div>
               </div>
 
               <!-- Next and previous buttons -->
@@ -97,7 +115,7 @@
 
       </section >
 
-      <section id="SobreNosotros" class="Box">
+      <section id="AboutUs" class="Box">
 
         <div class="container2">
           <div class="historia">
@@ -167,7 +185,7 @@
 
       </section>
 
-      <section id="Peliculas" class="Box">
+      <section id="Films" class="Box">
 
         <div class="container3">
           <h1>TOP 10 </h1>
@@ -228,20 +246,25 @@
               </div>
             </div>
 
+            <div id="cards_movies" class="cards_movies">
+
+
+            </div>
+
           </div>
           <div class="all_movies"></div>
         </div>
       </section>
 
-      <section id="Premios" class="Box">
+      <section id="Awards" class="Box">
 
       </section>
 
-      <section id="Estadisticas" class="Box">
+      <section id="Stadistics" class="Box">
 
       </section>
 
-      <section id="Juegos" class="Box">
+      <section id="Games" class="Box">
         <div class="container6">
           <div class="gameOne">
             <div class="boxGame1">
@@ -282,9 +305,9 @@
 
     <footer class="footer">
       <section class="FlexFoot" >
-        <p>Este Portal de Studio Ghibli no es oficial. Estas son las redes sociales oficiales: <br></p>
-        <a href="mailto:rous9716@gmail.com"><img src="./img/RedesSociales/Facebook.png" class="redSocial" alt="Facebook"></a>
-        <a href="https://twitter.com/rouseblues"><img src="./img/RedesSociales/Instagram.png" class="redSocial" alt="Twitter"></a>
+        <p>This Studio Ghibli Portal is not official. Official social networks of Studio Ghibli: <br></p>
+        <a href="https://www.instagram.com/ghibliarchives/"><img src="./img/RedesSociales/Faceboo" class="redSocial" alt="Facebook"></a>
+        <a href="https://twitter.com/rouseblues"><img src="./img/RedesSociales/icons8-twitter-30.png" class="redSocial" alt="Twitter"></a>
         <a href="https://www.linkedin.com/in/rosamaria-rodriguez-6904a1191/"><img src="./img/Favicon/StudioGL2.ico" class="redSocial" alt="Oficial"></a>
     </section>
     <section class="FlexFoot">
