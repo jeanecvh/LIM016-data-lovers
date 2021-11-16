@@ -4,33 +4,36 @@
 import data from './data/ghibli/ghibli.js';
 // // import data from './data/rickandmorty/rickandmorty.js';
 
-console.log(data['films']);
+//console.log(data['films']);
 
-/******** RESPONSIVE ************/
 
-const navToggle = document.querySelector(".nav-toggle")
+
+// Event for Nav-Menu responsive
+
+const navToggle = document.querySelector(".NavToggle")
 const navMenu = document.querySelector(".nav-menu")
 
 navToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("nav-menu_visible");
+  navMenu.classList.toggle("nav-menu_visible");
+
+// Event for area-label open and close menu
 
 if (navMenu.classList.contains("nav-menu_visible")){
-    navToggle.setAttribute("aria-label", "Close menu");
+  navToggle.setAttribute("aria-label", "Close menu");
 }else {
-    navToggle.setAttribute("aria-label", "Open menu")
+  navToggle.setAttribute("aria-label", "Open menu")
 }
 });
 
-
-/********* DATA **********/
-export const objetfilms = data.films;
-
+//Importamos la data de Ghibli
 let films = data.films;
+export const allFilms = data.films;
 
 const filmTitles = films.map((film) => film.title);
 const filmPosters = films.map((film) => film.poster);
 
-function printAllMovies() {
+//BUCLEANDO PARA CREAR
+function allMovies() {
   films = data.films;
   for (let i = 0; i < filmTitles.length; i++) {
     //Creamos el contenedor
@@ -59,8 +62,7 @@ function printAllMovies() {
     });
   }
 }
-printAllMovies();
-
+allMovies();
 
 
 
