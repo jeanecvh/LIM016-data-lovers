@@ -225,14 +225,14 @@
             <h1>ALL FILMS</h1>
             <div class="container_all_filters">
               <div class="box_search">
-                <input type="text" class="search" onkeyup="myFunction()" placeholder=" 🔍 Search  for movies names..">
+                <input type="text" class="search" onkeyup="myFunction()" placeholder=" 🔍 Search  for movies names...">
               </div>
 
               <div class="box_filters">
 
                 <div class="box_filter_by">
                   <select name="directors" class="data_filters" id="directors">
-                    <option value="directors" selected="selected">Filter by directors</option>
+                    <option value="directors" selected="selected">By directors</option>
                     <option value="Hayao Miyazaki">Hayao Miyazaki</option>
                     <option value="Isao Takahata">Isao Takahata</option>
                     <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
@@ -244,7 +244,7 @@
 
                 <div class="box_filter_by">
                   <select name="producers"  class="data_filters" id="producers">
-                    <option value="producers" selected="selected">Filter by producers</option>
+                    <option value="producers" selected="selected">By producers</option>
                     <option value="Hayao Miyazaki">Hayao Miyazaki</option>
                     <option value="Isao Takahata">Isao Takahata</option>
                     <option value="Toru Hara">Toru Hara</option>
@@ -255,7 +255,7 @@
 
                 <div class="box_filter_by">
                   <select name="score" class="data_filters"  id="score">
-                    <option value="score"   selected="selected">Filter by score</option>
+                    <option value="score"   selected="selected">By score</option>
                   </select>
                 </div>
 
@@ -692,16 +692,16 @@
       }
 
       function showSlides2(n) {
-       var i;
-       var slides2 = document.getElementsByClassName("mySlides2");
+      var i;
+      var slides2 = document.getElementsByClassName("mySlides2");
         if (n > slides2.length) {slideIndex2 = 1}
         if (n < 1) {slideIndex2 = slides2.length}
-       for (i = 0; i < slides2.length; i++) {
+      for (i = 0; i < slides2.length; i++) {
         slides2[i].style.display = "none";
-       }
+      }
 
-       slides2[slideIndex2-1].style.display = "block";
-       setTimeout(showSlides2,2000);
+      slides2[slideIndex2-1].style.display = "block";
+      setTimeout(showSlides2,2000);
 }
 */
 
