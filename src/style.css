@@ -110,7 +110,7 @@ body {
     margin-right: 20px;
     list-style: none;
     background-color: rgb(15 25 29);
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 60px;
     width: 100%;
@@ -1006,7 +1006,6 @@ div.redTable {
   .contenedor-img p {
   font-size: 12px;
   position: relative;
-  color: #fff;
   padding: 10px 20px 10px;
   text-align: center
   }
@@ -1021,6 +1020,15 @@ div.redTable {
   }
   .contenedor-img a.link:hover {
   box-shadow: 0 0 5px #000
+  }
+
+  .scoreClick {
+    color: rgb(194, 194, 34);
+  }
+  .dateClick, 
+  .directorClick, 
+  .producerClick {
+    color: beige;
   }
 
 /*Ejemplo 1*/

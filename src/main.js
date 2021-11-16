@@ -105,7 +105,7 @@ function allMovies() {
     const newMovieDate = document.createElement("p");
     const dateText = document.createTextNode(filmDate[i]);
     newMovieDate.setAttribute("class", "dateClick");
-
+    
     // Creamos p director
     const newMovieDirector = document.createElement("p");
     const directorText = document.createTextNode(filmDirector[i]);
