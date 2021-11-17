@@ -6,6 +6,8 @@ import data from './data/ghibli/ghibli.js';
 
 //console.log(data['films']);
 
+
+
 // Event for Nav-Menu responsive
 
 const navToggle = document.querySelector(".NavToggle")
@@ -32,8 +34,9 @@ const filmPosters = films.map((film) => film.poster);
 const filmDate = films.map((film) => film.release_date);
 const filmScore = films.map((film) => film.rt_score);
 const filmDirector = films.map((film) => film.director);
-const filmProducer = films.map((film) => film.producer)
+const filmProducer = films.map((film) => film.producer);
 //const top10 = filmScore.sort(function (a,b) {return b - a }).slice(0,10);
+
 
 //BUCLEANDO PARA CREAR
 function allMovies() {
@@ -105,8 +108,6 @@ function allMovies() {
 
     newDivMascara.appendChild(divScoreYear);
 
-
-
     //Ubicamos el contenedor en el DOM
     const newMovieContainer = document.getElementsByClassName("cards_movies")[0];
     newMovieContainer.appendChild(newMovieCard);
@@ -119,4 +120,3 @@ function allMovies() {
   }
 }
 allMovies();
-
