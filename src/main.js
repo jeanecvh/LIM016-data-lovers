@@ -85,33 +85,24 @@ function allMovies() {
     const producerText = document.createTextNode( "Producer: " + filmProducer[i]);
     newMovieProducer.setAttribute("class", "producerClick");
 
-
     //Unimos los elementos al contenedor
-
     newMovieTitle.appendChild(titleText);
     divScoreYear.appendChild(scoreText);
-
     divScoreYear.appendChild(dateText);
     newMovieDirector.appendChild(directorText);
     newMovieProducer.appendChild(producerText);
-
     newMovieCard.appendChild(newMoviePoster);
-
     newDivMascara.appendChild(newMovieTitle);
     newDivMascara.appendChild(newMovieScore);
-
     newDivMascara.appendChild(newMovieDate);
     newDivMascara.appendChild(newMovieDirector);
     newDivMascara.appendChild(newMovieProducer);
-
     newMovieCard.appendChild(newDivMascara);
-
     newDivMascara.appendChild(divScoreYear);
 
     //Ubicamos el contenedor en el DOM
     const newMovieContainer = document.getElementsByClassName("cards_movies")[0];
     newMovieContainer.appendChild(newMovieCard);
-
     document.getElementsByClassName("moviecard")[i].addEventListener("click", function () {
       window.open("movies.html", "_self");
       //USO LOCALSTORAGE
@@ -120,3 +111,6 @@ function allMovies() {
   }
 }
 allMovies();
+
+
+
