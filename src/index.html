@@ -216,7 +216,7 @@
       <section id="Films" class="Box">
         <div class="Top10text">
           <h1>TOP 10</h1>
-        </div>        
+        </div>
         <div class="ContainerFilms">
           <div id="BoxSliderTop" class="BoxSliderTop">
             <img class="Top10sr" src="./img/Top/Top10sr.gif" alt="Top10">
@@ -227,7 +227,7 @@
             <h1>ALL FILMS</h1>
             <div class="container_all_filters">
               <div class="box_search">
-                <input type="text" class="search" onkeyup="myFunction()" placeholder=" 🔍 Search  for movies names...">
+                <input type="text" class="search" id="myInput" onkeyup="myFunction()" placeholder=" 🔍 Search  for movies names...">
               </div>
 
               <div class="box_filters">
@@ -705,6 +705,27 @@
       // Show the current tab, and add an "active" class to the link that opened the tab
       document.getElementById(cityName).style.display = "block";
       evt.currentTarget.className += " active";
+      }
+
+
+      /********SEARCH**************/
+
+      function myFunction() {
+      var input, filter, div, movieposter, h2, i;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      div = document.getElementsByClassName("moviecard");
+      movieposter = document.getElementsByClassName("movie-poster");
+        for (i = 0; i < movieposter.length; i++) {
+          h2 = div[i].getElementsByClassName("filmClick")[0];
+          if (h2) {
+            if (h2.innerHTML.toUpperCase().indexOf(filter) > -1) {
+              div[i].style.display = "";
+            } else {
+              div[i].style.display = "none";
+            }
+          }
+        }
       }
 
     </script>
