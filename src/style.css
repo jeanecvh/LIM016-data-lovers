@@ -178,7 +178,6 @@ body {
 
 }
 
-
 /************** SCROLL **************/
 
 ::-webkit-scrollbar {
@@ -201,6 +200,14 @@ body {
 /* Diseñe el contenido de la pestaña (y agregue altura: 100% para el contenido de la página completa) */
 .Box {
   font-family:'Poppins', sans-serif;
+}
+#copyright{
+  padding-top: 35;
+}
+/************** Iconos de las redes sociales**************/
+.redSocial{
+  width: 1.125rem;
+
 }
 
 #Home {background-color: rgb(12 46 45 / 0);}
@@ -295,6 +302,8 @@ body {
   border-radius: 0 3px 3px 0;
   user-select: none;
 }
+
+
 
 /* Position the "next button" to the right */
 .next {
@@ -856,6 +865,9 @@ div.redTable {
   grid-area: box_filters;
   display: flex;
   align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 2%;
 }
 
 .Order_Alfabetic {
