@@ -235,12 +235,12 @@
                 <div class="box_filter_by">
                   <select name="directors" class="data_filters" id="directors">
                     <option value="directors" selected="selected">By directors</option>
-                    <option value="Hayao Miyazaki">Hayao Miyazaki</option>
-                    <option value="Isao Takahata">Isao Takahata</option>
-                    <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
-                    <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
-                    <option value="Gorō Miyazaki">Gorō Miyazaki</option>
-                    <option value="Hiroyuki Morita">Hiroyuki Morita</option>
+                    <option value="Hayao Miyazaki" class="directorHayao ">Hayao Miyazaki</option>
+                    <option value="Isao Takahata" class="directorIsao " >Isao Takahata</option>
+                    <option value="Yoshifumi Kondō" class="directorYoshifumi " >Yoshifumi Kondō</option>
+                    <option value="Hiromasa Yonebayashi" class="directorHiromasa ">Hiromasa Yonebayashi</option>
+                    <option value="Gorō Miyazaki" class="directorGoro ">Gorō Miyazaki</option>
+                    <option value="Hiroyuki Morita" class="directorHiroyuki ">Hiroyuki Morita</option>
                   </select>
                 </div>
 
@@ -263,7 +263,7 @@
 
                 <div class="Order_Alfabetic">
                 <div class="box_filter_by">
-                  <input type="image" class="button_alfabet"  id="order_az" src="./img/Animaciones/Iconos/A-Z.png">
+                  <input type="image" class="button_alfabet" onkeyup="SortArray()" id="order_az" src="./img/Animaciones/Iconos/A-Z.png">
                 </div>
 
                 <div class="box_filter_by">

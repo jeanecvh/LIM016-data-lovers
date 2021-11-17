@@ -112,5 +112,22 @@ function allMovies() {
 }
 allMovies();
 
+/************************* FILTERS **********************/
+//FILTER BY DIRECTOR
+const filterByDirector = (director, films) => {
+  let dataFilter = films.filter(film => film.director == director);
+  return dataFilter;
+}
+
+const selectDirector = document.querySelector("#directors");
 
 
+selectDirector.addEventListener("change", () => {
+  let director = selectDirector.value;
+  if (director == 'directors') {
+      allMovies(films);
+  } else {
+      let dataFilterDirector = filterByDirector(director, films);
+      allMovies(dataFilterDirector);
+  }
+});
