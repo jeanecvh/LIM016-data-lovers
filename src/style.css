@@ -814,7 +814,6 @@ div.redTable {
   
 }
 
-
 .BoxSliderTop {
   justify-self: stretch;
   align-self: stretch;
@@ -960,6 +959,7 @@ div.redTable {
 .starScore{
   width: 30px;
 }
+
 /* Data  All Films */
 
 .cards_movies{
@@ -1432,3 +1432,27 @@ div.redTable {
   }
 }
 
+/*******SLIDER PRUEBA *************/
+.cover{
+  overflow: hidden;
+}
+
+.slider{
+  display: flex;
+  width: 400vw;
+
+}
+.sliderimg {
+  width: 100vw;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+}
+.sliderimg.img1 {
+  height: 400px;
+  background-image: url("./img/Top/antiguo/TopB1.png");
+}
+.sliderimg.img2 {
+  height: 400px;
+  background-image: url("./img/Top/antiguo/TopB2.png");
+}

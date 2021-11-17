@@ -25,16 +25,18 @@ if (navMenu.classList.contains("nav-menu_visible")){
 }
 });
 
+
 let films = data.films;
 export const allFilms = data.films;
 
 const filmTitles = films.map((film) => film.title);
 const filmPosters = films.map((film) => film.poster);
-
 const filmDate = films.map((film) => film.release_date);
 const filmScore = films.map((film) => film.rt_score);
 const filmDirector = films.map((film) => film.director);
 const filmProducer = films.map((film) => film.producer);
+//const top10 = filmScore.sort(function (a,b) {return b - a }).slice(0,10);
+
 
 //BUCLEANDO PARA CREAR
 function allMovies() {
@@ -118,6 +120,3 @@ function allMovies() {
   }
 }
 allMovies();
-
-
-
