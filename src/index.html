@@ -214,11 +214,14 @@
       </section>
 
       <section id="Films" class="Box">
-        <h1>TOP 10</h1>
+        <div class="Top10text">
+          <h1>TOP 10</h1>
+        </div>        
         <div class="ContainerFilms">
 
           <div id="BoxSliderTop" class="BoxSliderTop">
-
+            <img class="Top10sr" src="./img/Top/Top10sr.gif" alt="Top10">
+            <img class="Top10cr" src="./img/Top/Top10cr.gif" alt="Top10">
           </div>
 
           <div class="BoxFilmFilter">
@@ -681,29 +684,6 @@
         slides[slideIndex-1].style.display = "block";
         dots[slideIndex-1].className += " active";
       }
-
-      /********** SLIDER CODE 2 ***********
-
-      var slideIndex2 = 1;
-      showSlides2(slideIndex2);
-
-      function plusSlides2(n) {
-        showSlides2(slideIndex2 += n);
-      }
-
-      function showSlides2(n) {
-      var i;
-      var slides2 = document.getElementsByClassName("mySlides2");
-        if (n > slides2.length) {slideIndex2 = 1}
-        if (n < 1) {slideIndex2 = slides2.length}
-      for (i = 0; i < slides2.length; i++) {
-        slides2[i].style.display = "none";
-      }
-
-      slides2[slideIndex2-1].style.display = "block";
-      setTimeout(showSlides2,2000);
-}
-*/
 
       /******** BOX AWARD CODE *********/
 
