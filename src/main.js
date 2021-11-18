@@ -1,12 +1,10 @@
 import { filterByProducer , filterByDirector } from './data.js';
 //import {} from '.data/.js'
 // // import data from './data/lol/lol.js';
-import data from './data/ghibli/ghibli.js';
+// import data from './data/ghibli/ghibli.js';
 // // import data from './data/rickandmorty/rickandmorty.js';
 
 //console.log(data['films']);
-
-
 
 // Event for Nav-Menu responsive
 
@@ -25,333 +23,133 @@ if (navMenu.classList.contains("nav-menu_visible")){
 }
 });
 
+/********** DATA FILTER***********/
+import dataGhibli from './data/ghibli/ghibli.js';
+import { filterBySearch, filterByDirector, filterByProducer } from './data.js';
+// TEMPLATE
+const allData = dataGhibli.films;
 
-let films = data.films;
-export const allFilms = data.films;
+//PAGE FILM-2
 
-const filmTitles = films.map((film) => film.title);
-const filmPosters = films.map((film) => film.poster);
-const filmDate = films.map((film) => film.release_date);
-const filmScore = films.map((film) => film.rt_score);
-const filmDirector = films.map((film) => film.director);
-const filmProducer = films.map((film) => film.producer);
-//const top10 = filmScore.sort(function (a,b) {return b - a }).slice(0,10);
+const mainCards = document.querySelector("#Films");
 
+const showData = (data) => {
+    const cardElement = document.createElement('div');
+    cardElement.className = "card";
 
-//BUCLEANDO PARA CREAR
-function allMovies() {
-  films = data.films;
-  for (let i = 0; i < filmTitles.length; i++) {
+    const templateCard =
+      `<div class="moviecard contenedor-img ejemplo-1" id="${data.id}">
+        <img class="movie-poster" src="${data.poster}">
+        <div class="mascara">
+          <h2 class="filmClick">${data.title}</h2>
+            <div class="divScoreYear" >
+                <p class="scoreClick"> ⭐️ ${data.rt_score}</p>
+                <p class="dateClick"> 📆 ${data.release_date}</p>
+            </div>
+            <p class="directorClick">Director: ${data.director}</p>
+            <p class="producerClick">Producer: ${data.producer}</p>
+            </div>
+        </div>`;
 
-    //Creamos el contenedor
-    const newMovieCard = document.createElement("div");
-    newMovieCard.setAttribute("class", "moviecard contenedor-img ejemplo-1");
-
-    //Creamos el elemento de imagen
-    const newMoviePoster = document.createElement("img");
-    newMoviePoster.setAttribute("src", filmPosters[i]);
-    newMoviePoster.setAttribute("class", "movie-poster");
-
-    //Creamo un div mascara
-    const newDivMascara = document.createElement("div");
-    newDivMascara.setAttribute("class", "mascara");
-
-    //Creamos el elemento de titulo
-    const newMovieTitle = document.createElement("h2");
-    const titleText = document.createTextNode(filmTitles[i]);
-    newMovieTitle.setAttribute("class", "filmClick");
-
-    // Crear un div para date and year
-    const divScoreYear = document.createElement("div");
-    divScoreYear.setAttribute("class", "divScoreYear");
-
-    // Creamos p score
-    const newMovieScore = document.createElement("p");
-    const scoreText = document.createTextNode("⭐️ " + filmScore[i] + " ");
-    newMovieScore.setAttribute("class", "scoreClick");
-
-    // Creamos p año
-    const newMovieDate = document.createElement("p");
-    const dateText = document.createTextNode( "📆 " + filmDate[i]);
-    newMovieDate.setAttribute("class", "dateClick");
-
-    // Creamos p director
-    const newMovieDirector = document.createElement("p");
-    const directorText = document.createTextNode( "Director: " + filmDirector[i]);
-    newMovieDirector.setAttribute("class", "directorClick");
-
-    // Creamos p producer
-    const newMovieProducer = document.createElement("p");
-    const producerText = document.createTextNode( "Producer: " + filmProducer[i]);
-    newMovieProducer.setAttribute("class", "producerClick");
-
-    //Unimos los elementos al contenedor
-    newMovieTitle.appendChild(titleText);
-    divScoreYear.appendChild(scoreText);
-    divScoreYear.appendChild(dateText);
-    newMovieDirector.appendChild(directorText);
-    newMovieProducer.appendChild(producerText);
-    newMovieCard.appendChild(newMoviePoster);
-    newDivMascara.appendChild(newMovieTitle);
-    newDivMascara.appendChild(newMovieScore);
-    newDivMascara.appendChild(newMovieDate);
-    newDivMascara.appendChild(newMovieDirector);
-    newDivMascara.appendChild(newMovieProducer);
-    newMovieCard.appendChild(newDivMascara);
-    newDivMascara.appendChild(divScoreYear);
-
-    //Ubicamos el contenedor en el DOM
-    const newMovieContainer = document.getElementsByClassName("cards_movies")[0];
-    newMovieContainer.appendChild(newMovieCard);
-    document.getElementsByClassName("moviecard")[i].addEventListener("click", function () {
-      window.open("movies.html", "_self");
-      //USO LOCALSTORAGE
-      localStorage.setItem("identificador", JSON.stringify(films[i]));
-    });
-  }
-}
-allMovies();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/************************* FILTERS **********************/
-//FILTER BY DIRECTOR
-/*
-const filterByDirector = (director, films) => {
-  let dataFilter = films.filter(film => film.director == director);
-  return dataFilter;
+    cardElement.innerHTML = templateCard;
+    cardElement.addEventListener('click', () => {
+        let id = cardElement.firstChild.id;
+        showMore(id);
+    })
+    return cardElement;
 }
 
+const cardsList = document.querySelector("#cards_movies");
 const selectDirector = document.querySelector("#directors");
+const selectProducer = document.querySelector("#producers");
+const ghibliNotFound = document.querySelector("#ghibli-notFound");
+let inputSearch = document.querySelector("#search");
 
 
-selectDirector.addEventListener("change", () => {
-  let director = selectDirector.value;
-  if (director == 'directors') {
-      allMovies(films);
-  } else {
-      let dataFilterDirector = filterByDirector(director, films);
-      allMovies(dataFilterDirector);
-  }
-});
-*/
-
-
-
-
-/*
-//FILTRADO DE DIRECTORES
-const directorHayao = document.querySelector("#directorHayao");
-const directorIsao = document.querySelector("#directorIsao");
-const directorYoshifumi = document.querySelector("#directorYoshifumi");
-const directorHiroyuki = document.querySelector("#directorHiroyuki");
-const directorGoro = document.querySelector("#directorGoro");
-const directorHiromasa = document.querySelector("#directorHiromasa");
-
-function movieCards(filterName) {
-  for (let i = 0; i < filterName.length; i++) {
-    //Creamos el contenedor
-    const newMovieCard = document.createElement("div");
-    newMovieCard.setAttribute("class", "moviecard contenedor-img ejemplo-1");
-    //Creamos el elemento de imagen
-    const newMoviePoster = document.createElement("img");
-    newMoviePoster.setAttribute("src", filterName[i].poster);
-    newMoviePoster.setAttribute("class", "movie-poster");
-*/
-
-    /******* AGREGADO *************/
-    //Creamo un div mascara
-    /*
-    const newDivMascara = document.createElement("div");
-    newDivMascara.setAttribute("class", "mascara");
-
-
-    //Creamos el elemento de titulo
-    const newMovieTitle = document.createElement("h2");
-    const titleText = document.createTextNode(filterName[i].title);
-    newMovieTitle.setAttribute("class", "filmClick");
-
-        // Crear un div para date and year
-    const divScoreYear = document.createElement("div");
-    divScoreYear.setAttribute("class", "divScoreYear");
-
-    // Creamos p score
-    const newMovieScore = document.createElement("p");
-    const scoreText = document.createTextNode("⭐️ " + filterName[i].rt_score + " ");
-    newMovieScore.setAttribute("class", "scoreClick");
-
-    // Creamos p año
-    const newMovieDate = document.createElement("p");
-    const dateText = document.createTextNode( "📆 " + filterName[i].release_date);
-    newMovieDate.setAttribute("class", "dateClick");
-
-    // Creamos p director
-    const newMovieDirector = document.createElement("p");
-    const directorText = document.createTextNode( "Director: " + filterName[i].director);
-    newMovieDirector.setAttribute("class", "directorClick");
-
-    // Creamos p producer
-    const newMovieProducer = document.createElement("p");
-    const producerText = document.createTextNode( "Producer: " + filterName[i].producer);
-    newMovieProducer.setAttribute("class", "producerClick");
-
-    //Unimos los elementos al contenedor
-    newMovieTitle.appendChild(titleText);
-    divScoreYear.appendChild(scoreText);
-    divScoreYear.appendChild(dateText);
-    newMovieDirector.appendChild(directorText);
-    newMovieProducer.appendChild(producerText);
-    newMovieCard.appendChild(newMoviePoster);
-    newDivMascara.appendChild(newMovieTitle);
-    newDivMascara.appendChild(newMovieScore);
-    newDivMascara.appendChild(newMovieDate);
-    newDivMascara.appendChild(newMovieDirector);
-    newDivMascara.appendChild(newMovieProducer);
-    newMovieCard.appendChild(newDivMascara);
-    newDivMascara.appendChild(divScoreYear);
-    //Ubicamos el contenedor en el DOM
-    const newMovieContainer = document.getElementsByClassName("cards_movies")[0];
-    newMovieContainer.appendChild(newMovieCard);
-    document.getElementsByClassName("moviecard")[i].addEventListener("click", function () {
-      window.open("movies.html", "_self");
-      //USO LOCALSTORAGE
-      localStorage.setItem("identificador", JSON.stringify(filterName[i]));
-    });
-
-function colorFilter() {
-  directorHayao.style.color = "whitesmoke";
-  directorIsao.style.color = "whitesmoke";
-  directorYoshifumi.style.color = "whitesmoke";
-  directorHiroyuki.style.color = "whitesmoke";
-  directorGoro.style.color = "whitesmoke";
-  directorHiromasa.style.color = "whitesmoke";
-  producerTakahata.style.color = "whitesmoke";
-  producerMiyazaki.style.color = "whitesmoke";
-  producerHara.style.color = "whitesmoke";
-  producerSuzuki.style.color = "whitesmoke";
-  producerNishimura.style.color = "whitesmoke";
+// Funcion Cargar Data en Card
+function loadData(data) {
+    cardsList.innerHTML = '';
+    for (let key in data) {
+        cardsList.appendChild(showData(data[key]));
+    }
 }
 
-directorHayao.addEventListener("click", function () {
-  colorFilter();
-  directorHayao.style.color = "#ffd092";
-  document.getElementsByClassName("filteritem")[0].style.display = "none";
-  films = filterByDirector(data.films, "Hayao Miyazaki");
-  document.getElementsByClassName("cardscontainer")[0].innerHTML = "";
-  movieCards(films);
-});
-directorIsao.addEventListener("click", function () {
-  colorFilter();
-  directorIsao.style.color = "#ffd092";
-  document.getElementsByClassName("filteritem")[0].style.display = "none";
-  films = filterByDirector(data.films, "Isao Takahata");
-  document.getElementsByClassName("cardscontainer")[0].innerHTML = "";
-  movieCards(films);
-});
-directorYoshifumi.addEventListener("click", function () {
-  colorFilter();
-  directorYoshifumi.style.color = "#ffd092";
-  document.getElementsByClassName("filteritem")[0].style.display = "none";
-  films = filterByDirector(data.films, "Yoshifumi Kondō");
-  document.getElementsByClassName("cardscontainer")[0].innerHTML = "";
-  movieCards(films);
-});
-directorHiroyuki.addEventListener("click", function () {
-  colorFilter();
-  directorHiroyuki.style.color = "#ffd092";
-  document.getElementsByClassName("filteritem")[0].style.display = "none";
-  films = filterByDirector(data.films, "Hiroyuki Morita");
-  document.getElementsByClassName("cardscontainer")[0].innerHTML = "";
-  movieCards(films);
-});
-directorGoro.addEventListener("click", function () {
-  colorFilter();
-  directorGoro.style.color = "#ffd092";
-  document.getElementsByClassName("filteritem")[0].style.display = "none";
-  films = filterByDirector(data.films, "Gorō Miyazaki");
-  document.getElementsByClassName("cardscontainer")[0].innerHTML = "";
-  movieCards(films);
-});
-directorHiromasa.addEventListener("click", function () {
-  colorFilter();
-  directorHiromasa.style.color = "#ffd092";
-  document.getElementsByClassName("filteritem")[0].style.display = "none";
-  films = filterByDirector(data.films, "Hiromasa Yonebayashi");
-  document.getElementsByClassName("cardscontainer")[0].innerHTML = "";
-  movieCards(films);
+// Cargar Toda la Data al inicio
+window.addEventListener("load", () => {
+    loadData(allData);
 });
 
-// FILTRADO DE PRODUCTORES
-const producerTakahata = document.querySelector("#Takahata");
-const producerMiyazaki = document.querySelector("#Miyazaki");
-const producerHara = document.querySelector("#Hara");
-const producerSuzuki = document.querySelector("#Suzuki");
-const producerNishimura = document.querySelector("#Nishimura");
+// Filtrar Data por Search
+inputSearch.addEventListener('keyup', () => {
+    let search = inputSearch.value;
+    ghibliNotFound.style.display = 'none';
+    if (search.length == 0) {
+        loadData(allData);
+    } else {
+        let dataFilterSearch = filterBySearch(search, allData);
+        if (dataFilterSearch.length == 0) {
+            cardsList.innerHTML = '';
+            ghibliNotFound.style.display = 'block';
+        } else {
+            loadData(dataFilterSearch);
+        }
+    }
+});
 
-producerTakahata.addEventListener("click", function () {
-  colorFilter();
-  producerTakahata.style.color = "#ffd092";
-  document.getElementsByClassName("filteritem")[1].style.display = "none";
-  films = filterByProducer(data.films, "Isao Takahata");
-  document.getElementsByClassName("cardscontainer")[0].innerHTML = "";
-  movieCards(films);
+// Volver a cargar toda la Data cuando haga click en la x interna de un input de tipo search
+  inputTypeSearch.addEventListener('search', () => {
+      loadData(allData);
+      ghibliNotFound.style.display = 'none';
 });
-producerMiyazaki.addEventListener("click", function () {
-  colorFilter();
-  producerMiyazaki.style.color = "#ffd092";
-  document.getElementsByClassName("filteritem")[1].style.display = "none";
-  films = filterByProducer(data.films, "Hayao Miyazaki");
-  document.getElementsByClassName("cardscontainer")[0].innerHTML = "";
-  movieCards(films);
+
+// Filtrar Data por Director
+selectDirector.addEventListener("change", () => {
+    let director = selectDirector.value;
+    if (director == 'directors') {
+        loadData(allData);
+    } else {
+        let dataFilterDirector = filterByDirector(director, allData);
+        loadData(dataFilterDirector);
+    }
 });
-producerHara.addEventListener("click", function () {
-  colorFilter();
-  producerHara.style.color = "#ffd092";
-  document.getElementsByClassName("filteritem")[1].style.display = "none";
-  films = filterByProducer(data.films, "Toru Hara");
-  document.getElementsByClassName("cardscontainer")[0].innerHTML = "";
-  movieCards(films);
+
+// Filtrar Data por Productor
+selectProducer.addEventListener("change", () => {
+    let producer = selectProducer.value;
+    if (producer == 'producers') {
+        loadData(allData);
+    } else {
+        let dataFilterProducer = filterByProducer(producer, allData);
+        loadData(dataFilterProducer);
+    }
 });
-producerSuzuki.addEventListener("click", function () {
-  colorFilter();
-  producerSuzuki.style.color = "#ffd092";
-  document.getElementsByClassName("filteritem")[1].style.display = "none";
-  films = filterByProducer(data.films, "Toshio Suzuki");
-  document.getElementsByClassName("cardscontainer")[0].innerHTML = "";
-  movieCards(films);
-});
-producerNishimura.addEventListener("click", function () {
-  colorFilter();
-  producerNishimura.style.color = "#ffd092";
-  document.getElementsByClassName("filteritem")[1].style.display = "none";
-  films = filterByProducer(data.films, "Yoshiaki Nishimura");
-  document.getElementsByClassName("cardscontainer")[0].innerHTML = "";
-  movieCards(films);
-});*/
+
+// let films = data.films;
+// export const allFilms = data.films;
+
+// const filmTitles = films.map((film) => film.title);
+// const filmPosters = films.map((film) => film.poster);
+// const filmDate = films.map((film) => film.release_date);
+// const filmScore = films.map((film) => film.rt_score);
+// const filmDirector = films.map((film) => film.director);
+// const filmProducer = films.map((film) => film.producer);
+// //const top10 = filmScore.sort(function (a,b) {return b - a }).slice(0,10);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
