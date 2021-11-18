@@ -1,4 +1,4 @@
-// import { example } from './data.js';
+import { filterByProducer , filterByDirector } from './data.js';
 //import {} from '.data/.js'
 // // import data from './data/lol/lol.js';
 // import data from './data/ghibli/ghibli.js';
@@ -134,3 +134,22 @@ selectProducer.addEventListener("change", () => {
 // const filmDirector = films.map((film) => film.director);
 // const filmProducer = films.map((film) => film.producer);
 // //const top10 = filmScore.sort(function (a,b) {return b - a }).slice(0,10);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,12 +1,13 @@
 // // estas funciones son de ejemplo
 
-// export const example = () => {
-//   return 'example';
-// };
+ export const filterByProducer = (arraytoFilter, filterValue) => {
+  const filterResult = arraytoFilter.filter((film) => film.producer === filterValue);
+  return filterResult;
+};
 
-// export const anotherExample = () => {
-//   return 'OMG';
-// };
+export const filterByDirector = (arraytoFilter, filterValue) => {
+  return arraytoFilter.filter((film) => film.director === filterValue);
+};
 
 export const filterBySearch = (search, allData) => {
     let searchConverted = search.toLowerCase();
