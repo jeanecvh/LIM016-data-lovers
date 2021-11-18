@@ -12,7 +12,7 @@
   </head>
   <body>
 
-    
+
 
     <header class="header">
       <nav class="nav">
@@ -274,7 +274,7 @@
 
                 <div class="Order_Alfabetic">
                 <div class="box_filter_by">
-                  <input type="image" class="button_alfabet" onkeyup="SortArray()" id="order_az" src="./img/Animaciones/Iconos/A-Z.png">
+                  <input type="image" class="button_alfabet"  id="order_az" src="./img/Animaciones/Iconos/A-Z.png">
                 </div>
 
                 <div class="box_filter_by">
@@ -291,8 +291,9 @@
               <h1 class="notF">Sorry, Not Found</h1>
               <img src="./img/Animaciones/Totoro/png/Totoro3.png" alt="notFound-img" class="img-not-found">
             </div>
+
           </section>
-          
+
         </div>
 
         <div class="Film-2">
@@ -326,7 +327,7 @@
                   <p>Time: 45min</p>
                 </div>
               </div>
-              
+
 
             </div>
           </div>
@@ -793,26 +794,6 @@
       evt.currentTarget.className += " active";
       }
 
-
-      /********SEARCH**************/
-
-      function myFunction() {
-      var input, filter, div, movieposter, h2, i;
-      input = document.getElementById("myInput");
-      filter = input.value.toUpperCase();
-      div = document.getElementsByClassName("moviecard");
-      movieposter = document.getElementsByClassName("movie-poster");
-        for (i = 0; i < movieposter.length; i++) {
-          h2 = div[i].getElementsByClassName("filmClick")[0];
-          if (h2) {
-            if (h2.innerHTML.toUpperCase().indexOf(filter) > -1) {
-              div[i].style.display = "";
-            } else {
-              div[i].style.display = "none";
-            }
-          }
-        }
-      }
 
     </script>
     <script src="main.js" type="module"></script>
