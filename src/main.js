@@ -1,7 +1,7 @@
-// import { example } from './data.js';
+//import { filterByProducer , filterByDirector } from './data.js';
 //import {} from '.data/.js'
 // // import data from './data/lol/lol.js';
-import data from './data/ghibli/ghibli.js';
+// import data from './data/ghibli/ghibli.js';
 // // import data from './data/rickandmorty/rickandmorty.js';
 
 //console.log(data['films']);
@@ -22,150 +22,198 @@ if (navMenu.classList.contains("nav-menu_visible")){
   navToggle.setAttribute("aria-label", "Open menu")
 }
 });
-
-let films = data.films;
-export const allFilms = data.films;
-
-const filmTitles = films.map((film) => film.title);
-const filmPosters = films.map((film) => film.poster);
-
-const filmDate = films.map((film) => film.release_date);
-const filmScore = films.map((film) => film.rt_score);
-const filmDirector = films.map((film) => film.director);
-const filmProducer = films.map((film) => film.producer)
-const top10 = films.sort(function (a,b) {return b.rt_score - a.rt_score }).slice(0,10);
-
-//BUCLEANDO PARA CREAR
-function allMovies() {
-  films = data.films;
-  for (let i = 0; i < filmTitles.length; i++) {
-
-    //Creamos el contenedor
-    const newMovieCard = document.createElement("div");
-    newMovieCard.setAttribute("class", "moviecard contenedor-img ejemplo-1");
-
-    //Creamos el elemento de imagen
-    const newMoviePoster = document.createElement("img");
-    newMoviePoster.setAttribute("src", filmPosters[i]);
-    newMoviePoster.setAttribute("class", "movie-poster");
-
-    //Creamo un div mascara
-    const newDivMascara = document.createElement("div");
-    newDivMascara.setAttribute("class", "mascara");
-
-    //Creamos el elemento de titulo
-    const newMovieTitle = document.createElement("h2");
-    const titleText = document.createTextNode(filmTitles[i]);
-    newMovieTitle.setAttribute("class", "filmClick");
-
-    // Crear un div para date and year
-    const divScoreYear = document.createElement("div");
-    divScoreYear.setAttribute("class", "divScoreYear");
-
-    // Creamos p score
-    const newMovieScore = document.createElement("p");
-    const scoreText = document.createTextNode("⭐️ " + filmScore[i] + " ");
-    newMovieScore.setAttribute("class", "scoreClick");
-
-    // Creamos p año
-    const newMovieDate = document.createElement("p");
-    const dateText = document.createTextNode( "📆 " + filmDate[i]);
-    newMovieDate.setAttribute("class", "dateClick");
-
-    // Creamos p director
-    const newMovieDirector = document.createElement("p");
-    const directorText = document.createTextNode( "Director: " + filmDirector[i]);
-    newMovieDirector.setAttribute("class", "directorClick");
-
-    // Creamos p producer
-    const newMovieProducer = document.createElement("p");
-    const producerText = document.createTextNode( "Producer: " + filmProducer[i]);
-    newMovieProducer.setAttribute("class", "producerClick");
-
-
-    //Unimos los elementos al contenedor
-
-    newMovieTitle.appendChild(titleText);
-    divScoreYear.appendChild(scoreText);
-
-    divScoreYear.appendChild(dateText);
-    newMovieDirector.appendChild(directorText);
-    newMovieProducer.appendChild(producerText);
-
-    newMovieCard.appendChild(newMoviePoster);
-
-    newDivMascara.appendChild(newMovieTitle);
-    newDivMascara.appendChild(newMovieScore);
-
-    newDivMascara.appendChild(newMovieDate);
-    newDivMascara.appendChild(newMovieDirector);
-    newDivMascara.appendChild(newMovieProducer);
-
-    newMovieCard.appendChild(newDivMascara);
-
-    newDivMascara.appendChild(divScoreYear);
-
-
-
-    //Ubicamos el contenedor en el DOM
-    const newMovieContainer = document.getElementsByClassName("cards_movies")[0];
-    newMovieContainer.appendChild(newMovieCard);
-
-    document.getElementsByClassName("moviecard")[i].addEventListener("click", function () {
-      window.open("movies.html", "_self");
-      //USO LOCALSTORAGE
-      localStorage.setItem("identificador", JSON.stringify(films[i]));
-    });
+//
+/*******************
+ function openPage (pageName,elmnt,color) {
+  var i, Box, BoxNavs;
+  Box = document.getElementsByClassName("Box");
+  for (i = 0; i < Box.length; i++) {
+    Box[i].style.display = "none";
   }
-}
-allMovies();
-
-
-
-function topmovies() {
-  films = data.films;
-  //if (filmScore > filmScore) {
-  for (let i = 0; i < top10.length; i++) {
-    ////if (filmScore >= "92" && filmScore <= "100"){
-    //Creamos el contenedor
-    const newMovieCard = document.createElement("div");
-    newMovieCard.setAttribute("class", "moviecard-top");
-    //Creamos el elemento de imagen
-    const newMoviePoster = document.createElement("img");
-    newMoviePoster.setAttribute("src", filmPosters[i]);
-    newMoviePoster.setAttribute("class", "movie-poster-top");
-    //Creamos el elemento de titulo
-    const newMovieTitle = document.createElement("p");
-    const titleText = document.createTextNode(filmTitles[i]);
-    newMovieTitle.setAttribute("class", "filmClick-top");
-    //Creamos el elemento score
-    const topScore = document.createElement("p");
-    const starScore = document.createElement("img");
-    starScore.setAttribute("src", "/src/img/Animaciones/Iconos/Star.png");
-    starScore.setAttribute("class", "starScore")
-    const scoreText= document.createTextNode(filmScore[i]);
-    topScore.setAttribute("class","score-top");
-    //Unimos los elementos al contenedor
-    newMovieTitle.appendChild(titleText);
-    topScore.appendChild(scoreText);
-    topScore.appendChild(starScore);
-    newMovieCard.appendChild(newMoviePoster);
-    newMovieCard.appendChild(newMovieTitle);
-    newMovieCard.appendChild(topScore);
-    newMovieCard.appendChild(topScore);
-
-    //Ubicamos el contenedor en el DOM
-    const newMovieContainer = document.getElementsByClassName("BoxSliderTop")[0];
-    newMovieContainer.appendChild(newMovieCard);
-
-    document.getElementsByClassName("moviecard-top")[i].addEventListener("click", function () {
-      window.open("movies.html", "_self");
-      //USO LOCALSTORAGE
-      localStorage.setItem("identificador", JSON.stringify(films[i]));
-    });
+  BoxNavs = document.getElementsByClassName("BoxNavs");
+  for (i = 0; i < BoxNavs.length; i++) {
+    BoxNavs[i].style.backgroundColor = "";
   }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
 }
-//}
-topmovies();
+openPage('Home', this,'rgb(12 46 45 / 0%)');
+openPage('AboutUs', this,'rgb(12 46 45 / 0%)');
+openPage('Films', this,' rgb(12 46 45 / 0%)');
+openPage('Awards', this, 'rgb(12 46 45 / 0%)');
+openPage('Statistics', this,' rgb(12 46 45 / 0%)');
+openPage('Games', this, 'rgb(12 46 45 / 0%)');
+
+document.getElementById("OpenDefault").click()
+*/
+
+/**** SLIDER ******/
+
+
+/********** DATA FILTER***********/
+import dataGhibli from './data/ghibli/ghibli.js';
+import { /*filterBySearch,*/ filterByDirector, filterByProducer, order_az, order_za} from './data.js';
+// TEMPLATE
+const allData = dataGhibli.films;
+
+//PAGE FILM-2
+
+//const mainCards = document.querySelector("#Films");
+
+const showData = (data) => {
+    const cardElement = document.createElement('div');
+    cardElement.className = "card";
+
+    const templateCard =
+      `<div class="moviecard contenedor-img ejemplo-1" id="${data.id}">
+        <img class="movie-poster" src="${data.poster}">
+        <div class="mascara">
+          <h2 class="filmClick">${data.title}</h2>
+            <div class="divScoreYear" >
+                <p class="scoreClick"> ⭐️ ${data.rt_score}</p>
+                <p class="dateClick"> 📆 ${data.release_date}</p>
+            </div>
+            <p class="directorClick">Director: ${data.director}</p>
+            <p class="producerClick">Producer: ${data.producer}</p>
+            </div>
+        </div>`;
+
+    cardElement.innerHTML = templateCard;
+    cardElement.addEventListener('click', () => {
+        //let id = cardElement.firstChild.id;
+        //showMore(id);
+    })
+    return cardElement;
+}
+
+const cardsList = document.querySelector("#cards_movies");
+const selectDirector = document.querySelector("#directors");
+const selectProducer = document.querySelector("#producers");
+const inputTypeSearch = document.querySelector("input[type=search]");
+const ghibliNotFound = document.querySelector("#ghibli-notFound");
+//let inputSearch = document.querySelector("#search");
+
+
+// Funcion Cargar Data en Card
+function loadData(data) {
+    cardsList.innerHTML = '';
+    for (let key in data) {
+        cardsList.appendChild(showData(data[key]));
+    }
+}
+
+// Cargar Toda la Data al inicio
+window.addEventListener("load", () => {
+    loadData(allData);
+});
+
+document.getElementById('myInput').addEventListener('keyup', function () {
+    var input, filter, div, movieposter, h2, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementsByClassName("moviecard");
+    movieposter = document.getElementsByClassName("movie-poster");
+      for (i = 0; i < movieposter.length; i++) {
+        h2 = div[i].getElementsByClassName("filmClick")[0];
+        if (h2) {
+          if (h2.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            div[i].style.display = "";
+          } else {
+            div[i].style.display = "none";
+          }
+        }
+
+    }
+})
+
+//Volver a cargar toda la Data cuando haga click en la x interna de un input de tipo search
+inputTypeSearch.addEventListener('search', () => {
+  loadData(allData);
+  ghibliNotFound.style.display = 'none';
+});
+
+//Filtrar Data por Search
+
+/*inputSearch.addEventListener('keyup', () => {
+    let search = inputSearch.value;
+    ghibliNotFound.style.display = 'none';
+    if (search.length == 0) {
+        loadData(allData);
+    } else {
+        let dataFilterSearch = filterBySearch(search, allData);
+        if (dataFilterSearch.length == 0) {
+            cardsList.innerHTML = '';
+            ghibliNotFound.style.display = 'block';
+        } else {
+            loadData(dataFilterSearch);
+        }
+    }
+});*/
+
+
+
+// Filtrar Data por Director
+selectDirector.addEventListener("change", () => {
+    let director = selectDirector.value;
+    if (director == 'directors') {
+        loadData(allData);
+    } else {
+        let dataFilterDirector = filterByDirector(director, allData);
+        loadData(dataFilterDirector);
+    }
+});
+
+// Filtrar Data por Productor
+selectProducer.addEventListener("change", () => {
+    let producer = selectProducer.value;
+    if (producer == 'producers') {
+        loadData(allData);
+    } else {
+        let dataFilterProducer = filterByProducer(producer, allData);
+        loadData(dataFilterProducer);
+    }
+});
+
+let orderAtoZ = document.getElementById("order_az");
+orderAtoZ.addEventListener("click", function () {
+  document.getElementsByClassName("cards_movies")[0].innerHTML = "";
+  order_az(allData);
+  loadData(allData);
+});
+
+let orderZtoA = document.getElementById("order_za");
+orderZtoA.addEventListener("click", function () {
+  document.getElementsByClassName("cards_movies")[0].innerHTML = "";
+  order_za(allData);
+  loadData(allData);
+});
+
+// let films = data.films;
+// export const allFilms = data.films;
+
+// const filmTitles = films.map((film) => film.title);
+// const filmPosters = films.map((film) => film.poster);
+// const filmDate = films.map((film) => film.release_date);
+// const filmScore = films.map((film) => film.rt_score);
+// const filmDirector = films.map((film) => film.director);
+// const filmProducer = films.map((film) => film.producer);
+// //const top10 = filmScore.sort(function (a,b) {return b - a }).slice(0,10);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

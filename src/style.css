@@ -5,6 +5,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Amaranth&display=swap');
+
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -26,6 +29,18 @@ body {
 }
 
 /************* NAVS HEADER **************/
+
+.audioSG {
+  width: 10%;
+  margin-top: 5%;
+}
+
+@media (max-width: 768px) {
+  .audioSG {
+    width: 30%;
+    margin-top: 5%;
+  }
+}
 
 .header {
   height: 80px;
@@ -107,7 +122,6 @@ body {
   .nav-menu {
     flex-direction: column;
     align-items: center;
-    margin-right: 20px;
     list-style: none;
     background-color: rgb(15 25 29);
     position: absolute;
@@ -119,6 +133,8 @@ body {
     overflow-y: auto;
     left: 100%;
     transition: left 0.3s;
+    z-index: 5;
+    padding: 10% 0% 0% 10.7%;
   }
 
   .nav-menu-item {
@@ -200,6 +216,7 @@ body {
 /* Diseñe el contenido de la pestaña (y agregue altura: 100% para el contenido de la página completa) */
 .Box {
   font-family:'Poppins', sans-serif;
+}
 
 #copyright{
   padding-top: 35;
@@ -207,7 +224,6 @@ body {
 /************** Iconos de las redes sociales**************/
 .redSocial{
   width: 1.125rem;
-
 }
 
 #Home {background-color: rgb(12 46 45 / 0);}
@@ -231,7 +247,6 @@ body {
   grid-template-rows: 1fr 1fr;
   gap: 0% 0%;
   grid-template-areas: "BoxWelcome" "BoxSlider";
-
   align-content: space-evenly;
   justify-items: center;
   align-items: center;
@@ -243,9 +258,9 @@ body {
   background: rgb(12 46 45 / 70%);
   color: beige;
   text-align: center;
-  font-size: 14px;
-  font-family: Roboto;
-  padding: 10%
+  padding: 10%;
+  font-family: 'Amaranth', sans-serif;
+
 }
 
 .BoxSlider {
@@ -797,21 +812,6 @@ div.redTable {
 
 /*----------------- FILM PAGE -----------------*/
 
-/*.ContainerFilms {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-auto-columns: 1fr;
-  gap: 0% 5%;
-  grid-auto-flow: row;
-  justify-content: center;
-  align-content: space-evenly;
-  justify-items: center;
-  align-items: center;
-  grid-template-areas:
-    "BoxSliderTop"
-    "BoxFilmFilter";
-} */
 
 .ContainerFilms h1 {
   color: rgb(175, 175, 10);
@@ -820,12 +820,23 @@ div.redTable {
   padding-left: 3%;
 }
 
+.Top10text h1 {
+  color: rgb(175, 175, 10);
+  font-size: large;
+  text-align: left;
+  padding: 1% 0 0 3% ;
+  background-color: rgba(0, 0, 0, 0.692);
+  
+}
+
 .BoxSliderTop {
   justify-self: stretch;
   align-self: stretch;
   grid-area: BoxSliderTop;
-  background-color: rgba(0, 0, 0, 0.63);
-}
+  background-color: rgba(0, 0, 0, 0.692);
+  padding-bottom: 3%;
+  padding-top: 1%;
+} 
 
 .BoxFilmFilter {
   margin-top: 2%;
@@ -866,7 +877,6 @@ div.redTable {
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: 2%;
 }
 
 .Order_Alfabetic {
@@ -936,65 +946,61 @@ div.redTable {
 
 /* TOP 10 */
 
-.cards_movies-top{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-auto-rows: column;
-  gap: 60px;
-  place-content: center;
-  margin: 3% 6%;
+.Top10sr {
+  width: 100%;
 }
 
-.moviecard-top{
-  background-color: rgba(0, 0, 0, 0.548);
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 20px;
-  position: relative;
-  display: inline-block;
+.Top10cr {
+  display: none;
 }
 
-.movie-poster-top{
-  border-radius: 10px;
-  border-style: solid;
-  border-width: 4px;
-  border-color: rgb(43 103 108);
-  height: 80%;
-  width: 80%;
-}
+@media (max-width: 768px) {
+  .Top10cr {
+    width: 100%;
+    display: block;
+  }
+  
+  .Top10sr {
+    display: none;
+  }
 
-.filmClick-top{
-  font-size: 17px;
-  font-family: Roboto;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: beige;
-  margin: 8% 5% 8% 5%;
-}
-.score-top{
-  width: 25%;
-  font-size: 18px;
-  color: white;
-  font-weight: bold;
-  position: absolute;
-  top: 80%;
-  left: 50%;
-  transform: translate(-49%, -50%);
-  background-color: rgb(2 21 29);
-  border: #ecab0f;
-  border-style: solid;
-  border-width: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border-radius: 10px;
-  padding-left: 4px;
+  .BoxSliderTop {
+    background-color: rgba(0, 0, 0, 0.692);
+    padding-bottom: 7.5%;
+    padding-top: 1%;
+  }
 }
 
 .starScore{
   width: 30px;
 }
+
 /* Data  All Films */
+
+.ghibli-notFound,
+.ghibli-notFound h1{
+  text-align: center;
+}
+
+.ghibli-notFound {
+  margin: 5%;
+  /* border-radius: 10px;
+  border-style: solid;
+  border-width: 4px;
+  border-color: rgb(43 103 108); */
+}
+
+.ghibli-notFound h1{
+  margin: 5% 20% 3% 20%;
+  background-color: rgba(0, 0, 0, 0.856);
+  padding: 3%;
+  font-size: x-large;
+  /* border-radius: 20px; */
+}
+
+.ghibli-notFound img {
+  width: 40%;
+}
 
 .cards_movies{
   display: grid;
@@ -1008,12 +1014,6 @@ div.redTable {
 .moviecard{
   background-color: rgba(0, 0, 0, 0.548);
   text-align: center;
- /* main
-  padding-top: 30px;
-  border-radius: 20px;
-  position: relative;
-  display: inline-block; */
-
   padding: 15% 0 15% 15%;
   border-radius: 20px;
   text-align: center;
@@ -1074,15 +1074,6 @@ div.redTable {
     font-size: medium;
   }
 
-}
-
-.BoxSliderTop{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-auto-rows: column;
-  gap: 60px;
-  place-content: center;
-  margin: 3% 6%;
 }
 
 .score{
@@ -1480,4 +1471,153 @@ div.redTable {
     padding: 7%;
   }
 }
+
+/*******SLIDER PRUEBA *************/
+.cover{
+  overflow: hidden;
+}
+
+.slider{
+  display: flex;
+  width: 400vw;
+
+}
+.sliderimg {
+  width: 100vw;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+}
+.sliderimg.img1 {
+  height: 400px;
+  background-image: url("./img/Top/antiguo/TopB1.png");
+}
+.sliderimg.img2 {
+  height: 400px;
+  background-image: url("./img/Top/antiguo/TopB2.png");
+}
+
+
+/************** PAGE FILM-2 *************/
+
+.Film-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.6fr 1.4fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "sinopsis"
+    "details";
+  color: beige;
+}
+
+.sinopsis { grid-area: sinopsis; }
+
+.details { grid-area: details; }
+
+
+.sinopsis {
+  display: grid;
+  grid-template-columns: 0.1fr 0.7fr 2fr;
+  grid-template-rows: 0.6fr;
+  grid-auto-columns: 1fr;
+  gap: 0% 0%;
+  grid-auto-flow: row;
+  justify-content: center;
+  align-content: space-evenly;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas:
+    "buttonBack mainPoster descriptionF";
+  background-color:  rgb(0 0 0 / 69%);
+  padding: 5%;
+}
+
+.buttonBack {
+
+  justify-self: stretch;
+  align-self: start;
+  grid-area: buttonBack;
+}
+
+.mainPoster {
+
+  justify-self: stretch;
+  grid-area: mainPoster;
+  text-align: center;
+  align-self: stretch;
+  grid-area: mainPoster;
+  display: flex;
+}
+
+.mainPoster img {
+  width: 100%;
+  padding: 0 20%;
+  /* border-radius: 10px;
+  border-width: 7px;
+  border-color: rgb(43 103 108);
+  border-style: solid; */
+}
+
+.descriptionF {
+
+  justify-self: stretch;
+  align-self: stretch;
+  grid-area: descriptionF;
+}
+
+.Tittlemain {
+  display: flex;
+  flex-direction: column;
+}
+
+.starMain {
+  display: flex;
+  align-items: center;
+  color:  #ffc911;
+  justify-content: flex-end;
+}
+
+.starMain img {
+  width: 30%; 
+  margin: 10% 0 10% 10%;
+}
+
+.Flexline1,
+.Flexline2,
+.Flexline3 {
+  display: flex;
+}
+
+.Flexline1 {
+  justify-content: space-between;
+}
+
+.Flexline3 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Flexline2 p {
+  margin: 2% 0;
+  text-align: justify;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: 0.6fr 1.4fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 18px 19px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "locationsF CharactersF"
+    "vehiclesF CharactersF";
+}
+
+.locationsF { grid-area: locationsF; }
+
+.vehiclesF { grid-area: vehiclesF; }
+
+.CharactersF { grid-area: CharactersF; }
 

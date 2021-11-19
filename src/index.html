@@ -11,9 +11,13 @@
     <link async href="http://fonts.googleapis.com/css?family=Coda" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
   </head>
   <body>
+
+
+
     <header class="header">
       <nav class="nav">
-        <a onclick="openPage('Home', this,'rgb(12 46 45 / 0%)')" id="OpenDefault"><img class="logo" src="./img/StudioG/Logo/Studio_Ghibli_portal_logo.png" alt="Studio Ghibli Portal"></a>
+        <a onclick="openPage('Home', this,'rgb(12 46 45 / 0%)')" id="OpenDefault">
+          <img class="logo" src="./img/StudioG/Logo/Studio_Ghibli_portal_logo.png" alt="Studio Ghibli Portal"></a>
         <button class="NavToggle" area-label="Open menu" >
           <img class="MenuBar" src="./img/Animaciones/Iconos/Menu.png" alt="Menu">
         </button>
@@ -49,6 +53,12 @@
             <h1>WELCOME!</h1> <br>
             <h3>WHAT WILL YOU FIND? <br> <br>
               In this platform, Studio Ghibli, you can find information about its history, movies, news, statistics, games and more. Join us in this fantasy adventure to learn more about its work.</h3>
+              <!-- Poner atributo autoplay -->
+              <audio class="audioSG"  loop controls>
+                <source type="audio/mpeg" src="img/Umi No Mieru Machi Piano.mp3">
+                <source type="audio/ogg" src="./img/Kiki's Delivery Service - Umi No Mieru Machi Piano.ogg">
+                Tu navegador no es compatible con el audio de la página.
+              </audio>
           </div>
 
           <div class="BoxSlider">
@@ -214,31 +224,34 @@
       </section>
 
       <section id="Films" class="Box">
-        <h1>TOP 10</h1>
+
+        <div class="Top10text">
+          <h1>TOP 10</h1>
+        </div>
         <div class="ContainerFilms">
-
           <div id="BoxSliderTop" class="BoxSliderTop">
-
+            <img class="Top10sr" src="./img/Top/Top10sr.gif" alt="Top10">
+            <img class="Top10cr" src="./img/Top/Top10cr.gif" alt="Top10">
           </div>
 
-          <div class="BoxFilmFilter">
+          <section class="BoxFilmFilter">
             <h1>ALL FILMS</h1>
             <div class="container_all_filters">
               <div class="box_search">
-                <input type="text" class="search" onkeyup="myFunction()" placeholder=" 🔍 Search  for movies names...">
+                <!-- onkeyup="myFunction()" -->
+                <input type="search"  class="search" id="myInput" class="input-data" placeholder=" 🔍 Search  for movies names..." autocomplete="off">
               </div>
 
               <div class="box_filters">
-
                 <div class="box_filter_by">
                   <select name="directors" class="data_filters" id="directors">
                     <option value="directors" selected="selected">By directors</option>
-                    <option value="Hayao Miyazaki">Hayao Miyazaki</option>
-                    <option value="Isao Takahata">Isao Takahata</option>
-                    <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
-                    <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
-                    <option value="Gorō Miyazaki">Gorō Miyazaki</option>
-                    <option value="Hiroyuki Morita">Hiroyuki Morita</option>
+                    <option value="Hayao Miyazaki" class="directorHayao ">Hayao Miyazaki</option>
+                    <option value="Isao Takahata" class="directorIsao " >Isao Takahata</option>
+                    <option value="Yoshifumi Kondō" class="directorYoshifumi " >Yoshifumi Kondō</option>
+                    <option value="Hiromasa Yonebayashi" class="directorHiromasa ">Hiromasa Yonebayashi</option>
+                    <option value="Gorō Miyazaki" class="directorGoro ">Gorō Miyazaki</option>
+                    <option value="Hiroyuki Morita" class="directorHiroyuki ">Hiroyuki Morita</option>
                   </select>
                 </div>
 
@@ -270,10 +283,86 @@
               </div>
               </div>
             </div>
-            <div id="cards_movies" class="cards_movies">
+            <section id="cards_movies" class="cards_movies">
+              <!-- Aquí van los cards -->
+            </section>
+
+            <div class="ghibli-notFound" id="ghibli-notFound">
+              <h1 class="notF">Sorry, Not Found</h1>
+              <img src="./img/Animaciones/Totoro/png/Totoro3.png" alt="notFound-img" class="img-not-found">
+            </div>
+
+          </section>
+
+        </div>
+
+        <div class="Film-2">
+          <div class="sinopsis">
+            <div class="buttonBack">
+              <img style="width: 50px;" src="./img/Animaciones/Iconos/Detras2.png" alt="">
+            </div>
+            <div class="mainPoster">
+              <img src="./img/Animaciones/Chihiro/Chihiro-Gordo.jpg" alt="">
+            </div>
+            <div class="descriptionF">
+              <div class="Flexline1" >
+                <div class="Tittlemain">
+                  <h1>TITULO</h1>
+                  <h3>AÑO</h3>
+                </div>
+                <div class="starMain">
+                  <h4>score</h4>
+                  <img src="./img/Animaciones/Iconos/Star.png" alt="Star">
+                </div>
+              </div>
+              <div class="Flexline2">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam nemo illo dolores at alias? Sapiente debitis atque, delectus sit distinctio deserunt error libero beatae quam facere illo iste? Maxime, optio! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, dignissimos quae. Ratione eaque officia, adipisci quae nesciunt natus placeat sed ad blanditiis quam assumenda, dolorum eius. Fugit atque quos hic.</p>
+              </div>
+              <div class="Flexline3">
+                <div class="boxAuthors">
+                  <p>Director</p>
+                  <p>Producer</p>
+                </div>
+                <div class="boxTime">
+                  <p>Time: 45min</p>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+          <div class="details">
+            <div class="details">
+              <div class="locationsF">
+                <div>
+                  <h2>Location</h2>
+                </div>
+                <div class="locationbox">
+                  <div>
+                    <img style="width: 50px;" src="./img/Animaciones/Totoro/Totoro-Durmiendo.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="vehiclesF">
+                <div>
+                  <h2>Vehicles</h2>
+                </div>
+                <div class="vehiclesbox">
+                  <div>
+                    <img style="width: 50px;" src="./img/Animaciones/Totoro/Totoro-Gato.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="CharactersF">
+
+              </div>
             </div>
           </div>
         </div>
+
+          </div>
+        </section>
+
       </section>
 
       <section id="Awards" class="Box">
@@ -682,29 +771,6 @@
         dots[slideIndex-1].className += " active";
       }
 
-      /********** SLIDER CODE 2 ***********
-
-      var slideIndex2 = 1;
-      showSlides2(slideIndex2);
-
-      function plusSlides2(n) {
-        showSlides2(slideIndex2 += n);
-      }
-
-      function showSlides2(n) {
-      var i;
-      var slides2 = document.getElementsByClassName("mySlides2");
-        if (n > slides2.length) {slideIndex2 = 1}
-        if (n < 1) {slideIndex2 = slides2.length}
-      for (i = 0; i < slides2.length; i++) {
-        slides2[i].style.display = "none";
-      }
-
-      slides2[slideIndex2-1].style.display = "block";
-      setTimeout(showSlides2,2000);
-}
-*/
-
       /******** BOX AWARD CODE *********/
 
       function openCity(evt, cityName) {
@@ -727,6 +793,7 @@
       document.getElementById(cityName).style.display = "block";
       evt.currentTarget.className += " active";
       }
+
 
     </script>
     <script src="main.js" type="module"></script>
