@@ -52,7 +52,7 @@ document.getElementById("OpenDefault").click()
 
 /********** DATA FILTER***********/
 import dataGhibli from './data/ghibli/ghibli.js';
-import { /*filterBySearch,*/ filterByDirector, filterByProducer, order_az, order_za} from './data.js';
+import { filterByDirector, filterByProducer, filterBySearch, order_az, order_za} from './data.js';
 // TEMPLATE
 const allData = dataGhibli.films;
 
@@ -91,7 +91,7 @@ const selectDirector = document.querySelector("#directors");
 const selectProducer = document.querySelector("#producers");
 const inputTypeSearch = document.querySelector("input[type=search]");
 const ghibliNotFound = document.querySelector("#ghibli-notFound");
-//let inputSearch = document.querySelector("#search");
+let inputSearch = document.querySelector("#searchFilm");
 
 
 // Funcion Cargar Data en Card
@@ -107,24 +107,24 @@ window.addEventListener("load", () => {
     loadData(allData);
 });
 
-document.getElementById('myInput').addEventListener('keyup', function () {
-    var input, filter, div, movieposter, h2, i;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    div = document.getElementsByClassName("moviecard");
-    movieposter = document.getElementsByClassName("movie-poster");
-      for (i = 0; i < movieposter.length; i++) {
-        h2 = div[i].getElementsByClassName("filmClick")[0];
-        if (h2) {
-          if (h2.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            div[i].style.display = "";
-          } else {
-            div[i].style.display = "none";
-          }
-        }
+// document.getElementById('searchFilm').addEventListener('keyup', function () {
+//     var input, filter, div, movieposter, h2, i;
+//     input = document.getElementById("myInput");
+//     filter = input.value.toUpperCase();
+//     div = document.getElementsByClassName("moviecard");
+//     movieposter = document.getElementsByClassName("movie-poster");
+//       for (i = 0; i < movieposter.length; i++) {
+//         h2 = div[i].getElementsByClassName("filmClick")[0];
+//         if (h2) {
+//           if (h2.innerHTML.toUpperCase().indexOf(filter) > -1) {
+//             div[i].style.display = "";
+//           } else {
+//             div[i].style.display = "none";
+//           }
+//         }
 
-    }
-})
+//     }
+// })
 
 //Volver a cargar toda la Data cuando haga click en la x interna de un input de tipo search
 inputTypeSearch.addEventListener('search', () => {
@@ -134,7 +134,7 @@ inputTypeSearch.addEventListener('search', () => {
 
 //Filtrar Data por Search
 
-/*inputSearch.addEventListener('keyup', () => {
+inputSearch.addEventListener('keyup', () => {
     let search = inputSearch.value;
     ghibliNotFound.style.display = 'none';
     if (search.length == 0) {
@@ -148,7 +148,7 @@ inputTypeSearch.addEventListener('search', () => {
             loadData(dataFilterSearch);
         }
     }
-});*/
+});
 
 
 

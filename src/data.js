@@ -1,9 +1,4 @@
 // // estas funciones son de ejemplo
-/*export const filterBySearch = (search, allData) => {
-    let searchConverted = search.toLowerCase();
-    let dataFilterSearch = allData.filter(film => film.title.toLowerCase().includes(searchConverted));
-    return dataFilterSearch;
-}*/
 
 export const filterByDirector = (director, allData) => {
     let dataFilter = allData.filter(film => film.director == director);
@@ -13,6 +8,12 @@ export const filterByDirector = (director, allData) => {
 export const filterByProducer = (producer, allData) => {
     let dataFilter = allData.filter(film => film.producer == producer);
     return dataFilter;
+}
+
+export const filterBySearch = (search, allData) => {
+  let searchConverted = search.toLowerCase();
+  let dataFilterSearch = allData.filter(film => film.title.toLowerCase().includes(searchConverted));
+  return dataFilterSearch;
 }
 
 function compareStrings(a, b) {
