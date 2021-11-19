@@ -52,7 +52,7 @@ document.getElementById("OpenDefault").click()
 
 /********** DATA FILTER***********/
 import dataGhibli from './data/ghibli/ghibli.js';
-import { filterByDirector, filterByProducer, filterBySearch, order_az, order_za} from './data.js';
+import { filterByDirector, filterByProducer, filterBySearch, order_az, order_za, filterByScore, filterByYear } from './data.js';
 // TEMPLATE
 const allData = dataGhibli.films;
 
@@ -92,6 +92,8 @@ const selectProducer = document.querySelector("#producers");
 const inputTypeSearch = document.querySelector("input[type=search]");
 const ghibliNotFound = document.querySelector("#ghibli-notFound");
 let inputSearch = document.querySelector("#searchFilm");
+const selectScore = document.querySelector("#score");
+const selectYear = document.querySelector("#year");
 
 
 // Funcion Cargar Data en Card
@@ -188,6 +190,31 @@ orderZtoA.addEventListener("click", function () {
   loadData(allData);
 });
 
+// Filtrar Data por Score
+selectScore.addEventListener("change", () => {
+  let score= selectScore.value;
+  if (score == 'score') {
+      loadData(allData);
+  } else {
+      let dataFilterScore = filterByScore(score, allData);
+      loadData(dataFilterScore);
+  }
+});
+
+// Filtrar Data por Year
+selectYear.addEventListener("change", () => {
+  let year= selectYear.value;
+  if (year == 'year') {
+      loadData(allData);
+  } else {
+      let dataFilterScore = filterByYear(year, allData);
+      loadData(dataFilterScore);
+  }
+});
+
+
+
+
 // let films = data.films;
 // export const allFilms = data.films;
 
@@ -198,7 +225,6 @@ orderZtoA.addEventListener("click", function () {
 // const filmDirector = films.map((film) => film.director);
 // const filmProducer = films.map((film) => film.producer);
 // //const top10 = filmScore.sort(function (a,b) {return b - a }).slice(0,10);
-
 
 
 
