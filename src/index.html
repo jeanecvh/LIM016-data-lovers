@@ -295,32 +295,33 @@
         </div>
 
         <!-- Page Film-2 -->
-        <div class="Film-2">
+        <!-- style="display: none;" -->
+        <div class="Film-2" id="BoxFilm-2" >  
           <div class="sinopsis">
             <div class="buttonBack">
               <img style="width: 50px;" src="./img/Animaciones/Iconos/Detras2.png" alt="">
             </div>
             <div class="mainPoster">
-              <img src="./img/Animaciones/Chihiro/Chihiro-Gordo.jpg" alt="">
+              <img id="PosterF2" src="./img/Animaciones/Chihiro/Chihiro-Gordo.jpg" alt="">
             </div>
             <div class="descriptionF">
               <div class="Flexline1" >
                 <div class="Tittlemain">
-                  <h1>TITULO</h1>
-                  <h3>AÑO</h3>
+                  <h1 class="tittleF2"></h1>
+                  <h3 class="dateF2" ></h3>
                 </div>
                 <div class="starMain">
-                  <h4>score</h4>
+                  <h4 class="scoreF2"></h4>
                   <img src="./img/Animaciones/Iconos/Star.png" alt="Star">
                 </div>
               </div>
               <div class="Flexline2">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam nemo illo dolores at alias? Sapiente debitis atque, delectus sit distinctio deserunt error libero beatae quam facere illo iste? Maxime, optio! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, dignissimos quae. Ratione eaque officia, adipisci quae nesciunt natus placeat sed ad blanditiis quam assumenda, dolorum eius. Fugit atque quos hic.</p>
+                <p id="synopsisF2" ></p>
               </div>
               <div class="Flexline3">
                 <div class="boxAuthors">
-                  <p>Director</p>
-                  <p>Producer</p>
+                  <p>Director: <span class="span-name" id="directorF2"></span> </p>
+                  <p>Producer: <span class="span-name"  id="producerF2"></span></p>
                 </div>
                 <div class="boxTime">
                   <p>Time: 45min</p>
@@ -335,7 +336,7 @@
                 <div>
                   <h1>LOCATIONS</h1>
                 </div>
-                <div class="img-location">
+                <div class="img-location" id="box-location">
                   <!-- <img style="width: 100%;" src="./img/Animaciones/Chihiro/ChihiroFlores.png" alt="">
                   <img style="width: 100%;" src="./img/Animaciones/Chihiro/ChihiroFlores.png" alt="">
                   <img style="width: 100%;" src="./img/Animaciones/Chihiro/ChihiroFlores.png" alt=""> -->
@@ -345,7 +346,7 @@
                 <div>
                   <h1>VEHICLES</h1>
                 </div>
-                <div class="img-vehicles">
+                <div class="img-vehicles" id="box-vehicles">
                   <!-- <img style="width: 100%;" src="./img/Animaciones/Chihiro/ChihiroFlores.png" alt=""> -->
                 </div>                  
               </div>    
@@ -368,7 +369,7 @@
                   </select>
                 </div>
               </div>
-              <div class="cards-Characters" >
+              <div class="cards-Characters" id="box-characters">
                 <!-- Aquí van las characters cards -->
                 <!-- <img style="width: 50%;" src="./img/Animaciones/Chihiro/ChihiroFlores.png" alt="">
                 <img style="width: 50%;" src="./img/Animaciones/Chihiro/ChihiroFlores.png" alt=""> -->
@@ -660,7 +661,7 @@
           <div class="Game1">
             <br><h1> SHOW US HOW MUCH YOU KNOW 😄 </h1> <br>
             <p>In this game, you can found a lot of question about "Studio Ghibli".
-              Show us your skills, after having read some of the data on this website.</p>
+              Show us your skills, after having read some of the data on this website.</p> <br>
               <p>About the game:</p>
                 <ul>
                   <li> They are questions, based on the data you will find here. You will be in advantage after reading a little.</li>
@@ -675,7 +676,7 @@
           </div>
           <div class="Game2">
             <br><h1> HOW FAST YOU CAN DO IT 🐭 </h1> <br>
-            <p> In this game will appear a little and sweet Totoro, and you have to try catch with the mouse!</p>
+            <p> In this game will appear a little and sweet Totoro, and you have to try catch with the mouse!</p> <br>
               <p>About the game:</p>
                 <ul>
                   <li> The key is the patience and the pulse</li>
