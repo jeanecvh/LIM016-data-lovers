@@ -1,26 +1,3 @@
-// import { example, anotherExample } from '../src/data.js';
-
-
-// describe('example', () => {
-//   it('is a function', () => {
-//     expect(typeof example).toBe('function');
-//   });
-
-//   it('returns `example`', () => {
-//     expect(example()).toBe('example');
-//   });
-// });
-
-
-// describe('anotherExample', () => {
-//   it('is a function', () => {
-//     expect(typeof anotherExample).toBe('function');
-//   });
-
-//   it('returns `anotherExample`', () => {
-//     expect(anotherExample()).toBe('OMG');
-//   });
-// });
 
 import { filterByScore, filterByYear, filterByDirector, filterByProducer, filterBySearch, order_az, order_za } from '../src/data.js';
 
@@ -71,7 +48,7 @@ describe('filterByDirector', () => {
   });
   it("Should return `Hiromasa Yonebayashi`", () => {
     const testGhibli = [{ director: "Hiromasa Yonebayashi", title: "When Marnie Was There" }, { director: "Hayao Miyazaki", title: "Ponyo on the Cliff by the Sea" }];
-    expect(filterByDirector(`Yoshifumi Kondō`, testGhibli)).toEqual([
+    expect(filterByDirector(`Hiromasa Yonebayashi`, testGhibli)).toEqual([
       { director: "Hiromasa Yonebayashi", title: "When Marnie Was There" }
     ]);
   });
@@ -110,6 +87,6 @@ describe('Sort descending order', () => {
 
   it('Should be sorted in descending order', () => {
     const arrayToSort  = [{title:"Spirited Away"},{title: "Kiki's Delivery Service"}];
-    expect(order_za(arrayToSort)).toEqual([{title: "Kiki's Delivery Service"},{title:"Spirited Away"}]);
+    expect(order_za(arrayToSort)).toEqual([{title: "Spirited Away"},{title:"Kiki's Delivery Service"}]);
   }); 
 });

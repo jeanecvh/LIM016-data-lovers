@@ -83,25 +83,6 @@ window.addEventListener("load", () => {
     loadData(allData);
 });
 
-// document.getElementById('searchFilm').addEventListener('keyup', function () {
-//     var input, filter, div, movieposter, h2, i;
-//     input = document.getElementById("myInput");
-//     filter = input.value.toUpperCase();
-//     div = document.getElementsByClassName("moviecard");
-//     movieposter = document.getElementsByClassName("movie-poster");
-//       for (i = 0; i < movieposter.length; i++) {
-//         h2 = div[i].getElementsByClassName("filmClick")[0];
-//         if (h2) {
-//           if (h2.innerHTML.toUpperCase().indexOf(filter) > -1) {
-//             div[i].style.display = "";
-//           } else {
-//             div[i].style.display = "none";
-//           }
-//         }
-
-//     }
-// })
-
 //Reload Data when close "x" of search
 inputTypeSearch.addEventListener('search', () => {
   loadData(allData);
@@ -111,19 +92,19 @@ inputTypeSearch.addEventListener('search', () => {
 //Filtrar by Search
 
 inputSearch.addEventListener('keyup', () => {
-    let search = inputSearch.value;
-    ghibliNotFound.style.display = 'none';
-    if (search.length == 0) {
-        loadData(allData);
+  let search = inputSearch.value;
+  ghibliNotFound.style.display = 'none';
+  if (search.length == 0) {
+    loadData(allData);
+  } else {
+    let dataFilterSearch = filterBySearch(search, allData);
+    if (dataFilterSearch.length == 0) {
+      cardsList.innerHTML = '';
+      ghibliNotFound.style.display = 'block';
     } else {
-        let dataFilterSearch = filterBySearch(search, allData);
-        if (dataFilterSearch.length == 0) {
-            cardsList.innerHTML = '';
-            ghibliNotFound.style.display = 'block';
-        } else {
-            loadData(dataFilterSearch);
-        }
+      loadData(dataFilterSearch);
     }
+  }
 });
 
 
@@ -182,8 +163,8 @@ selectYear.addEventListener("change", () => {
   if (year == 'year') {
       loadData(allData);
   } else {
-      let dataFilterScore = filterByYear(year, allData);
-      loadData(dataFilterScore);
+      let dataFilterYear = filterByYear(year, allData);
+      loadData(dataFilterYear);
   }
 });
 

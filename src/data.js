@@ -20,7 +20,7 @@ export const filterBySearch = (search, allData) => {
 
 /************ FILTER BY ALFABETIC *************/
 
-function compareStrings(a, b) {
+export function compareStrings(a, b) {
   a = a.toLowerCase();
   b = b.toLowerCase();
 
