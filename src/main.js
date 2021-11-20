@@ -22,32 +22,6 @@ if (navMenu.classList.contains("nav-menu_visible")){
   navToggle.setAttribute("aria-label", "Open menu")
 }
 });
-//
-/*******************
- function openPage (pageName,elmnt,color) {
-  var i, Box, BoxNavs;
-  Box = document.getElementsByClassName("Box");
-  for (i = 0; i < Box.length; i++) {
-    Box[i].style.display = "none";
-  }
-  BoxNavs = document.getElementsByClassName("BoxNavs");
-  for (i = 0; i < BoxNavs.length; i++) {
-    BoxNavs[i].style.backgroundColor = "";
-  }
-  document.getElementById(pageName).style.display = "block";
-  elmnt.style.backgroundColor = color;
-}
-openPage('Home', this,'rgb(12 46 45 / 0%)');
-openPage('AboutUs', this,'rgb(12 46 45 / 0%)');
-openPage('Films', this,' rgb(12 46 45 / 0%)');
-openPage('Awards', this, 'rgb(12 46 45 / 0%)');
-openPage('Statistics', this,' rgb(12 46 45 / 0%)');
-openPage('Games', this, 'rgb(12 46 45 / 0%)');
-
-document.getElementById("OpenDefault").click()
-*/
-
-/**** SLIDER ******/
 
 
 /********** DATA FILTER***********/
@@ -128,13 +102,13 @@ window.addEventListener("load", () => {
 //     }
 // })
 
-//Volver a cargar toda la Data cuando haga click en la x interna de un input de tipo search
+//Reload Data when close "x" of search
 inputTypeSearch.addEventListener('search', () => {
   loadData(allData);
   ghibliNotFound.style.display = 'none';
 });
 
-//Filtrar Data por Search
+//Filtrar by Search
 
 inputSearch.addEventListener('keyup', () => {
     let search = inputSearch.value;
@@ -153,8 +127,7 @@ inputSearch.addEventListener('keyup', () => {
 });
 
 
-
-// Filtrar Data por Director
+// Filter by Director
 selectDirector.addEventListener("change", () => {
     let director = selectDirector.value;
     if (director == 'directors') {
@@ -165,7 +138,7 @@ selectDirector.addEventListener("change", () => {
     }
 });
 
-// Filtrar Data por Productor
+// Filter by Producer
 selectProducer.addEventListener("change", () => {
     let producer = selectProducer.value;
     if (producer == 'producers') {
@@ -176,6 +149,7 @@ selectProducer.addEventListener("change", () => {
     }
 });
 
+// Filter by alphabetical Az
 let orderAtoZ = document.getElementById("order_az");
 orderAtoZ.addEventListener("click", function () {
   document.getElementsByClassName("cards_movies")[0].innerHTML = "";
@@ -183,6 +157,7 @@ orderAtoZ.addEventListener("click", function () {
   loadData(allData);
 });
 
+// Filter by alphabetical Za
 let orderZtoA = document.getElementById("order_za");
 orderZtoA.addEventListener("click", function () {
   document.getElementsByClassName("cards_movies")[0].innerHTML = "";
@@ -190,7 +165,7 @@ orderZtoA.addEventListener("click", function () {
   loadData(allData);
 });
 
-// Filtrar Data por Score
+// Filter by Score
 selectScore.addEventListener("change", () => {
   let score= selectScore.value;
   if (score == 'score') {
@@ -201,7 +176,7 @@ selectScore.addEventListener("change", () => {
   }
 });
 
-// Filtrar Data por Year
+// Filter by Year
 selectYear.addEventListener("change", () => {
   let year= selectYear.value;
   if (year == 'year') {

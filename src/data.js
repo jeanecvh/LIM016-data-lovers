@@ -2,13 +2,13 @@
 
 /************ FILTER BY DIRECTOR *************/
 export const filterByDirector = (director, allData) => {
-    let dataFilter = allData.filter(film => film.director == director);
-    return dataFilter;
+  let dataFilter = allData.filter(film => film.director == director);
+  return dataFilter;
 }
 /************ FILTER BY PRODUCER *************/
 export const filterByProducer = (producer, allData) => {
-    let dataFilter = allData.filter(film => film.producer == producer);
-    return dataFilter;
+  let dataFilter = allData.filter(film => film.producer == producer);
+  return dataFilter;
 }
 
 /************ FILTER BY SEARCH *************/
@@ -18,13 +18,15 @@ export const filterBySearch = (search, allData) => {
   return dataFilterSearch;
 }
 
+/************ FILTER BY ALFABETIC *************/
+
 function compareStrings(a, b) {
   a = a.toLowerCase();
   b = b.toLowerCase();
 
   return (a < b) ? -1 : (a > b) ? 1 : 0;
 }
-/************ FILTER BY ALFABETIC *************/
+
 export const order_az = (arraytosort) => {
   return arraytosort.sort(function(a, b) {
     return compareStrings(a.title, b.title);
