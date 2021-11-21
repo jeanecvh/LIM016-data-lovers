@@ -54,8 +54,8 @@ const showData = (data) => {
 
     cardElement.innerHTML = templateCard;
     cardElement.addEventListener('click', () => {
-        //let id = cardElement.firstChild.id;
-        //showMore(id);
+    let id = cardElement.firstChild.id;
+    showMore(id);
     })
     return cardElement;
 }
@@ -68,6 +68,115 @@ const ghibliNotFound = document.querySelector("#ghibli-notFound");
 let inputSearch = document.querySelector("#searchFilm");
 const selectScore = document.querySelector("#score");
 const selectYear = document.querySelector("#year");
+const film1 = document.querySelector("#BoxFilm-1")
+const film2 = document.querySelector("#BoxFilm-2")
+
+/**************SHOW MORE ITEMS PAGE FILM 2 *************/
+const titleF2 = document.querySelector(".tittleF2");
+const synopsisF2 = document.querySelector(".synopsisF2");
+const posterF2 = document.querySelector(".PosterF2");
+const yearF2 = document.querySelector(".dateF2");
+const scoreF2 = document.querySelector(".scoreF2");
+const directorF2 = document.querySelector("#directorF2");
+const producerF2 = document.querySelector("#producerF2");
+const durationMovie = document.querySelector("#duration");
+const boxLocation = document.querySelector("#box-location");
+const boxVehicles = document.querySelector("#box-vehicles");
+const boxCharacteres = document.querySelector("#box-characters");
+
+
+/************ FUNCTION SHOW MORE *************/
+
+function showMore(id) {
+
+  let dataFilm = allData.filter(film => film.id == id);
+
+  posterF2.src = dataFilm[0].poster;
+  titleF2.innerHTML = dataFilm[0].title;
+  yearF2.innerHTML = dataFilm[0].release_date;
+  scoreF2.innerHTML = dataFilm[0].rt_score;
+  directorF2.innerHTML = dataFilm[0].director;
+  producerF2.innerHTML = dataFilm[0].producer;
+  synopsisF2.innerHTML = dataFilm[0].description;
+  durationMovie.innerHTML = dataFilm[0].duration;
+  const dataLocation = dataFilm[0].locations;
+  boxLocation.innerHTML = "";
+
+  if(dataLocation.length==0){
+    boxLocation.innerHTML = `<p>No Data</p>`;
+}else{
+    for (let key in dataLocation) {
+        const locationElement = document.createElement('div');
+        locationElement.className = 'locations-detail-box';
+        let residents = dataLocation[key].residents;
+        let templateLocation =
+            `<div class="img-locations-box">
+                ${dataLocation[key].img=="" ? `<img src="./img/not-found.jpg" alt="" class="img-locations">` : `<img src="${dataLocation[key].img}" alt="" class="img-locations">`}
+            </div>
+            <div class="details-container locationsDetails">
+                <p class="text-name">${dataLocation[key].name}</p>
+                <p class="text"><span class="span-black">Climate:</span>${dataLocation[key].climate}</p>
+                <p class="text"><span class="span-black">Terrain:</span>${dataLocation[key].terrain}</p>
+                <p class="text"><span class="span-black">Surface water:</span>${dataLocation[key].surface_water}</p>
+                <p class="text"><span class="span-black">Residents:</span> ${residents.map(i => i.name).join(",")}</p>
+            </div>`;
+        locationElement.innerHTML=templateLocation;
+        boxLocation.appendChild(locationElement);
+    }
+}
+
+      const dataVehicles = dataFilm[0].vehicles;
+      boxVehicles.innerHTML = "";
+      if(dataVehicles.length== 0){
+        boxVehicles.innerHTML =`<p>No Data</p>` ;
+      } else  {
+          for(let key in dataVehicles){
+              const vehiclesElement = document.createElement('div');
+              vehiclesElement.className='vehicles-detail-box';
+              let pilots = dataVehicles[key].pilot;
+              let templateVehicles =
+              `<div class="img-vehicles-box">
+                  <img src="${dataVehicles[key].img}" alt="" class="img-vehicles">
+              </div>
+              <div class="details-container vehiclesDetails">
+                  <p class="text-name">${dataVehicles[key].name}</p>
+                  <p class="text description"><span class="span-black">Description:</span>${dataVehicles[key].description}</p>
+                  <p class="text"><span class="span-black">Vehicle class:</span>${dataVehicles[key].vehicle_class}</p>
+                  <p class="text"><span class="span-black">Length:</span>${dataVehicles[key].length}</p>
+                  <p class="text"><span class="span-black">Pilot:</span>${pilots.name}</p>
+              </div>`
+              vehiclesElement.innerHTML= templateVehicles;
+              boxVehicles.appendChild(vehiclesElement);
+          }
+        }
+
+      const dataCharacters = dataFilm[0].people;
+      boxCharacteres.innerHTML = "";
+      for(let key in dataCharacters){
+          const charactersElement = document.createElement('div');
+          charactersElement.className='characters-detail-box';
+          let templateCharacter=
+              `<div class="img-character-box">
+                  ${dataCharacters[key].img=="" ? `<img src="./img/not-found.jpg" alt="" class="img-character">` : `<img src="${dataCharacters[key].img}" alt="" class="img-character">`}
+              </div>
+              <div class="details-container">
+                  <p class="text-name">${dataCharacters[key].name}</p>
+                  <p class="text"><span class="span-black"> Gender:</span>${dataCharacters[key].gender}</p>
+                  <p class="text"><span class="span-black"> Age:</span>${dataCharacters[key].age}</p>
+                  <p class="text"><span class="span-black">Specie:</span>${dataCharacters[key].specie}</p>
+                  <p class="text"><span class="span-black">Eye color:</span>${dataCharacters[key].eye_color}</p>
+                  <p class="text"><span class="span-black">Hair color:</span>${dataCharacters[key].hair_color}</p>
+              </div>`
+          charactersElement.innerHTML=templateCharacter;
+          boxCharacteres.appendChild(charactersElement);
+          }
+
+    window.scroll(0,0);
+    film1.style.display='none';
+    film2.style.display='block';
+    }
+
+
 
 
 // Funcion Cargar Data en Card
@@ -168,19 +277,6 @@ selectYear.addEventListener("change", () => {
   }
 });
 
-
-
-
-// let films = data.films;
-// export const allFilms = data.films;
-
-// const filmTitles = films.map((film) => film.title);
-// const filmPosters = films.map((film) => film.poster);
-// const filmDate = films.map((film) => film.release_date);
-// const filmScore = films.map((film) => film.rt_score);
-// const filmDirector = films.map((film) => film.director);
-// const filmProducer = films.map((film) => film.producer);
-// //const top10 = filmScore.sort(function (a,b) {return b - a }).slice(0,10);
 
 
 
