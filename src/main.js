@@ -73,8 +73,8 @@ const film2 = document.querySelector("#BoxFilm-2")
 
 /**************SHOW MORE ITEMS PAGE FILM 2 *************/
 const titleF2 = document.querySelector(".tittleF2");
-const synopsisF2 = document.querySelector(".synopsisF2");
-const posterF2 = document.querySelector(".PosterF2");
+const synopsisF2 = document.querySelector("#synopsisF2");
+const posterF2 = document.querySelector("#PosterF2");
 const yearF2 = document.querySelector(".dateF2");
 const scoreF2 = document.querySelector(".scoreF2");
 const directorF2 = document.querySelector("#directorF2");
@@ -104,8 +104,8 @@ function showMore(id) {
 
   if(dataLocation.length==0){
     boxLocation.innerHTML = `<p>No Data</p>`;
-}else{
-    for (let key in dataLocation) {
+  }else{
+    for (let key in dataLocation){
         const locationElement = document.createElement('div');
         locationElement.className = 'locations-detail-box';
         let residents = dataLocation[key].residents;
@@ -115,10 +115,10 @@ function showMore(id) {
             </div>
             <div class="details-container locationsDetails">
                 <p class="text-name">${dataLocation[key].name}</p>
-                <p class="text"><span class="span-black">Climate:</span>${dataLocation[key].climate}</p>
-                <p class="text"><span class="span-black">Terrain:</span>${dataLocation[key].terrain}</p>
-                <p class="text"><span class="span-black">Surface water:</span>${dataLocation[key].surface_water}</p>
-                <p class="text"><span class="span-black">Residents:</span> ${residents.map(i => i.name).join(",")}</p>
+                <p class="text-description"><span class="span-black">Climate:</span>${dataLocation[key].climate}</p>
+                <p class="textF2"><span class="span-black">Terrain:</span>${dataLocation[key].terrain}</p>
+                <p class="textF2"><span class="span-black">Surface water:</span>${dataLocation[key].surface_water}</p>
+                <p class="textF2"><span class="span-black">Residents:</span> ${residents.map(i => i.name).join(",")}</p>
             </div>`;
         locationElement.innerHTML=templateLocation;
         boxLocation.appendChild(locationElement);
@@ -140,10 +140,10 @@ function showMore(id) {
               </div>
               <div class="details-container vehiclesDetails">
                   <p class="text-name">${dataVehicles[key].name}</p>
-                  <p class="text description"><span class="span-black">Description:</span>${dataVehicles[key].description}</p>
-                  <p class="text"><span class="span-black">Vehicle class:</span>${dataVehicles[key].vehicle_class}</p>
-                  <p class="text"><span class="span-black">Length:</span>${dataVehicles[key].length}</p>
-                  <p class="text"><span class="span-black">Pilot:</span>${pilots.name}</p>
+                  <p class="text-description"><span class="span-black">Description:</span>${dataVehicles[key].description}</p>
+                  <p class="textF2"><span class="span-black">Vehicle class:</span>${dataVehicles[key].vehicle_class}</p>
+                  <p class="textF2"><span class="span-black">Length:</span>${dataVehicles[key].length}</p>
+                  <p class="textF2"><span class="span-black">Pilot:</span>${pilots.name}</p>
               </div>`
               vehiclesElement.innerHTML= templateVehicles;
               boxVehicles.appendChild(vehiclesElement);
@@ -161,11 +161,11 @@ function showMore(id) {
               </div>
               <div class="details-container">
                   <p class="text-name">${dataCharacters[key].name}</p>
-                  <p class="text"><span class="span-black"> Gender:</span>${dataCharacters[key].gender}</p>
-                  <p class="text"><span class="span-black"> Age:</span>${dataCharacters[key].age}</p>
-                  <p class="text"><span class="span-black">Specie:</span>${dataCharacters[key].specie}</p>
-                  <p class="text"><span class="span-black">Eye color:</span>${dataCharacters[key].eye_color}</p>
-                  <p class="text"><span class="span-black">Hair color:</span>${dataCharacters[key].hair_color}</p>
+                  <p class="textF2"><span class="span-black"> Gender:</span>${dataCharacters[key].gender}</p>
+                  <p class="textF2"><span class="span-black"> Age:</span>${dataCharacters[key].age}</p>
+                  <p class="textF2"><span class="span-black">Specie:</span>${dataCharacters[key].specie}</p>
+                  <p class="textF2"><span class="span-black">Eye color:</span>${dataCharacters[key].eye_color}</p>
+                  <p class="textF2"><span class="span-black">Hair color:</span>${dataCharacters[key].hair_color}</p>
               </div>`
           charactersElement.innerHTML=templateCharacter;
           boxCharacteres.appendChild(charactersElement);
