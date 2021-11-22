@@ -215,11 +215,11 @@
       </section>
 
       <section id="Films" class="Box">
-
-        <div class="Top10text">
-          <h1>TOP 10</h1>
-        </div>
         <div class="ContainerFilms" id="BoxFilm-1">
+          <div class="Top10text">
+            <h1>TOP 10</h1>
+          </div>
+        
           <div id="BoxSliderTop" class="BoxSliderTop">
             <img class="Top10sr" src="./img/Top/Top10sr.gif" alt="Top10">
             <img class="Top10cr" src="./img/Top/Top10cr.gif" alt="Top10">
@@ -325,13 +325,13 @@
 
         <!-- Page Film-2 -->
         <!-- style="display: none;" -->
-        <div class="Film-2" id="BoxFilm-2" >
+        <div class="Film-2" id="BoxFilm-2" style="display: none;">
           <div class="sinopsis">
             <div class="buttonBack">
-              <img style="width: 50px;" src="./img/Animaciones/Iconos/Detras2.png" alt="">
+              <input type="image" id="buttonBack" onclick="showAndHide()" src="./img/Animaciones/Iconos/Back.png" alt="back">
             </div>
             <div class="mainPoster">
-              <img id="PosterF2" src="./img/Animaciones/Chihiro/Chihiro-Gordo.jpg" alt="">
+              <img id="PosterF2" src="" alt="">
             </div>
             <div class="descriptionF">
               <div class="Flexline1" >
@@ -834,6 +834,16 @@
       evt.currentTarget.className += " active";
       }
 
+      /*********** OCULTAR MOSTRAR ***********/
+
+      function showAndHide() {
+        var boxFilm1 = document.getElementById("BoxFilm-1");
+        var boxFilm2 = document.getElementById("BoxFilm-2");
+        if (boxFilm1.style.display === "none" && boxFilm2.style.display === "block") {
+          boxFilm1.style.display = "block";
+          boxFilm2.style.display = "none";
+        }
+      }
 
     </script>
     <script src="main.js" type="module"></script>
