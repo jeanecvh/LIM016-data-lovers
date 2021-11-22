@@ -29,7 +29,7 @@
             <a class="nav-menu-link nav-link " onclick="openPage('AboutUs', this,'rgb(12 46 45 / 0%)')" >About us</a>
           </li>
           <li class="nav-menu-item">
-            <a class="nav-menu-link nav-link" onclick="openPage('Films', this,' rgb(12 46 45 / 0%)')">Films</a>
+            <a  class="nav-menu-link nav-link" onclick="openPage('Films', this,' rgb(12 46 45 / 0%)')">Films</a>
           </li>
           <li class="nav-menu-item">
             <a class="nav-menu-link nav-link" onclick="openPage('Awards', this, 'rgb(12 46 45 / 0%)')">Awards</a>
@@ -215,11 +215,10 @@
       </section>
 
       <section id="Films" class="Box">
-
+        <div class="ContainerFilms" id="BoxFilm-1">
         <div class="Top10text">
           <h1>TOP 10</h1>
         </div>
-        <div class="ContainerFilms" id="BoxFilm-1">
           <div id="BoxSliderTop" class="BoxSliderTop">
             <img class="Top10sr" src="./img/Top/Top10sr.gif" alt="Top10">
             <img class="Top10cr" src="./img/Top/Top10cr.gif" alt="Top10">
@@ -325,10 +324,10 @@
 
         <!-- Page Film-2 -->
         <!-- style="display: none;" -->
-        <div class="Film-2" id="BoxFilm-2" >
+        <div class="Film-2" id="BoxFilm-2"  style="display: none;">
           <div class="sinopsis">
             <div class="buttonBack">
-              <img style="width: 50px;" src="./img/Animaciones/Iconos/Detras2.png" alt="">
+              <input type="image" class="buttonBack" onclick="showAndHide()" src="./img/Animaciones/Iconos/Detras2.png" alt="back">
             </div>
             <div class="mainPoster">
               <img id="PosterF2" src="./img/Animaciones/Chihiro/Chihiro-Gordo.jpg" alt="">
@@ -385,7 +384,7 @@
               </div>
               <div class="filter-Characters">
                 <div class="search-Characters">
-                  <input type="search" class="input-Character" placeholder="🔍 Search for character names...">
+                  <input type="search" class="input-Character" id="input-Character" placeholder="🔍 Search for character names...">
                 </div >
                 <div class="select-Gender">
                   <select class="filter-Gender" name="filter-Gender" id="filter-Gender">
@@ -834,6 +833,16 @@
       evt.currentTarget.className += " active";
       }
 
+      /*********** OCULTAR MOSTRAR ***********/
+
+      function showAndHide() {
+        var boxFilm1 = document.getElementById("BoxFilm-1");
+        var boxFilm2 = document.getElementById("BoxFilm-2");
+        if (boxFilm1.style.display === "none" && boxFilm2.style.display === "block") {
+          boxFilm1.style.display = "block";
+          boxFilm2.style.display = "none";
+        }
+      }
 
     </script>
     <script src="main.js" type="module"></script>

@@ -26,7 +26,7 @@ if (navMenu.classList.contains("nav-menu_visible")){
 
 /********** DATA FILTER***********/
 import dataGhibli from './data/ghibli/ghibli.js';
-import { filterByDirector, filterByProducer, filterBySearch, order_az, order_za, filterByScore, filterByYear } from './data.js';
+import { filterByDirector, filterByProducer, filterBySearch, order_az, order_za, filterByScore, filterByYear, filterBySearchCharacters } from './data.js';
 // TEMPLATE
 const allData = dataGhibli.films;
 
@@ -73,8 +73,8 @@ const film2 = document.querySelector("#BoxFilm-2")
 
 /**************SHOW MORE ITEMS PAGE FILM 2 *************/
 const titleF2 = document.querySelector(".tittleF2");
-const synopsisF2 = document.querySelector(".synopsisF2");
-const posterF2 = document.querySelector(".PosterF2");
+const synopsisF2 = document.querySelector("#synopsisF2");
+const posterF2 = document.querySelector("#PosterF2");
 const yearF2 = document.querySelector(".dateF2");
 const scoreF2 = document.querySelector(".scoreF2");
 const directorF2 = document.querySelector("#directorF2");
@@ -83,6 +83,7 @@ const durationMovie = document.querySelector("#duration");
 const boxLocation = document.querySelector("#box-location");
 const boxVehicles = document.querySelector("#box-vehicles");
 const boxCharacteres = document.querySelector("#box-characters");
+const inputSearchCharacters = document.querySelector("#input-Character");
 
 
 /************ FUNCTION SHOW MORE *************/
@@ -277,6 +278,24 @@ selectYear.addEventListener("change", () => {
   }
 });
 
+
+/**********SEARCH CHARACTER ***********/
+
+inputSearchCharacters.addEventListener('keyup', () => {
+  let searchCharacter = inputSearchCharacters.value;
+  ghibliNotFound.style.display = 'none';
+  if (searchCharacter.length == 0) {
+    loadData(allData);
+  } else {
+    let dataFilterSearchCharacter = filterBySearchCharacters(searchCharacter, allData);
+    if (dataFilterSearchCharacter.length == 0) {
+      cardsList.innerHTML = '';
+      ghibliNotFound.style.display = 'block';
+    } else {
+      loadData(dataFilterSearchCharacter);
+    }
+  }
+});
 
 
 

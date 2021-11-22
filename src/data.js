@@ -18,6 +18,12 @@ export const filterBySearch = (search, allData) => {
   return dataFilterSearch;
 }
 
+export const filterBySearchCharacters = (searchCharacter, allData) => {
+  let searchConvertedCharacters = searchCharacter.toLowerCase();
+  let dataFilterSearchCharacters = allData.filter(people => people.name.toLowerCase().includes(searchConvertedCharacters));
+  return dataFilterSearchCharacters;
+}
+
 /************ FILTER BY ALFABETIC *************/
 
 export function compareStrings(a, b) {
