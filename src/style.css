@@ -827,7 +827,7 @@ div.redTable {
   Padding: 1% 0 1% 3%;
   background-color: rgba(0, 0, 0, 0.692);
   box-shadow: 3px 3px 18px 3px rgb(15 35 48 / 91%);
-  
+
 }
 
 .BoxSliderTop {
@@ -837,7 +837,7 @@ div.redTable {
   background-color: rgba(0, 0, 0, 0.692);
   padding-bottom: 3%;
   box-shadow: 3px 3px 18px 3px rgb(15 35 48 / 91%);
-} 
+}
 
 .BoxFilmFilter {
   margin-top: 2%;
@@ -961,7 +961,7 @@ div.redTable {
     width: 100%;
     display: block;
   }
-  
+
   .Top10sr {
     display: none;
   }
@@ -1086,7 +1086,7 @@ div.redTable {
     padding: 2% 5%;
     font-size: medium;
   }
-  
+
 
 }
 
@@ -1216,7 +1216,6 @@ div.redTable {
 .ContainerStaditics {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
   grid-auto-columns: 1fr;
   grid-auto-flow: row;
   justify-content: center;
@@ -1558,7 +1557,7 @@ div.redTable {
 }
 
 .buttonBack input{
-  width: 80%; 
+  width: 80%;
 }
 
 .mainPoster {
@@ -1603,7 +1602,7 @@ div.redTable {
 }
 
 .starMain img {
-  width: 30%; 
+  width: 30%;
   margin: 10% 0 10% 10%;
 }
 
@@ -1646,7 +1645,7 @@ div.redTable {
   padding: 5% 10%;
   background-color: #000000a1;
   margin: 5% 0;
-  width: 351px;
+  width: 100%;
   height: 329px;
   overflow-y: scroll;
 }
@@ -1677,7 +1676,7 @@ div.redTable {
   padding: 5% 10%;
   background-color: #000000a1;
   margin: 5% 0;
-  width: 351px;
+  width: 100%;
   height: 329px;
   overflow-y: scroll;
 }
@@ -1706,7 +1705,7 @@ div.redTable {
 
 .cards-Characters {
   background-color: #000000a1;
-  width: 822px;
+  width: 100%;
   height: 445.5px;
   overflow-y: scroll;
   box-shadow: 3px 3px 18px 3px rgb(15 35 48 / 91%);

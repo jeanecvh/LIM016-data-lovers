@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 //import { filterByProducer , filterByDirector } from './data.js';
 //import {} from '.data/.js'
 // // import data from './data/lol/lol.js';
@@ -26,11 +27,10 @@ if (navMenu.classList.contains("nav-menu_visible")){
 
 /********** DATA FILTER***********/
 import dataGhibli from './data/ghibli/ghibli.js';
-import { filterByDirector, filterByProducer, filterBySearch, order_az, order_za, filterByScore, filterByYear, filterBySearchCharacters } from './data.js';
+import { filterByDirector, filterByProducer, filterBySearch, order_az, order_za, filterByScore, filterByYear} from './data.js';
 // TEMPLATE
 const allData = dataGhibli.films;
 
-//PAGE FILM-2
 
 //const mainCards = document.querySelector("#Films");
 
@@ -83,7 +83,6 @@ const durationMovie = document.querySelector("#duration");
 const boxLocation = document.querySelector("#box-location");
 const boxVehicles = document.querySelector("#box-vehicles");
 const boxCharacteres = document.querySelector("#box-characters");
-const inputSearchCharacters = document.querySelector("#input-Character");
 
 
 /************ FUNCTION SHOW MORE *************/
@@ -291,30 +290,169 @@ selectYear.addEventListener("change", () => {
 });
 
 
-/**********SEARCH CHARACTER ***********/
+/****************** ESTATISTICS **************/
 
-inputSearchCharacters.addEventListener('keyup', () => {
-  let searchCharacter = inputSearchCharacters.value;
-  ghibliNotFound.style.display = 'none';
-  if (searchCharacter.length == 0) {
-    loadData(allData);
-  } else {
-    let dataFilterSearchCharacter = filterBySearchCharacters(searchCharacter, allData);
-    if (dataFilterSearchCharacter.length == 0) {
-      cardsList.innerHTML = '';
-      ghibliNotFound.style.display = 'block';
-    } else {
-      loadData(dataFilterSearchCharacter);
+function statisticsYear(ctx) {
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: dataGhibli.films.map(item => item.title),
+      datasets: [
+        {
+          label: "Data realease date for movie",
+          data: dataGhibli.films.map(item => item.release_date),
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.3)',
+            'rgba(54, 162, 235, 0.3)',
+            'rgba(255, 206, 86, 0.3)',
+            'rgba(75, 192, 192, 0.3)',
+            'rgba(153, 102, 255, 0.3)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)'
+          ],
+          borderWidth: 1
+        }
+      ]
+    },
+    options:{
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspecRatio: false,
     }
-  }
-});
+  })
+}
+function renderCharts1() {
+  const ctx = document.querySelector('#myChart1').getContext('2d');
+  statisticsYear(ctx)
+}
+renderCharts1();
 
 
+function statisticsScore(ctx) {
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: dataGhibli.films.map(item => item.title),
+      datasets: [
+        {
+          label: "Data score for movie",
+          data: dataGhibli.films.map(item => item.rt_score),
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.3)',
+            'rgba(54, 162, 235, 0.3)',
+            'rgba(255, 206, 86, 0.3)',
+            'rgba(75, 192, 192, 0.3)',
+            'rgba(153, 102, 255, 0.3)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)'
+          ],
+          borderWidth: 1
+        }
+      ]
+    },
+    options:{
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspecRatio: false,
+    }
+  })
+}
+function renderCharts2() {
+  const ctx = document.querySelector('#myChart2').getContext('2d');
+  statisticsScore(ctx)
+}
+renderCharts2();
 
 
+function totalGender(ctx) {
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Female','Male','NA'],
+      datasets: [
+        {
+          label: "Data Character for movie",
+          data: [81,87,3],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.3)',
+            'rgba(54, 162, 235, 0.3)',
+            'rgba(255, 206, 86, 0.3)',
+            'rgba(75, 192, 192, 0.3)',
+            'rgba(153, 102, 255, 0.3)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)'
+          ],
+          borderWidth: 1
+        }
+      ]
+    },
+    options:{
+      responsive: true,
+      maintainAspecRatio: false,
+    }
+  })
+}
+function renderGender3() {
+  const ctx = document.querySelector('#myChart3').getContext('2d');
+  totalGender(ctx)
+}
+renderGender3();
 
 
-
+function totalCharacters (ctx) {
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: dataGhibli.films.map(item => item.title),
+      datasets: [
+        {
+           label: "Data Character for movie",
+          data: [13,10,6,5,11,8,6,9,10,5,10,9,10,8,10,8,8,8,8,10],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.3)',
+            'rgba(54, 162, 235, 0.3)',
+            'rgba(255, 206, 86, 0.3)',
+            'rgba(75, 192, 192, 0.3)',
+            'rgba(153, 102, 255, 0.3)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)'
+          ],
+          borderWidth: 1
+        }
+      ]
+    },
+    options:{
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspecRatio: false,
+    }
+  })
+}
+function renderCharts4() {
+  const ctx = document.querySelector('#myChart4').getContext('2d');
+  totalCharacters(ctx)
+}
+renderCharts4();
 
 
 

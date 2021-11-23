@@ -18,12 +18,6 @@ export const filterBySearch = (search, allData) => {
   return dataFilterSearch;
 }
 
-export const filterBySearchCharacters = (searchCharacter, allData) => {
-  let searchConvertedCharacters = searchCharacter.toLowerCase();
-  let dataFilterSearchCharacters = allData.filter(people => people.name.toLowerCase().includes(searchConvertedCharacters));
-  return dataFilterSearchCharacters;
-}
-
 /************ FILTER BY ALFABETIC *************/
 
 export function compareStrings(a, b) {
@@ -44,8 +38,6 @@ export const order_za = (arraytosort) => {
     return compareStrings(b.title, a.title);
 })
 };
-
-
 /************ FILTER BY SCORE *************/
 
 export const filterByScore = (rt_score, allData) => {
@@ -59,3 +51,5 @@ export const filterByYear = (release_date, allData) => {
   let dataFilter = allData.filter(film => film.release_date == release_date);
   return dataFilter;
 }
+
+/********** STATITICS **********/

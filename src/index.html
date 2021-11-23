@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css" />
     <link async href="http://fonts.googleapis.com/css?family=Warnes" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
     <link async href="http://fonts.googleapis.com/css?family=Coda" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.js" integrity="sha512-CWVDkca3f3uAWgDNVzW+W4XJbiC3CH84P2aWZXj+DqI6PNbTzXbl1dIzEHeNJpYSn4B6U8miSZb/hCws7FnUZA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
   <body>
 
@@ -216,16 +217,10 @@
 
       <section id="Films" class="Box">
         <div class="ContainerFilms" id="BoxFilm-1">
-<<<<<<< HEAD
-        <div class="Top10text">
-          <h1>TOP 10</h1>
-        </div>
-=======
           <div class="Top10text">
             <h1>TOP 10</h1>
           </div>
-        
->>>>>>> 9266f5ebefc130935b77c910e75592cb00dc557e
+
           <div id="BoxSliderTop" class="BoxSliderTop">
             <img class="Top10sr" src="./img/Top/Top10sr.gif" alt="Top10">
             <img class="Top10cr" src="./img/Top/Top10cr.gif" alt="Top10">
@@ -331,17 +326,10 @@
 
         <!-- Page Film-2 -->
         <!-- style="display: none;" -->
-<<<<<<< HEAD
-        <div class="Film-2" id="BoxFilm-2"  style="display: none;">
-          <div class="sinopsis">
-            <div class="buttonBack">
-              <input type="image" class="buttonBack" onclick="showAndHide()" src="./img/Animaciones/Iconos/Detras2.png" alt="back">
-=======
         <div class="Film-2" id="BoxFilm-2" style="display: none;">
           <div class="sinopsis">
             <div class="buttonBack">
               <input type="image" id="buttonBack" onclick="showAndHide()" src="./img/Animaciones/Iconos/Back.png" alt="back">
->>>>>>> 9266f5ebefc130935b77c910e75592cb00dc557e
             </div>
             <div class="mainPoster">
               <img id="PosterF2" src="" alt="">
@@ -397,11 +385,8 @@
                 <h1>CHARACTERES</h1>
               </div>
               <div class="filter-Characters">
-                <div class="search-Characters">
-                  <input type="search" class="input-Character" id="input-Character" placeholder="🔍 Search for character names...">
-                </div >
                 <div class="select-Gender">
-                  <select class="filter-Gender" name="filter-Gender" id="filter-Gender">
+                  <select class="filter-Gender" name="Gender" id="Gender">
                     <option value="Gender" class="gender" selected="selected">Gender</option>
                     <option value="Female" class="female">Female</option>
                     <option value="Male" class="male">Male</option>
@@ -669,23 +654,27 @@
           </div>
           <div class="Chart1">
             <br>
-            <p>Location Type</p>
+            <p>Release date of movies</p>
             <br>
+            <canvas id="myChart1" width="400" height="400"></canvas>
           </div>
           <div class="Chart2">
             <br>
             <p>Ranking Score</p>
             <br>
+            <canvas id="myChart2" width="400" height="400"></canvas>
           </div>
           <div class="Chart3">
             <br>
             <p>Number of characters per genre</p>
             <br>
+          <canvas id="myChart3" width="400" height="400"></canvas>
           </div>
           <div class="Chart4">
             <br>
             <p>Number of characters per movie</p>
             <br>
+            <canvas id="myChart4" width="400" height="400"></canvas>
           </div>
         </div>
       </section>
@@ -862,7 +851,6 @@
     <script src="main.js" type="module"></script>
     <script src="data/ghibli/ghibli.js" type="module"></script>
   </body>
-
 </html>
 
 
