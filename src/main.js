@@ -44,8 +44,8 @@ const showData = (data) => {
         <div class="mascara">
           <h2 class="filmClick">${data.title}</h2>
             <div class="divScoreYear" >
-                <p class="scoreClick"> ⭐️ ${data.rt_score}</p>
-                <p class="dateClick"> 📆 ${data.release_date}</p>
+                <p class="scoreClick"> ⭐️ <strong>${data.rt_score}</strong></p>
+                <p class="dateClick"> 📆 <strong>${data.release_date}</strong></p>
             </div>
             <p class="directorClick">Director: ${data.director}</p>
             <p class="producerClick">Producer: ${data.producer}</p>
@@ -103,7 +103,7 @@ function showMore(id) {
   boxLocation.innerHTML = "";
 
   if(dataLocation.length==0){
-    boxLocation.innerHTML = `<p>No Data</p>`;
+    boxLocation.innerHTML = `<p>NOT FOUND DATA</p> <br>`;
   }else{
     for (let key in dataLocation){
         const locationElement = document.createElement('div');
@@ -132,7 +132,7 @@ function showMore(id) {
       const dataVehicles = dataFilm[0].vehicles;
       boxVehicles.innerHTML = "";
       if(dataVehicles.length== 0){
-        boxVehicles.innerHTML =`<p>No Data</p>` ;
+        boxVehicles.innerHTML =`<p>NOT FOUND DATA</p> <br>` ;
       } else  {
           for(let key in dataVehicles){
               const vehiclesElement = document.createElement('div');
@@ -291,27 +291,20 @@ selectYear.addEventListener("change", () => {
 
 
 /****************** ESTATISTICS **************/
-
-function statisticsYear(ctx) {
+function totalAwards(ctx) {
   new Chart(ctx, {
-    type: 'bar',
+    type: 'doughnut',
     data: {
-      labels: dataGhibli.films.map(item => item.title),
+      labels: ['Awards winner','Awards nominated'],
       datasets: [
         {
-          label: "Data realease date for movie",
-          data: dataGhibli.films.map(item => item.release_date),
+          label: "Data awards ",
+          data: [28,15],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.3)',
-            'rgba(54, 162, 235, 0.3)',
-            'rgba(255, 206, 86, 0.3)',
             'rgba(75, 192, 192, 0.3)',
             'rgba(153, 102, 255, 0.3)'
           ],
           borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
             'rgba(75, 192, 192, 1)',
             'rgba(153, 102, 255, 1)'
           ],
@@ -320,17 +313,17 @@ function statisticsYear(ctx) {
       ]
     },
     options:{
-      indexAxis: 'y',
       responsive: true,
       maintainAspecRatio: false,
     }
   })
 }
-function renderCharts1() {
+function renderGender1() {
   const ctx = document.querySelector('#myChart1').getContext('2d');
-  statisticsYear(ctx)
+  totalAwards(ctx)
 }
-renderCharts1();
+renderGender1();
+
 
 
 function statisticsScore(ctx) {
@@ -421,7 +414,7 @@ function totalCharacters (ctx) {
       labels: dataGhibli.films.map(item => item.title),
       datasets: [
         {
-           label: "Data Character for movie",
+          label: "Data Character for movie",
           data: [13,10,6,5,11,8,6,9,10,5,10,9,10,8,10,8,8,8,8,10],
           backgroundColor: [
             'rgba(255, 99, 132, 0.3)',
