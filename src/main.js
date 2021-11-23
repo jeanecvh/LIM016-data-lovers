@@ -44,8 +44,8 @@ const showData = (data) => {
         <div class="mascara">
           <h2 class="filmClick">${data.title}</h2>
             <div class="divScoreYear" >
-                <p class="scoreClick"> ⭐️ ${data.rt_score}</p>
-                <p class="dateClick"> 📆 ${data.release_date}</p>
+                <p class="scoreClick"> ⭐️ <strong>${data.rt_score}</strong></p>
+                <p class="dateClick"> 📆 <strong>${data.release_date}</strong></p>
             </div>
             <p class="directorClick">Director: ${data.director}</p>
             <p class="producerClick">Producer: ${data.producer}</p>
@@ -103,7 +103,7 @@ function showMore(id) {
   boxLocation.innerHTML = "";
 
   if(dataLocation.length==0){
-    boxLocation.innerHTML = `<p>No Data</p>`;
+    boxLocation.innerHTML = `<p>NOT FOUND DATA</p> <br>`;
   }else{
     for (let key in dataLocation){
         const locationElement = document.createElement('div');
@@ -132,7 +132,7 @@ function showMore(id) {
       const dataVehicles = dataFilm[0].vehicles;
       boxVehicles.innerHTML = "";
       if(dataVehicles.length== 0){
-        boxVehicles.innerHTML =`<p>No Data</p>` ;
+        boxVehicles.innerHTML =`<p>NOT FOUND DATA</p> <br>` ;
       } else  {
           for(let key in dataVehicles){
               const vehiclesElement = document.createElement('div');
