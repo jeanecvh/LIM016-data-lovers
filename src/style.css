@@ -1259,6 +1259,7 @@ div.redTable {
   border-width: 7px;
   border-color: rgb(43 103 108);
   border-style: solid;
+  padding: 8% 8%;
 }
 
 .Chart1 {
@@ -1289,6 +1290,14 @@ div.redTable {
   .TittleSt {
     margin-top: 8%;
   }
+
+  .Chart1,
+  .Chart2,
+  .Chart3,
+  .Chart4 {
+    margin: 6%
+  }
+
 }
 
 
