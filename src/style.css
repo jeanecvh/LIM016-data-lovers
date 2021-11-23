@@ -1407,6 +1407,11 @@ div.redTable {
     text-shadow: 0 -1px 1px rgb(10 20 30);
 }
 
+.button_play a {
+  text-decoration: none;
+  color: beige;
+}
+
 .button_play:hover {
   cursor: pointer;
   -webkit-box-shadow: 0 0 20px 1px rgb(135,173,255) inset, 0 1px 0 0 rgb(29,44,77) , 0 6px 0 0 rgb(31,48,83) , 0 8px 4px 1px rgb(17,17,17) ;
