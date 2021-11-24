@@ -1,22 +1,46 @@
-/* eslint-disable no-undef */
-//import { filterByProducer , filterByDirector } from './data.js';
-//import {} from '.data/.js'
-// // import data from './data/lol/lol.js';
-// import data from './data/ghibli/ghibli.js';
-// // import data from './data/rickandmorty/rickandmorty.js';
+  /****************IMPORTACIÓN DE MÓDULOS *******************/
+import dataGhibli from './data/ghibli/ghibli.js';
+import { filterByDirector, filterByProducer, filterBySearch, order_az, order_za, filterByScore, filterByYear} from './data.js';
 
-//console.log(data['films']);
 
-// Event for Nav-Menu responsive
+/**************************** DECLARACIÓN DE VARIABLES  *****************************************/
 
+/**********************MENU RESPONSIVE**********************/
 const navToggle = document.querySelector(".NavToggle")
 const navMenu = document.querySelector(".nav-menu")
+/*********************OBTENEMOS LA DATA***********************/
+const allData = dataGhibli.films;
+/************************TEMPLATE***********************/
+const cardsList = document.querySelector("#cards_movies");
+const selectDirector = document.querySelector("#directors");
+const selectProducer = document.querySelector("#producers");
+const inputTypeSearch = document.querySelector("input[type=search]");
+const ghibliNotFound = document.querySelector("#ghibli-notFound");
+let inputSearch = document.querySelector("#searchFilm");
+const selectScore = document.querySelector("#score");
+const selectYear = document.querySelector("#year");
+const film1 = document.querySelector("#BoxFilm-1");
+const film2 = document.querySelector("#BoxFilm-2");
+/**************SHOW MORE ITEMS PAGE FILM 2 *************/
+const titleF2 = document.querySelector(".tittleF2");
+const synopsisF2 = document.querySelector("#synopsisF2");
+const posterF2 = document.querySelector("#PosterF2");
+const yearF2 = document.querySelector(".dateF2");
+const scoreF2 = document.querySelector(".scoreF2");
+const directorF2 = document.querySelector("#directorF2");
+const producerF2 = document.querySelector("#producerF2");
+const durationMovie = document.querySelector("#duration");
+const boxLocation = document.querySelector("#box-location");
+const boxVehicles = document.querySelector("#box-vehicles");
+const boxCharacteres = document.querySelector("#box-characters");
 
+
+/**********************MENU RESPONSIVE**********************/
+// MENÚ RESPONSIVE (Se edita el nav)
+/***Event for Nav-Menu responsive***/
 navToggle.addEventListener("click", () => {
   navMenu.classList.toggle("nav-menu_visible");
-
-// Event for area-label open and close menu
-
+/***Event for area-label open and close menu***/
 if (navMenu.classList.contains("nav-menu_visible")){
   navToggle.setAttribute("aria-label", "Close menu");
 }else {
@@ -24,16 +48,8 @@ if (navMenu.classList.contains("nav-menu_visible")){
 }
 });
 
-
-/********** DATA FILTER***********/
-import dataGhibli from './data/ghibli/ghibli.js';
-import { filterByDirector, filterByProducer, filterBySearch, order_az, order_za, filterByScore, filterByYear} from './data.js';
-// TEMPLATE
-const allData = dataGhibli.films;
-
-
-//const mainCards = document.querySelector("#Films");
-
+/************************ TEMPLETE CARDS ********************/
+// FUNCION PARA OBTENER LOS CARDS + LLAMAR A FUNCION SHOW MORE PARA OBTENER LA PÁGINA PROPIA DE CADA FILM
 const showData = (data) => {
     const cardElement = document.createElement('div');
     cardElement.className = "card";
@@ -42,7 +58,7 @@ const showData = (data) => {
       `<div class="moviecard contenedor-img ejemplo-1" id="${data.id}">
         <img class="movie-poster" src="${data.poster}">
         <div class="mascara">
-          <h2 class="filmClick">${data.title}</h2>
+          <h1 class="filmClick">${data.title}</h1>
             <div class="divScoreYear" >
                 <p class="scoreClick"> ⭐️ <strong>${data.rt_score}</strong></p>
                 <p class="dateClick"> 📆 <strong>${data.release_date}</strong></p>
@@ -60,74 +76,62 @@ const showData = (data) => {
     return cardElement;
 }
 
-const cardsList = document.querySelector("#cards_movies");
-const selectDirector = document.querySelector("#directors");
-const selectProducer = document.querySelector("#producers");
-const inputTypeSearch = document.querySelector("input[type=search]");
-const ghibliNotFound = document.querySelector("#ghibli-notFound");
-let inputSearch = document.querySelector("#searchFilm");
-const selectScore = document.querySelector("#score");
-const selectYear = document.querySelector("#year");
-const film1 = document.querySelector("#BoxFilm-1")
-const film2 = document.querySelector("#BoxFilm-2")
+// Funcion Cargar Data en Card
+function loadData(data) {
+  cardsList.innerHTML = '';
+  for (let key in data) {
+      cardsList.appendChild(showData(data[key]));
+  }
+}
 
-/**************SHOW MORE ITEMS PAGE FILM 2 *************/
-const titleF2 = document.querySelector(".tittleF2");
-const synopsisF2 = document.querySelector("#synopsisF2");
-const posterF2 = document.querySelector("#PosterF2");
-const yearF2 = document.querySelector(".dateF2");
-const scoreF2 = document.querySelector(".scoreF2");
-const directorF2 = document.querySelector("#directorF2");
-const producerF2 = document.querySelector("#producerF2");
-const durationMovie = document.querySelector("#duration");
-const boxLocation = document.querySelector("#box-location");
-const boxVehicles = document.querySelector("#box-vehicles");
-const boxCharacteres = document.querySelector("#box-characters");
+// Cargar Toda la Data al inicio
+window.addEventListener("load", () => {
+  loadData(allData);
+});
 
-
-/************ FUNCTION SHOW MORE *************/
-
+/*********************** FUNCTION SHOW MORE ************************/
+// FUNCIÓN PARA REDIRECCIONAR A PÁGINA FILM 2 Y MOSTRAR CONTENIDO
 function showMore(id) {
 
   let dataFilm = allData.filter(film => film.id == id);
 
-  posterF2.src = dataFilm[0].poster;
-  titleF2.innerHTML = dataFilm[0].title;
-  yearF2.innerHTML = dataFilm[0].release_date;
-  scoreF2.innerHTML = dataFilm[0].rt_score;
-  directorF2.innerHTML = dataFilm[0].director;
-  producerF2.innerHTML = dataFilm[0].producer;
-  synopsisF2.innerHTML = dataFilm[0].description;
-  durationMovie.innerHTML = dataFilm[0].duration;
-  const dataLocation = dataFilm[0].locations;
-  boxLocation.innerHTML = "";
+    posterF2.src = dataFilm[0].poster;
+    titleF2.innerHTML = dataFilm[0].title;
+    yearF2.innerHTML = dataFilm[0].release_date;
+    scoreF2.innerHTML = dataFilm[0].rt_score;
+    directorF2.innerHTML = dataFilm[0].director;
+    producerF2.innerHTML = dataFilm[0].producer;
+    synopsisF2.innerHTML = dataFilm[0].description;
+    durationMovie.innerHTML = dataFilm[0].duration;
 
-  if(dataLocation.length==0){
-    boxLocation.innerHTML = `<p>NOT FOUND DATA</p> <br>`;
-  }else{
-    for (let key in dataLocation){
-        const locationElement = document.createElement('div');
-        locationElement.className = 'locations-detail-box';
-        let residents = dataLocation[key].residents;
-        let templateLocation =
-            `<div class="img-locations-box">
-                ${dataLocation[key].img=="" ? `<img src="./img/not-found.jpg" alt="" class="img-locations">` : `<img src="${dataLocation[key].img}" alt="" class="img-locations">`}
-            </div>
-            <div class="details-container locationsDetails">
-              <div class="text-nameVL">
-                <p>${dataLocation[key].name}</p>
-              </div>
-              <div class="text-name2">
-                <p class="text-description"><span class="span-black">Climate: </span>${dataLocation[key].climate}</p>
-                <p class="textF2"><span class="span-black">Terrain: </span>${dataLocation[key].terrain}</p>
-                <p class="textF2"><span class="span-black">Surface water: </span>${dataLocation[key].surface_water}</p>
-                <p class="textF2"><span class="span-black">Residents: </span> ${residents.map(i => i.name).join(",")}</p>
-              </div>
-            </div>`;
-        locationElement.innerHTML=templateLocation;
-        boxLocation.appendChild(locationElement);
-    }
-}
+      const dataLocation = dataFilm[0].locations;
+      boxLocation.innerHTML = "";
+        if(dataLocation.length==0){
+          boxLocation.innerHTML = `<p>NOT FOUND DATA</p> <br>`;
+        }else{
+          for (let key in dataLocation){
+              const locationElement = document.createElement('div');
+              locationElement.className = 'locations-detail-box';
+              let residents = dataLocation[key].residents;
+              let templateLocation =
+                  `<div class="img-locations-box">
+                      ${dataLocation[key].img=="" ? `<img src="./img/not-found.jpg" alt="" class="img-locations">` : `<img src="${dataLocation[key].img}" alt="" class="img-locations">`}
+                  </div>
+                  <div class="details-container locationsDetails">
+                    <div class="text-nameVL">
+                      <p>${dataLocation[key].name}</p>
+                    </div>
+                    <div class="text-name2">
+                      <p class="text-description"><span class="span-black">Climate: </span>${dataLocation[key].climate}</p>
+                      <p class="textF2"><span class="span-black">Terrain: </span>${dataLocation[key].terrain}</p>
+                      <p class="textF2"><span class="span-black">Surface water: </span>${dataLocation[key].surface_water}</p>
+                      <p class="textF2"><span class="span-black">Residents: </span> ${residents.map(i => i.name).join(",")}</p>
+                    </div>
+                  </div>`;
+              locationElement.innerHTML=templateLocation;
+              boxLocation.appendChild(locationElement);
+            }
+        }
 
       const dataVehicles = dataFilm[0].vehicles;
       boxVehicles.innerHTML = "";
@@ -189,29 +193,9 @@ function showMore(id) {
     }
 
 
+/******************************* FILTROS PARA CARDS (PAGE FILM 1) **************************/
 
-
-// Funcion Cargar Data en Card
-function loadData(data) {
-    cardsList.innerHTML = '';
-    for (let key in data) {
-        cardsList.appendChild(showData(data[key]));
-    }
-}
-
-// Cargar Toda la Data al inicio
-window.addEventListener("load", () => {
-    loadData(allData);
-});
-
-//Reload Data when close "x" of search
-inputTypeSearch.addEventListener('search', () => {
-  loadData(allData);
-  ghibliNotFound.style.display = 'none';
-});
-
-//Filtrar by Search
-
+//Filtrar by Search (bar search)
 inputSearch.addEventListener('keyup', () => {
   let search = inputSearch.value;
   ghibliNotFound.style.display = 'none';
@@ -228,6 +212,11 @@ inputSearch.addEventListener('keyup', () => {
   }
 });
 
+//Reload Data when close "x" of search
+inputTypeSearch.addEventListener('search', () => {
+  loadData(allData);
+  ghibliNotFound.style.display = 'none';
+});
 
 // Filter by Director
 selectDirector.addEventListener("change", () => {
@@ -290,7 +279,10 @@ selectYear.addEventListener("change", () => {
 });
 
 
-/****************** ESTATISTICS **************/
+/*********************************** ESTATISTICS *******************************/
+
+// Chart 1
+
 function totalAwards(ctx) {
   new Chart(ctx, {
     type: 'doughnut',
@@ -318,14 +310,13 @@ function totalAwards(ctx) {
     }
   })
 }
+// Llamando desde el DOM
 function renderGender1() {
   const ctx = document.querySelector('#myChart1').getContext('2d');
   totalAwards(ctx)
 }
-renderGender1();
 
-
-
+// Chart 2
 function statisticsScore(ctx) {
   new Chart(ctx, {
     type: 'bar',
@@ -360,12 +351,13 @@ function statisticsScore(ctx) {
     }
   })
 }
+// Llamando desde el DOM
 function renderCharts2() {
   const ctx = document.querySelector('#myChart2').getContext('2d');
   statisticsScore(ctx)
 }
-renderCharts2();
 
+// Chart 3
 
 function totalGender(ctx) {
   new Chart(ctx, {
@@ -400,12 +392,13 @@ function totalGender(ctx) {
     }
   })
 }
+// Llamando desde el DOM
 function renderGender3() {
   const ctx = document.querySelector('#myChart3').getContext('2d');
   totalGender(ctx)
 }
-renderGender3();
 
+// Chart 4
 
 function totalCharacters (ctx) {
   new Chart(ctx, {
@@ -441,14 +434,16 @@ function totalCharacters (ctx) {
     }
   })
 }
+// Llamando desde el DOM
 function renderCharts4() {
   const ctx = document.querySelector('#myChart4').getContext('2d');
   totalCharacters(ctx)
 }
+
+renderGender1();
+renderCharts2();
+renderGender3();
 renderCharts4();
-
-
-
 
 
 
