@@ -600,12 +600,11 @@ text-align: center;
 
 .BoxText2 h1 {
   color: rgb(187 178 97);
-  font-size: x-large;
 }
 
 .BoxText2 p {
   color: beige;
-  font-size: medium;
+  font-size: small;
   text-align: justify;
 }
 
@@ -616,7 +615,7 @@ text-align: center;
 .Cita p {
   color: beige;
   text-align: justify;
-  font-size: medium;
+  font-size: small;
 }
 
 .Cita h3 {
@@ -684,13 +683,11 @@ text-align: center;
 .BoxPremio h3 {
   text-align: left;
   color: rgb(10, 103, 116);
-  font-size: x-large;
 }
 
 .BoxPremio p {
   text-align: justify;
   color: black;
-  font-size: large;
 }
 
 .Video1 {
@@ -885,8 +882,7 @@ div.redTable {
 }
 
 .search {
-  width: 350px;
-  font-size: 20px;
+  width: 300px;
   border: none;
   border-bottom: #55a389 6px solid;
   background: none;
@@ -899,6 +895,7 @@ div.redTable {
   left: 0;
   color: beige;
   outline:none;
+  font-size: small;
 }
 
 ::placeholder {
@@ -906,14 +903,14 @@ div.redTable {
 }
 
 .data_filters {
-  width: 200px;
-  font-size: 18px;
+  width: 150px;
   background: none;
   color: beige;
   padding: 2.2% 5%;
   outline:none;
   border: none;
   border-bottom: #55a389 4px solid;
+  font-size: small;
 }
 
 .data_filters option {
@@ -1192,13 +1189,11 @@ div.redTable {
   transform: translateX(-50px);/*Desplazamos a la izquierda*/
   opacity: 0;
   transition: all 0.7s ease-in-out;
-  font-size: x-large;
   }
   .ejemplo-1 p {
   transform: translateX(100px); /*Desplazamos a la derecha*/
   opacity: 0;
   transition: all 0.4s linear;
-  font-size: large;
   }
   .ejemplo-1 a.link{
   opacity: 0;
@@ -1331,12 +1326,10 @@ div.redTable {
 .Flexline3 {
   display: flex;
   justify-content: space-between;
-  font-size: large;
   margin: 1% 15% 5% 0;
 }
 
 .Flexline2 p {
-  font-size: large;
   margin: 3% 15% 2% 0;
   text-align: justify;
 }
@@ -1400,7 +1393,7 @@ div.redTable {
 .img-location p,
 .img-vehicles p {
   text-align: center;
-  font-size: medium;
+  font-size: small;
 }
 
 .details h1 {
@@ -1496,7 +1489,7 @@ div.redTable {
 }
 
 .text-name {
-  font-size: large;
+  font-size: medium;
   color: beige;
   font-weight: bold;
   background-color: #127c77b6;
@@ -1530,7 +1523,7 @@ div.redTable {
 }
 
 .text-name2 {
-font-size: medium;
+font-size: small;
 text-align: center;
 }
 
@@ -1554,7 +1547,7 @@ text-align: center;
   .Characteres {
     display: flex;
     flex-direction: column;
-    width: 600px;
+    width: 450px;
   }
 
   .img-location img,
@@ -1569,7 +1562,7 @@ text-align: center;
     grid-auto-rows: column;
     gap: 40px;
     place-content: center;
-    width: 600px;
+    width: 450px;
   }
 
   .filter-Characters {
@@ -1605,7 +1598,6 @@ text-align: center;
 .TittleSt h1,
 .TittleSt p {
   color: rgb(43 103 108);
-  font-size: xx-large;
   text-align: center;
 }
 
@@ -1614,7 +1606,7 @@ text-align: center;
 .Chart3 p,
 .Chart4 p {
   color: rgb(43 103 108);
-  font-size: x-large;
+  font-size: medium;
   text-align: center;
 }
 
@@ -1719,19 +1711,16 @@ text-align: center;
 .Game1 h1 ,
 .Game2 h1 {
   color: beige;
-  font-size: xx-large;
-      text-shadow: 0 0 10px #050505, 0 0 10px #050505, 0 0 20px #050505, 0 0 20px #045c5c, 0 0 10px #063c3c, 0 0 20px #0cc7c7, 0 0 20px #04f1f1;
+  text-shadow: 0 0 10px #050505, 0 0 10px #050505, 0 0 20px #050505, 0 0 20px #045c5c, 0 0 10px #063c3c, 0 0 20px #0cc7c7, 0 0 20px #04f1f1;
 }
 
 .Game1 p,
 .Game2 p {
-  font-size: large;
   color: beige;
 }
 
 .Game1 ul,
 .Game2 ul {
-  font-size: large;
   color: beige;
   text-align: left;
 }
@@ -1825,13 +1814,11 @@ text-align: center;
 /************** FOOTER **************/
 
 .footer {
-  /* position: fixed; */
-
   width: 100%;
   background-color: rgba(0, 0, 0, 0.87);
   color: white;
   text-align: center;
-  font-size: medium;
+  font-size: small;
   font-family: Roboto;
   display: flex;
   justify-content: space-evenly;
