@@ -138,5 +138,5 @@ A continuación, se mostrará parte del prototipado de alta fidelidad, si desea 
 ****
 
 <div align="center">
-<img src="/src/img/team/imgteam.png" width="800">
+<img src="img/team/imgteam.png" width="800">
 </div>
