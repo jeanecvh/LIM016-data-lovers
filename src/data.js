@@ -52,4 +52,3 @@ export const filterByYear = (release_date, allData) => {
   return dataFilter;
 }
 
-/********** STATITICS **********/
