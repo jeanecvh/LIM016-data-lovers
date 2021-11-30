@@ -1,13 +1,16 @@
-  /****************IMPORTACIÓN DE MÓDULOS *******************/
+  /**************** IMPORT MODULES *******************/
 import dataGhibli from './data/ghibli/ghibli.js';
 import { filterByDirector, filterByProducer, filterBySearch, order_az, order_za, filterByScore, filterByYear} from './data.js';
 
 
-/**************************** DECLARACIÓN DE VARIABLES  *****************************************/
-/*********************OBTENEMOS LA DATA***********************/
+/**************************** DECLARATION OF VARIABLES  *****************************************/
+/********************* GET THE DATA***********************/
 const allData = dataGhibli.films;
 /************************TEMPLATE***********************/
 const cardsList = document.querySelector("#cards_movies");
+const film1 = document.querySelector("#BoxFilm-1");
+const film2 = document.querySelector("#BoxFilm-2");
+/************************FILTERS***********************/
 const selectDirector = document.querySelector("#directors");
 const selectProducer = document.querySelector("#producers");
 const inputTypeSearch = document.querySelector("input[type=search]");
@@ -15,8 +18,8 @@ const ghibliNotFound = document.querySelector("#ghibli-notFound");
 let inputSearch = document.querySelector("#searchFilm");
 const selectScore = document.querySelector("#score");
 const selectYear = document.querySelector("#year");
-const film1 = document.querySelector("#BoxFilm-1");
-const film2 = document.querySelector("#BoxFilm-2");
+let orderAtoZ = document.getElementById("order_az");
+let orderZtoA = document.getElementById("order_za");
 /**************SHOW MORE ITEMS PAGE FILM 2 *************/
 const titleF2 = document.querySelector(".tittleF2");
 const synopsisF2 = document.querySelector("#synopsisF2");
@@ -51,7 +54,6 @@ const showData = (data) => {
             <p class="producerClick">Producer: ${data.producer}</p>
             </div>
         </div>`;
-
     cardElement.innerHTML = templateCard;
     cardElement.addEventListener('click', () => {
     let id = cardElement.firstChild.id;
@@ -60,7 +62,7 @@ const showData = (data) => {
     return cardElement;
 }
 
-// Funcion Cargar Data en Card
+// function charge data in div cards
 function loadData(data) {
   cardsList.innerHTML = '';
   for (let key in data) {
@@ -68,7 +70,7 @@ function loadData(data) {
   }
 }
 
-// Cargar Toda la Data al inicio
+// Charge all the data in the box
 window.addEventListener("load", () => {
   loadData(allData);
 });
@@ -176,10 +178,9 @@ function showMore(id) {
     film2.style.display='block';
     }
 
-
 /******************************* FILTROS PARA CARDS (PAGE FILM 1) **************************/
 
-//Filtrar by Search (bar search)
+//Filter by Search (bar search)
 inputSearch.addEventListener('keyup', () => {
   let search = inputSearch.value;
   ghibliNotFound.style.display = 'none';
@@ -204,6 +205,9 @@ inputTypeSearch.addEventListener('search', () => {
 
 // Filter by Director
 selectDirector.addEventListener("change", () => {
+  selectProducer.value = "producers";
+  selectScore.value = "score";
+  selectYear.value = "year";
     let director = selectDirector.value;
     if (director == 'directors') {
         loadData(allData);
@@ -215,7 +219,10 @@ selectDirector.addEventListener("change", () => {
 
 // Filter by Producer
 selectProducer.addEventListener("change", () => {
-    let producer = selectProducer.value;
+  selectDirector.value = "directors";
+  selectScore.value = "score";
+  selectYear.value = "year";
+  let producer = selectProducer.value;
     if (producer == 'producers') {
         loadData(allData);
     } else {
@@ -224,24 +231,11 @@ selectProducer.addEventListener("change", () => {
     }
 });
 
-// Filter by alphabetical Az
-let orderAtoZ = document.getElementById("order_az");
-orderAtoZ.addEventListener("click", function () {
-  document.getElementsByClassName("cards_movies")[0].innerHTML = "";
-  order_az(allData);
-  loadData(allData);
-});
-
-// Filter by alphabetical Za
-let orderZtoA = document.getElementById("order_za");
-orderZtoA.addEventListener("click", function () {
-  document.getElementsByClassName("cards_movies")[0].innerHTML = "";
-  order_za(allData);
-  loadData(allData);
-});
-
 // Filter by Score
 selectScore.addEventListener("change", () => {
+  selectDirector.value = "directors";
+  selectProducer.value = "producers";
+  selectYear.value = "year";
   let score= selectScore.value;
   if (score == 'score') {
       loadData(allData);
@@ -253,6 +247,9 @@ selectScore.addEventListener("change", () => {
 
 // Filter by Year
 selectYear.addEventListener("change", () => {
+  selectDirector.value = "directors";
+  selectProducer.value = "producers";
+  selectScore.value = "score";
   let year= selectYear.value;
   if (year == 'year') {
       loadData(allData);
@@ -261,6 +258,21 @@ selectYear.addEventListener("change", () => {
       loadData(dataFilterYear);
   }
 });
+
+// Filter by alphabetical Az
+orderAtoZ.addEventListener("click", function () {
+  document.getElementsByClassName("cards_movies")[0].innerHTML = "";
+  order_az(allData);
+  loadData(allData);
+});
+
+// Filter by alphabetical Za
+orderZtoA.addEventListener("click", function () {
+  document.getElementsByClassName("cards_movies")[0].innerHTML = "";
+  order_za(allData);
+  loadData(allData);
+});
+
 
 
 
