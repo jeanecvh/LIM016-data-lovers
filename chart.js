@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import dataGhibli from './data/ghibli/ghibli.js';
 
 /*********************************** ESTATISTICS *******************************/
@@ -12,7 +13,7 @@ function totalAwards(ctx) {
       datasets: [
         {
           label: "Data awards ",
-          data: [28,15],
+          data: [28,43],
           backgroundColor: [
             'rgba(75, 192, 192, 0.3)',
             'rgba(153, 102, 255, 0.3)'
